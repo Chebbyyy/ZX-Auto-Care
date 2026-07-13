@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Z Elite Auto Care - Professional garage services and premium mobile car detailing. 24/7 availability. Expert mechanics, transparent pricing, and satisfaction guaranteed.">
+    <meta name="keywords" content="garage services, brake repairs, oil changes, car detailing, mobile detailing, ceramic coating, Darwin NT, auto care">
+    <meta name="author" content="Z Elite Auto Care">
+    <title>Z Elite Auto Care - Professional Garage Services & Mobile Car Detailing</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%23E10600'>Z</text></svg>">
+    
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <img src="images/Z Elite Logo.jpg" alt="Z Elite Auto Care" class="loader-logo-img">
+            <div class="loader-tagline">Darwin's Trusted Mobile Workshop</div>
+            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+        </div>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm" style="background: #ffffff; border-bottom: 3px solid #E10600;">
+        <div class="container">
+
+            <!-- Brand / Logo -->
+            <a href="#home" class="navbar-brand" aria-label="Z Elite Auto Care Home">
+                <img src="images/Z Elite Logo.jpg" alt="Z Elite Auto Care" class="nav-logo-img">
+            </a>
+
+            <!-- Mobile toggler -->
+            <button class="navbar-toggler border-danger" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav links -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a href="#home"         class="nav-link px-3">Home</a></li>
+                    <li class="nav-item"><a href="#services"     class="nav-link px-3">Services</a></li>
+                    <li class="nav-item"><a href="#why-us"       class="nav-link px-3">Why Us</a></li>
+                    <li class="nav-item"><a href="#gallery"      class="nav-link px-3">Gallery</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link px-3">Testimonials</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="#booking" class="btn btn-danger rounded-pill px-4 py-2 fw-bold nav-cta">
+                            <i class="bi bi-calendar-check-fill me-1"></i> Book Service
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero position-relative overflow-hidden d-flex align-items-center">
+
+        <!-- Background image -->
+        <div class="position-absolute top-0 start-0 w-100 h-100">
+            <img src="images/premium.jfif" alt="Professional car wash and mechanical services" class="hero-bg-img w-100 h-100" style="object-fit:cover; object-position:center;">
+        </div>
+
+        <!-- Dark overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(135deg,rgba(0,0,0,0.75) 0%,rgba(10,10,10,0.55) 100%); z-index:1;"></div>
+
+        <!-- Content -->
+        <div class="container position-relative" style="z-index:2;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 text-center py-5">
+
+                    <!-- Sleek header bar with 3 coloured badges -->
+                    <div class="hero-info-bar mb-5">
+                        <div class="hib-badge hib-badge--red">
+                            <span class="hib-circle hib-circle--red"><i class="bi bi-geo-alt-fill"></i></span>
+                            <span class="hib-text">Darwin, NT</span>
+                        </div>
+                        <div class="hib-center">
+                            <span class="hib-circle hib-circle--green"><i class="bi bi-shield-check"></i></span>
+                            <span class="hib-text">Satisfied</span>
+                        </div>
+                        <div class="hib-badge hib-badge--teal">
+                            <span class="hib-circle hib-circle--teal"><i class="bi bi-lightning-charge-fill"></i></span>
+                            <span class="hib-text">24/7 Emergency</span>
+                        </div>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="hero-headline fw-bold mb-3">
+                        Darwin's Mobile<br>
+                        <span class="hero-headline-accent" id="heroAccent"></span><br>
+                        Garage Specialists
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="hero-subheadline mb-4 mx-auto" style="max-width:540px;">
+                        Brakes, oil changes, suspension, electrical and more. Professional mechanical repairs brought straight to you, 24/7.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="d-flex flex-wrap justify-content-center gap-3 hero-cta-buttons">
+                        <a href="tel:0432241883" class="btn btn-danger rounded-pill px-4 py-2 hero-call-pulse d-flex flex-column align-items-center" title="Call Z Elite Auto Care">
+                            <span class="d-flex align-items-center gap-2" style="font-size:0.85rem;"><i class="bi bi-telephone-fill"></i> Call Now</span>
+                            <span class="fw-bold" style="font-size:0.9rem; letter-spacing:-0.3px;">0432 241 883</span>
+                        </a>
+                        <a href="#booking" class="btn btn-outline-light rounded-pill px-4 py-2 d-flex align-items-center gap-2" style="font-size:0.85rem;" title="Book a service">
+                            <i class="bi bi-calendar-check-fill"></i> Book Now
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#services" class="hero-scroll-indicator d-none d-md-flex" aria-label="Scroll down">
+            <span class="hero-scroll-text">Scroll</span>
+            <i class="bi bi-chevron-double-down"></i>
+        </a>
+
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-up" data-animate="fade-up">
+                <h2>Our Services</h2>
+                <div class="header-line"></div>
+                <p>Quality work at honest prices. Professional service for every vehicle in Darwin.</p>
+            </div>
+
+            <div class="services-redesign">
+
+                <!-- Garage Services -->
+                <div class="svc-block" id="garageServices">
+                    <div class="svc-block-header">
+                        <span class="svc-block-icon"><i class="bi bi-tools"></i></span>
+                        <div>
+                            <h3 class="svc-block-title">Garage Services</h3>
+                            <p class="svc-block-sub">Professional mechanical repairs brought straight to you, anywhere in Darwin.</p>
+                        </div>
+                    </div>
+                    <div class="garage-services-grid">
+                        <div class="garage-service-card hover-lift animate-on-scroll scale-in stagger-1" data-animate="list-item" style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid #f8f9fa;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 300);">
+                            <div class="garage-icon" style="background: linear-gradient(135deg, #E10600 0%, #c90500 100%);">
+                                <i class="bi bi-disc text-white"></i>
+                            </div>
+                            <h4 class="fade-up stagger-2 text-dark">Brake Repairs</h4>
+                            <div class="service-features slide-left stagger-3">
+                                <small class="text-muted">Brake pads and rotors</small>
+                                <small class="text-muted">Brake fluid service</small>
+                            </div>
+                        </div>
+                        <div class="garage-service-card hover-lift animate-on-scroll scale-in stagger-2" data-animate="list-item" style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid #f8f9fa;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 300);">
+                            <div class="garage-icon" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                                <i class="bi bi-droplet-fill text-white"></i>
+                            </div>
+                            <h4 class="fade-up stagger-2 text-dark">Oil Changes</h4>
+                            <div class="service-features slide-left stagger-3">
+                                <small class="text-muted">Full synthetic oils</small>
+                                <small class="text-muted">Filter replacement</small>
+                            </div>
+                        </div>
+                        <div class="garage-service-card hover-lift animate-on-scroll scale-in stagger-3" data-animate="list-item" style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid #f8f9fa;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 300);">
+                            <div class="garage-icon" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                                <i class="bi bi-gear-fill text-white"></i>
+                            </div>
+                            <h4 class="fade-up stagger-2 text-dark">Transmission Service</h4>
+                            <div class="service-features slide-left stagger-3">
+                                <small class="text-muted">Fluid replacement</small>
+                                <small class="text-muted">Filter service</small>
+                            </div>
+                        </div>
+                        <div class="garage-service-card" data-animate="list-item" style="cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200);">
+                            <div class="garage-icon">
+                                <i class="bi bi-arrow-up-down text-white"></i>
+                            </div>
+                            <h4>Suspension Repairs</h4>
+                            <div class="service-features">
+                                <small class="text-muted">Shock absorbers</small>
+                                <small class="text-muted">Strut replacement</small>
+                            </div>
+                        </div>
+                        <div class="garage-service-card" data-animate="list-item" style="cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200);">
+                            <div class="garage-icon">
+                                <i class="bi bi-lightning-charge-fill text-white"></i>
+                            </div>
+                            <h4>Jump Starting</h4>
+                            <div class="service-features">
+                                <small class="text-muted">24/7 emergency</small>
+                                <small class="text-muted">Battery testing</small>
+                            </div>
+                        </div>
+                        <div class="garage-service-card" data-animate="list-item" style="cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200);">
+                            <div class="garage-icon">
+                                <i class="bi bi-radio text-white"></i>
+                            </div>
+                            <h4>Car Radio Fitting</h4>
+                            <div class="service-features">
+                                <small class="text-muted">Professional install</small>
+                                <small class="text-muted">Wiring and setup</small>
+                            </div>
+                        </div>
+                        <div class="garage-service-card" data-animate="list-item" style="cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200);">
+                            <div class="garage-icon">
+                                <i class="bi bi-clipboard-check text-white"></i>
+                            </div>
+                            <h4>Pre-Purchase Inspection</h4>
+                            <div class="service-features">
+                                <small class="text-muted">Comprehensive check</small>
+                                <small class="text-muted">Detailed report</small>
+                            </div>
+                        </div>
+                        <div class="garage-service-card" data-animate="list-item" style="cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200);">
+                            <div class="garage-icon">
+                                <i class="bi bi-lightbulb text-white"></i>
+                            </div>
+                            <h4>Headlight Cleaning</h4>
+                            <div class="service-features">
+                                <small class="text-muted">Restoration service</small>
+                                <small class="text-muted">UV protection</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="svc-divider">
+                    <span class="svc-divider-icon"><i class="bi bi-droplet-fill"></i></span>
+                </div>
+
+                <!-- Detailing Packages -->
+                <div class="svc-block">
+                    <div class="svc-block-header">
+                        <span class="svc-block-icon svc-block-icon--blue"><i class="bi bi-droplet-fill"></i></span>
+                        <div>
+                            <h3 class="svc-block-title">Detailing Packages</h3>
+                            <p class="svc-block-sub">Premium car detailing delivered to your door. From a quick wash to full ceramic coating.</p>
+                        </div>
+                    </div>
+                    <div class="service-cards">
+                        <div class="service-card" data-animate="card">
+                            <div class="service-icon-wrapper bg-info">
+                                <i class="bi bi-droplet-fill text-white"></i>
+                            </div>
+                            <h4 class="text-info">Express Wash</h4>
+                            <p class="service-desc">A proper hand wash from top to bottom, dried off and finished with a full vacuum and wipe inside. Great for a quick refresh.</p>
+                            <div class="service-features">
+                                <small class="text-muted">Full exterior hand wash</small>
+                                <small class="text-muted">Interior vacuum and wipe</small>
+                                <small class="text-muted">Window clean</small>
+                            </div>
+                            <p class="service-price">From <strong>$80</strong></p>
+                        </div>
+
+                        <div class="service-card" data-animate="card">
+                            <div class="service-icon-wrapper bg-warning">
+                                <i class="bi bi-house-fill text-white"></i>
+                            </div>
+                            <h4 class="text-warning">Interior Detail</h4>
+                            <p class="service-desc">We go through every corner of your cabin. Seats shampooed, leather treated, dash and trim wiped down properly.</p>
+                            <div class="service-features">
+                                <small class="text-muted">Deep vacuum and shampoo</small>
+                                <small class="text-muted">Leather conditioning</small>
+                                <small class="text-muted">Dashboard and trim detail</small>
+                            </div>
+                            <p class="service-price">From <strong>$120</strong></p>
+                        </div>
+
+                        <div class="service-card featured" data-animate="card">
+                            <div class="featured-badge">MOST POPULAR</div>
+                            <div class="service-icon-wrapper bg-success">
+                                <i class="bi bi-star-fill text-white"></i>
+                            </div>
+                            <h4 style="color: #166534;">Full Detail</h4>
+                            <p class="service-desc" style="color: #374151;">Inside and out, your car gets the full treatment. We wash, clay, polish, wax and deep clean the interior so it looks like it just left the showroom.</p>
+                            <div class="service-features">
+                                <small style="color: #374151;">Full exterior wash and clay bar</small>
+                                <small style="color: #374151;">Machine polish and wax</small>
+                                <small style="color: #374151;">Full interior deep clean</small>
+                                <small style="color: #374151;">Tyre dressing and trim care</small>
+                            </div>
+                            <p class="service-price">From <strong>$250</strong></p>
+                        </div>
+
+                        <div class="service-card premium" data-animate="card">
+                            <div class="premium-badge">PREMIUM</div>
+                            <div class="service-icon-wrapper" style="background: linear-gradient(135deg, #E10600 0%, #c90500 100%);">
+                                <i class="bi bi-gem text-white"></i>
+                            </div>
+                            <h4 style="color: #ffffff;">Full Detail + Ceramic Coating</h4>
+                            <p class="service-desc" style="color: rgba(255,255,255,0.8);">The best we offer. After a complete full detail, we apply a professional ceramic coating that protects your paint and keeps it looking sharp for years.</p>
+                            <div class="service-features">
+                                <small style="color: rgba(255,255,255,0.85);">Complete full detail</small>
+                                <small style="color: rgba(255,255,255,0.85);">Paint decontamination</small>
+                                <small style="color: rgba(255,255,255,0.85);">Professional ceramic coat</small>
+                                <small style="color: rgba(255,255,255,0.85);">5 year paint protection</small>
+                            </div>
+                            <p class="service-price" style="color: #ffffff;">From <strong style="color: #FF6B6B; font-size: 1.6rem;">$600</strong></p>
+                        </div>
+                    </div>
+                    <div class="pricing-notice">
+                        <i class="bi bi-gem"></i>
+                        <span><strong>PREMIUM PRICING</strong> • SUV & Double Cab Vehicles +$20</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="tech-grid-bg"></div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stat-card stat-card--red text-center p-4 h-100" data-animate="stat">
+                        <div class="stat-icon mb-3">
+                            <i class="bi bi-tools display-4 text-danger"></i>
+                        </div>
+                        <div class="stat-number text-danger" data-count="100">0</div>
+                        <div class="stat-label">% Garage Service Satisfaction</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card stat-card--yellow text-center p-4 h-100" data-animate="stat">
+                        <div class="stat-icon mb-3">
+                            <i class="bi bi-clock-fill display-4 text-warning"></i>
+                        </div>
+                        <div class="stat-number text-warning">24/7</div>
+                        <div class="stat-label">Emergency Repairs Available</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card stat-card--green text-center p-4 h-100" data-animate="stat">
+                        <div class="stat-icon mb-3">
+                            <i class="bi bi-star-fill display-4 text-success"></i>
+                        </div>
+                        <div class="stat-number text-success">5★</div>
+                        <div class="stat-label">Quality Mechanical Work</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card stat-card--cyan text-center p-4 h-100" data-animate="stat">
+                        <div class="stat-icon mb-3">
+                            <i class="bi bi-patch-check-fill display-4 text-info"></i>
+                        </div>
+                        <div class="stat-number text-info">Expert</div>
+                        <div class="stat-label">Certified Mechanics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Text Strip -->
+    <div class="text-strip">
+        <div class="text-strip-track">
+            <div class="text-strip-content">
+                <span><i class="bi bi-tools me-2"></i>GARAGE SERVICES FIRST</span>
+                <span class="strip-divider">|</span>
+                <span><i class="bi bi-clock-fill me-2"></i>24/7 EMERGENCY REPAIRS</span>
+                <span class="strip-divider">|</span>
+                <span class="strip-highlight"><i class="bi bi-info-circle me-2"></i>SUVs & DOUBLE CABS +$20</span>
+                <span class="strip-divider">|</span>
+                <span><i class="bi bi-gear-fill me-2"></i>MECHANICAL EXPERTISE</span>
+                <span class="strip-divider">|</span>
+            </div>
+            <div class="text-strip-content" aria-hidden="true">
+                <span><i class="bi bi-tools me-2"></i>GARAGE SERVICES FIRST</span>
+                <span class="strip-divider">|</span>
+                <span><i class="bi bi-clock-fill me-2"></i>24/7 EMERGENCY REPAIRS</span>
+                <span class="strip-divider">|</span>
+                <span class="strip-highlight"><i class="bi bi-info-circle me-2"></i>SUVs & DOUBLE CABS +$20</span>
+                <span class="strip-divider">|</span>
+                <span><i class="bi bi-gear-fill me-2"></i>MECHANICAL EXPERTISE</span>
+                <span class="strip-divider">|</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <h2>Why Choose Us</h2>
+                <div class="header-line"></div>
+                <p class="text-muted">Discover why Elite Auto Care is your preferred choice</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="why-card" data-animate="feature">
+                    <div class="why-icon-badge" style="background: linear-gradient(135deg, #E10600, #a00400); box-shadow: 0 6px 18px rgba(225,6,0,0.4);">
+                        <i class="bi bi-truck"></i>
+                    </div>
+                    <h3>Mobile Garage Service</h3>
+                    <p>Professional mechanical repairs at your location. Home, office, or roadside in Darwin.</p>
+                </div>
+
+                <div class="why-card" data-animate="feature">
+                    <div class="why-icon-badge" style="background: linear-gradient(135deg, #0891b2, #0e7490); box-shadow: 0 6px 18px rgba(8,145,178,0.4);">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h3>Expert Mechanics</h3>
+                    <p>Certified technicians with years of mechanical expertise. Specializing in all makes and models.</p>
+                </div>
+
+                <div class="why-card" data-animate="feature">
+                    <div class="why-icon-badge" style="background: linear-gradient(135deg, #16a34a, #14532d); box-shadow: 0 6px 18px rgba(22,163,74,0.4);">
+                        <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <h3>Transparent Pricing</h3>
+                    <p>Upfront quotes for all garage services. No hidden fees. Fair prices for quality mechanical work.</p>
+                </div>
+
+                <div class="why-card" data-animate="feature">
+                    <div class="why-icon-badge" style="background: linear-gradient(135deg, #d97706, #b45309); box-shadow: 0 6px 18px rgba(217,119,6,0.4);">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                    <h3>Quality Repairs</h3>
+                    <p>Every mechanical repair done right the first time. Professional standards for all garage services.</p>
+                </div>
+
+                <div class="why-card" data-animate="feature">
+                    <div class="why-icon-badge" style="background: linear-gradient(135deg, #7c3aed, #5b21b6); box-shadow: 0 6px 18px rgba(124,58,237,0.4);">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3>Guaranteed Repairs</h3>
+                    <p>All mechanical work guaranteed. Not satisfied? We'll make it right. Your trust is everything.</p>
+                </div>
+
+                <div class="why-card" data-animate="feature">
+                    <div class="why-icon-badge" style="background: linear-gradient(135deg, #db2777, #9d174d); box-shadow: 0 6px 18px rgba(219,39,119,0.4);">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                    </div>
+                    <h3>Emergency Repairs</h3>
+                    <p>24/7 emergency garage services. Urgent mechanical repairs when you need them most.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <h2>Our Work Gallery</h2>
+                <div class="header-line"></div>
+                <p class="text-muted">See the quality of our craftsmanship</p>
+            </div>
+
+            <!-- Interactive Before & After Carousel -->
+            <div id="workCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="0" class="active bg-danger"></button>
+                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="1" class="bg-warning"></button>
+                </div>
+                <div class="carousel-inner rounded-4 shadow-lg">
+                    <div class="carousel-item active">
+                        <div class="row g-0">
+                            <div class="col-md-6 position-relative">
+                                <img src="images/mw11.jpeg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Before repair">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">BEFORE</span>
+                            </div>
+                            <div class="col-md-6 position-relative">
+                                <img src="images/mw12.jpeg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="After repair">
+                                <span class="badge bg-success position-absolute top-0 end-0 m-3 fs-6">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-0">
+                            <div class="col-md-6 position-relative">
+                                <img src="images/mw13.jpeg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Interior before">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">BEFORE</span>
+                            </div>
+                            <div class="col-md-6 position-relative">
+                                <img src="images/mw14.jpeg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Interior after">
+                                <span class="badge bg-success position-absolute top-0 end-0 m-3 fs-6">AFTER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#workCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-danger rounded-circle p-3"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#workCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-danger rounded-circle p-3"></span>
+                </button>
+            </div>
+
+            <!-- Interactive Work Cards -->
+            <div class="row g-4">
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-danger border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal1">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw 6.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Engine repair">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-danger fs-6">GARAGE</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-gear-fill text-warning me-2"></i>Engine Overhaul</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Complete engine component repair and reconditioning</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-danger fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-warning border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal2">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw7.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="CV axle repair">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-warning fs-6">REPAIR</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-tools text-info me-2"></i>CV Axle Replacement</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Professional drivetrain and suspension service</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-warning fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-success border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal3">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw8.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Engine timing">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-success fs-6">PRECISION</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-stopwatch text-success me-2"></i>Engine Timing</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Precision valve adjustment and timing service</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-success fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-info border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal4">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw1.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Brake service">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-info fs-6">SAFETY</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-shield-check text-info me-2"></i>Brake System</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Complete brake and suspension safety service</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-info fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-primary border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal5">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw9.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Camshaft inspection">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-primary fs-6">TIMING</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-clock text-primary me-2"></i>Camshaft Service</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Detailed camshaft and valve timing inspection</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-primary fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-secondary border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal6">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw10.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Engine bay repair">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-secondary fs-6">SYSTEM</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-cpu text-secondary me-2"></i>Engine Bay Service</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Detailed engine bay system repair and maintenance</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-secondary fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-dark border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal7">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw3.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Engine removal">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-dark fs-6">REBUILD</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-wrench text-light me-2"></i>Engine Removal</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Complete engine removal and replacement service</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-dark fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-animate="work-item">
+                    <div class="card border-danger border-3 h-100 work-card" data-bs-toggle="modal" data-bs-target="#workModal8">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/mw2.jpeg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Dashboard wiring">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-danger fs-6">ELECTRICAL</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-3">
+                                <h5 class="text-white mb-0"><i class="bi bi-lightning text-warning me-2"></i>Dashboard Wiring</h5>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text text-dark">Dashboard wiring and electronics repair service</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Click to view details</small>
+                                <i class="bi bi-arrow-right-circle-fill text-danger fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Detail Modals -->
+    <div class="modal fade" id="workModal1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-danger border-3">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title"><i class="bi bi-gear-fill me-2"></i>Engine Component Overhaul</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw 6.jpeg" class="img-fluid rounded mb-3" alt="Engine repair">
+                    <p class="lead">Professional Engine Repair Service</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Complete engine disassembly and inspection</li>
+                        <li class="list-group-item">Thorough component cleaning and reconditioning</li>
+                        <li class="list-group-item">Seal replacement and part restoration</li>
+                        <li class="list-group-item">Performance testing and quality assurance</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="workModal2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-warning border-3">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title"><i class="bi bi-tools me-2"></i>CV Axle & Drivetrain Repair</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw7.jpeg" class="img-fluid rounded mb-3" alt="CV axle repair">
+                    <p class="lead">Expert Drivetrain Service</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">CV axle replacement and joint inspection</li>
+                        <li class="list-group-item">Suspension component assessment</li>
+                        <li class="list-group-item">Power transfer restoration</li>
+                        <li class="list-group-item">Road testing for smooth operation</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="workModal3" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-success border-3">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title"><i class="bi bi-stopwatch me-2"></i>Engine Valve Adjustment & Timing</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw8.jpeg" class="img-fluid rounded mb-3" alt="Engine timing">
+                    <p class="lead">Precision Engine Timing Service</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Precision valve adjustment and timing work</li>
+                        <li class="list-group-item">Camshaft inspection and alignment</li>
+                        <li class="list-group-item">Engine performance optimization</li>
+                        <li class="list-group-item">Extended engine life guarantee</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="workModal4" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-info border-3">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title"><i class="bi bi-shield-check me-2"></i>Brake System & Suspension Service</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw1.jpeg" class="img-fluid rounded mb-3" alt="Brake service">
+                    <p class="lead">Complete Brake & Safety Service</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Complete brake system inspection and repair</li>
+                        <li class="list-group-item">Brake pad and rotor replacement</li>
+                        <li class="list-group-item">Suspension component assessment</li>
+                        <li class="list-group-item">Safety testing and road performance check</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="workModal5" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-primary border-3">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="bi bi-clock me-2"></i>Camshaft Inspection & Timing Service</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw9.jpeg" class="img-fluid rounded mb-3" alt="Camshaft inspection">
+                    <p class="lead">Precision Camshaft Service</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Detailed camshaft and valve timing inspection</li>
+                        <li class="list-group-item">Bearing cap assessment and alignment</li>
+                        <li class="list-group-item">Precise valve synchronization</li>
+                        <li class="list-group-item">Timing-related issue prevention</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="workModal6" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-secondary border-3">
+                <div class="modal-header bg-secondary text-white">
+                    <h5 class="modal-title"><i class="bi bi-cpu me-2"></i>Engine Bay System Repair</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw10.jpeg" class="img-fluid rounded mb-3" alt="Engine bay repair">
+                    <p class="lead">Complete Engine Bay Service</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cooling system components service</li>
+                        <li class="list-group-item">Electrical connections repair</li>
+                        <li class="list-group-item">Hose replacements and maintenance</li>
+                        <li class="list-group-item">Hands-on troubleshooting</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="workModal7" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-dark border-3">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="bi bi-wrench me-2"></i>Complete Engine Removal & Replacement</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw3.jpeg" class="img-fluid rounded mb-3" alt="Engine removal">
+                    <p class="lead">Professional Engine Replacement</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Full engine extraction using hydraulic hoist</li>
+                        <li class="list-group-item">Engine rebuild and replacement service</li>
+                        <li class="list-group-item">Expert handling of heavy components</li>
+                        <li class="list-group-item">Precision and safety for major overhauls</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="workModal8" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-danger border-3">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title"><i class="bi bi-lightning me-2"></i>Dashboard Wiring & Electronics Repair</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/mw2.jpeg" class="img-fluid rounded mb-3" alt="Dashboard wiring">
+                    <p class="lead">Expert Electronics Service</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Dashboard disassembly for electrical repair</li>
+                        <li class="list-group-item">Expert troubleshooting of wiring faults</li>
+                        <li class="list-group-item">Sensor issues and component installation</li>
+                        <li class="list-group-item">HVAC controls and safety systems</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <a href="#booking" class="btn btn-success">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testi-section">
+        <div class="container">
+            <div class="testi-header">
+                <span class="testi-eyebrow">Customer Reviews</span>
+                <h2 class="testi-title">What Our Customers Say</h2>
+                <div class="testi-line"></div>
+                <p class="testi-subtitle">Real feedback from real Darwin clients</p>
+            </div>
+
+            <div class="testi-grid">
+                <!-- Card 1 -->
+                <div class="testi-card">
+                    <div class="testi-quote-mark">&ldquo;</div>
+                    <div class="testi-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testi-text">Outstanding service from a highly professional and trustworthy team. They quickly diagnosed my car's issue, explained everything clearly, and repaired it efficiently at a fair price. Communication was excellent throughout, and my car has been running perfectly ever since.</p>
+                    <div class="testi-footer">
+                        <div class="testi-avatar">ST</div>
+                        <div class="testi-info">
+                            <strong class="testi-name">Samson Tarus</strong>
+                            <span class="testi-badge"><i class="bi bi-patch-check-fill"></i> Verified Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testi-card testi-card--featured">
+                    <div class="testi-quote-mark">&ldquo;</div>
+                    <div class="testi-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testi-text">Reliable, honest, and skilled. Fixed my car quickly and properly. Didn't try to upsell me on anything I didn't need. Straight to the point, great price, and the car drives perfectly. Highly recommended to anyone in Darwin.</p>
+                    <div class="testi-footer">
+                        <div class="testi-avatar">JA</div>
+                        <div class="testi-info">
+                            <strong class="testi-name">Jacob M. Abuoi</strong>
+                            <span class="testi-badge"><i class="bi bi-patch-check-fill"></i> Verified Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testi-card">
+                    <div class="testi-quote-mark">&ldquo;</div>
+                    <div class="testi-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testi-text">I had such a great experience. From the moment I called, they were professional, honest, and incredibly reassuring. They explained everything clearly, kept me updated, and the work was completed to a very high standard. I truly appreciated their transparency with pricing.</p>
+                    <div class="testi-footer">
+                        <div class="testi-avatar">CC</div>
+                        <div class="testi-info">
+                            <strong class="testi-name">Chepchumba Cherutich</strong>
+                            <span class="testi-badge"><i class="bi bi-patch-check-fill"></i> Verified Customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-bottom-bar">
+                <div class="testi-rating-summary">
+                    <span class="testi-big-score">5.0</span>
+                    <div>
+                        <div class="testi-stars testi-stars--sm">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <span class="testi-review-count">Based on customer reviews</span>
+                    </div>
+                </div>
+                <a href="#booking" class="testi-cta-btn">Book Your Service Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section Divider -->
+    <div class="booking-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill=#000000"/>
+        </svg>
+    </div>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-4 fw-bold" style="color: #ffffff;">Book Your Service</h2>
+                <div class="header-line mx-auto"></div>
+                <p style="color: rgba(255,255,255,0.65);" class="mt-3">Schedule your appointment at your convenience</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-danger border-3 shadow-lg" style="border-radius: 20px; overflow: hidden;">
+                        <div class="card-header bg-danger text-white text-center py-4">
+                            <h4 class="mb-0"><i class="bi bi-telephone-fill me-2"></i>CALL NOW: 0432 241 883</h4>
+                            <small>Or fill the form below for callback</small>
+                        </div>
+                        <div class="card-body p-4">
+
+                            <!-- Success Message -->
+                            <div id="formSuccess" class="hidden" style="display:none; text-align:center; padding: 2.5rem 1.5rem;">
+                                <div style="width:80px; height:80px; background:linear-gradient(135deg,#E10600,#c90500); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+                                    <i class="bi bi-check-lg" style="font-size:2.5rem; color:#ffffff;"></i>
+                                </div>
+                                <h3 style="color:#0a0a0a; font-weight:800; font-size:1.6rem; margin-bottom:0.5rem;">Booking Confirmed!</h3>
+                                <p style="color:#555555; font-size:1rem; margin-bottom:1.5rem;">Thanks! We'll call you back shortly to confirm your appointment.</p>
+                                <div style="background:#f8f9fa; border-radius:12px; padding:1.25rem; margin-bottom:1.5rem; border-left:4px solid #E10600;">
+                                    <p style="margin:0 0 0.4rem; color:#333; font-size:0.92rem;"><i class="bi bi-telephone-fill text-danger me-2"></i>We'll call: <strong id="confirmPhone"></strong></p>
+                                    <p style="margin:0; color:#333; font-size:0.92rem;"><i class="bi bi-calendar-check-fill text-danger me-2"></i>Requested: <strong id="confirmDate"></strong></p>
+                                </div>
+                                <a href="tel:0432241883" class="btn btn-danger rounded-pill px-4 py-2 fw-bold me-2"><i class="bi bi-telephone-fill me-1"></i>Call Us Now</a>
+                                <a href="https://wa.me/61432241883" target="_blank" class="btn btn-success rounded-pill px-4 py-2 fw-bold"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+                            </div>
+
+                            <form id="bookingForm" class="booking-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label fw-bold">Full Name</label>
+                                        <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Your name" required>
+                                        <span class="error-message" id="nameError"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label fw-bold">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control form-control-lg" placeholder="0432 241 883" required>
+                                        <span class="error-message" id="phoneError"></span>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="service" class="form-label fw-bold">Service Required</label>
+                                        <select id="service" name="service" class="form-select form-select-lg" required>
+                                            <option value="">Select a service</option>
+                                            <optgroup label="GARAGE SERVICES (Priority)">
+                                                <option value="Brake Repairs">Brake Repairs</option>
+                                                <option value="Oil Changes">Oil Changes</option>
+                                                <option value="Transmission Service">Transmission Service</option>
+                                                <option value="Suspension Repairs">Suspension Repairs</option>
+                                                <option value="Jump Starting">Jump Starting (24/7)</option>
+                                                <option value="Car Radio Fitting">Car Radio Fitting</option>
+                                                <option value="Pre-Purchase Inspection">Pre-Purchase Inspection</option>
+                                                <option value="Headlight Cleaning">Headlight Cleaning</option>
+                                            </optgroup>
+                                            <optgroup label="DETAILING SERVICES">
+                                                <option value="Normal Carwash">Normal Carwash $80</option>
+                                                <option value="Interior Only">Interior Only $120</option>
+                                                <option value="Full Detail">Full Detail $250</option>
+                                                <option value="Full Detail + Coating">Full Detail + 5 Year Coating $600</option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="error-message" id="serviceError"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="date" class="form-label fw-bold">Preferred Date</label>
+                                        <input type="date" id="date" name="date" class="form-control form-control-lg" required>
+                                        <span class="error-message" id="dateError"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="time" class="form-label fw-bold">Preferred Time</label>
+                                        <input type="time" id="time" name="time" class="form-control form-control-lg" required>
+                                        <span class="error-message" id="timeError"></span>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label fw-bold">Additional Notes</label>
+                                        <textarea id="message" name="message" class="form-control" placeholder="Tell us about your vehicle or special requirements..." rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12 text-center mt-4">
+                                        <button type="submit" class="btn btn-danger btn-lg px-5 py-3">
+                                            <i class="bi bi-check-circle-fill me-2"></i>CONFIRM BOOKING
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="ct-section">
+        <div class="container">
+
+            <!-- Section header -->
+            <div class="ct-section-header">
+                <span class="ct-label">Contact Us</span>
+                <h2 class="ct-title">Get in Touch</h2>
+                <p class="ct-subtitle">Based in Durack, serving all of Darwin. 24 hours a day, every day of the year.</p>
+            </div>
+
+            <!-- Three info cards -->
+            <div class="ct-cards-row">
+
+                <!-- Card 1: Phone -->
+                <div class="ct-card ct-card--red" data-ct-reveal="0">
+                    <div class="ct-card-icon">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <h3 class="ct-card-title">Call Us</h3>
+                    <a href="tel:0432241883" class="ct-phone" id="ctPhone" title="Click to copy number">0432 241 883</a>
+                    <a href="https://wa.me/61432241883" target="_blank" rel="noopener noreferrer" class="ct-wa-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        WhatsApp us
+                    </a>
+                </div>
+
+                <!-- Card 2: Address -->
+                <div class="ct-card ct-card--blue" data-ct-reveal="1">
+                    <div class="ct-card-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <h3 class="ct-card-title">Our Location</h3>
+                    <p class="ct-address">6 Myola Ct,<br>Durack NT 0830</p>
+                    <a href="https://maps.google.com/?q=6+Myola+Ct,+Durack+NT+0830" target="_blank" rel="noopener noreferrer" class="ct-dir-link">
+                        Get directions <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Hours -->
+                <div class="ct-card ct-card--green" data-ct-reveal="2">
+                    <div class="ct-card-icon">
+                        <i class="bi bi-clock-fill"></i>
+                    </div>
+                    <h3 class="ct-card-title">Opening Hours</h3>
+                    <p class="ct-hours">Open 24 / 7</p>
+                    <span class="ct-col-note">Every day, including public holidays</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Wave divider: contact cards → map -->
+    <div class="ct-map-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f4f4f5"/>
+        </svg>
+    </div>
+
+
+    <!-- Map Section -->
+    <section class="ct-map-section">
+        <div class="container">
+            <!-- Contained map -->
+            <div class="ct-map-wrap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.0!2d130.967458!3d-12.472991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s6+Myola+Ct%2C+Durack+NT+0830!5e0!3m2!1sen!2sau!4v1700000000000"
+                    width="100%" height="100%" style="border:0; display:block;"
+                    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Z Elite Auto Care — 6 Myola Ct, Durack NT 0830">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer wave divider -->
+    <div style="line-height:0; background:#f4f4f5;">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px;">
+            <path d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill=#000000"/>
+        </svg>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #000000; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(225, 6, 0, 0.03) 10px, rgba(225, 6, 0, 0.03) 20px);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="row g-4 py-5">
+                <div class="col-lg-4">
+                    <div class="card border-danger border-2 h-100" style="background: #1a1a1a; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(225,6,0,0.3)'; this.style.background='#2a1010'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='#1a1a1a'">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-gear-fill" style="font-size: 3rem; color: #E10600;"></i>
+                            </div>
+                            <h4 style="color: #E10600; font-weight: 700; margin-bottom: 0.5rem;">Z Elite Auto Care</h4>
+                            <p style="color: #aaaaaa; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">Darwin's Trusted Mobile Workshop</p>
+                            <p style="color: #cccccc; font-size: 0.95rem; line-height: 1.7;">Professional mechanical repairs and premium car detailing delivered to your door, anywhere in Darwin, 24/7.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-danger me-2" style="font-size: 0.85rem; padding: 0.45rem 0.9rem;"><i class="bi bi-clock-fill me-1"></i>24/7 Available</span>
+                                <span class="badge bg-warning text-dark" style="font-size: 0.85rem; padding: 0.45rem 0.9rem;"><i class="bi bi-truck me-1"></i>Mobile Service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-warning border-2 h-100" style="background: #1a1a1a; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(255,193,7,0.2)'; this.style.background='#1a1800'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='#1a1a1a'">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-tools" style="font-size: 3rem; color: #ffc107;"></i>
+                            </div>
+                            <h4 style="color: #E10600; font-weight: 700; margin-bottom: 0.5rem;">Quick Links</h4>
+                            <p style="color: #aaaaaa; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">Navigate the Site</p>
+                            <div class="text-start">
+                                <a href="#services" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid #2a2a2a; transition: all 0.3s ease; font-weight: 500;" onmouseover="this.style.color='#E10600'; this.style.paddingLeft='10px'" onmouseout="this.style.color='#cccccc'; this.style.paddingLeft='0'"><i class="bi bi-wrench me-2 text-danger"></i>Brake, Oil & Mechanical Repairs</a>
+                                <a href="#services" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid #2a2a2a; transition: all 0.3s ease; font-weight: 500;" onmouseover="this.style.color='#E10600'; this.style.paddingLeft='10px'" onmouseout="this.style.color='#cccccc'; this.style.paddingLeft='0'"><i class="bi bi-droplet-fill me-2 text-info"></i>Car Wash & Detailing Packages</a>
+                                <a href="#gallery" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid #2a2a2a; transition: all 0.3s ease; font-weight: 500;" onmouseover="this.style.color='#E10600'; this.style.paddingLeft='10px'" onmouseout="this.style.color='#cccccc'; this.style.paddingLeft='0'"><i class="bi bi-images me-2 text-warning"></i>View Our Work Gallery</a>
+                                <a href="#booking" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; padding: 0.55rem 0; transition: all 0.3s ease; font-weight: 500;" onmouseover="this.style.color='#E10600'; this.style.paddingLeft='10px'" onmouseout="this.style.color='#cccccc'; this.style.paddingLeft='0'"><i class="bi bi-calendar-check-fill me-2 text-success"></i>Book a Service Today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-success border-2 h-100" style="background: #1a1a1a; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(25,135,84,0.25)'; this.style.background='#001a0d'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='#1a1a1a'">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-telephone-fill" style="font-size: 3rem; color: #198754;"></i>
+                            </div>
+                            <h4 style="color: #E10600; font-weight: 700; margin-bottom: 0.5rem;">Get In Touch</h4>
+                            <p style="color: #aaaaaa; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">We're Always Here For You</p>
+                            <a href="tel:0432241883" class="btn btn-danger btn-lg w-100 mb-3" style="font-size: 1.15rem; font-weight: 800; letter-spacing: 0.5px;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"><i class="bi bi-telephone-fill me-2"></i>0432 241 883</a>
+                            <p style="color: #cccccc; margin-bottom: 0.4rem; font-size: 0.92rem;"><i class="bi bi-clock-fill text-danger me-2"></i>Open 24 hours, 7 days a week</p>
+                            <p style="color: #cccccc; margin-bottom: 1.2rem; font-size: 0.92rem;"><i class="bi bi-geo-alt-fill text-danger me-2"></i>6 Myola Ct, Durack NT 0830</p>
+                            <div class="d-flex gap-2 justify-content-center">
+                                <a href="https://wa.me/61432241883" target="_blank" rel="noopener noreferrer" class="btn btn-success flex-fill" style="font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+                                <a href="#contact" class="btn btn-outline-danger flex-fill" style="font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center py-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start mb-2 mb-md-0">
+                        <p style="color: #aaaaaa; margin: 0; font-size: 0.9rem;">&copy; 2026 Z Elite Auto Care. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="d-inline-flex gap-3">
+                            <span style="color: #E10600; font-weight: 700; font-size: 0.9rem;"><i class="bi bi-shield-check me-1"></i>Licensed</span>
+                            <span style="color: #ffc107; font-weight: 700; font-size: 0.9rem;"><i class="bi bi-award me-1"></i>Insured</span>
+                            <span style="color: #198754; font-weight: 700; font-size: 0.9rem;"><i class="bi bi-patch-check me-1"></i>Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <a href="tel:0432241883" class="floating-call-btn" aria-label="Call Z Elite Auto Care">
+        Call Now
+    </a>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/61432241883" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
+
+

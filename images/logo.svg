@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <!-- Background shield/badge shape -->
+  <defs>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF3D3D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A00400;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Z badge -->
+  <rect x="2" y="4" width="56" height="62" rx="8" fill="url(#redGrad)" />
+  <rect x="4" y="6" width="52" height="58" rx="6" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+
+  <!-- Z letter -->
+  <text x="30" y="52" font-family="'Sora', 'Arial Black', sans-serif" font-size="46" font-weight="900"
+        fill="white" text-anchor="middle" letter-spacing="-2">Z</text>
+
+  <!-- Accent line under Z -->
+  <rect x="10" y="58" width="40" height="3" rx="1.5" fill="url(#goldGrad)" />
+
+  <!-- Brand name -->
+  <text x="74" y="30" font-family="'Sora', 'Arial Black', sans-serif" font-size="22" font-weight="800"
+        fill="#0a0a0a" letter-spacing="1">ELITE</text>
+
+  <!-- Divider line -->
+  <rect x="74" y="35" width="140" height="2" rx="1" fill="url(#redGrad)" />
+
+  <!-- Subtext -->
+  <text x="74" y="54" font-family="'Inter', Arial, sans-serif" font-size="14" font-weight="600"
+        fill="#E10600" letter-spacing="3">AUTO CARE</text>
+
+  <!-- Small tagline -->
+  <text x="74" y="66" font-family="'Inter', Arial, sans-serif" font-size="8" font-weight="500"
+        fill="#666" letter-spacing="1.5">DARWIN · MOBILE SERVICE</text>
+</svg>

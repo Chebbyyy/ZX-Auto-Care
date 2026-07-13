@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="redGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF3D3D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A00400;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="60" cy="60" r="56" fill="none" stroke="url(#redGrad2)" stroke-width="3" opacity="0.6"/>
+  <!-- Inner circle -->
+  <circle cx="60" cy="60" r="50" fill="url(#redGrad2)" />
+  <!-- Inner ring accent -->
+  <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+
+  <!-- Z letter -->
+  <text x="60" y="78" font-family="'Sora', 'Arial Black', sans-serif" font-size="72" font-weight="900"
+        fill="white" text-anchor="middle" letter-spacing="-3">Z</text>
+
+  <!-- Gold accent bar -->
+  <rect x="28" y="90" width="64" height="4" rx="2" fill="url(#goldGrad2)" />
+
+  <!-- Bottom text -->
+  <text x="60" y="112" font-family="'Inter', Arial, sans-serif" font-size="9" font-weight="700"
+        fill="white" text-anchor="middle" letter-spacing="2" opacity="0.9">ELITE AUTO CARE</text>
+</svg>
