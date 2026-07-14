@@ -1,0 +1,392 @@
+/* ═══════════════════════════════════════════
+   Home page enhancements only
+   Scoped under .home-page — no other routes
+   ═══════════════════════════════════════════ */
+
+.home-page {
+  --home-red: #e10600;
+  --home-red-soft: rgba(225, 6, 0, 0.45);
+  --home-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Hero: cinematic Ken Burns ─── */
+.home-page .hero-bg-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.home-page .hero-bg-kenburns {
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  animation: homeKenBurns 28s ease-in-out infinite alternate;
+}
+
+.home-page .hero-bg-kenburns .hero-bg-img {
+  /* override legacy zoom — Ken Burns owns motion */
+  animation: none !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);
+}
+
+@keyframes homeKenBurns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate3d(-1.2%, 0.4%, 0);
+  }
+  100% {
+    transform: scale(1.12) translate3d(1.1%, -0.5%, 0);
+  }
+}
+
+.home-page .hero-overlay {
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(10, 10, 10, 0.55) 45%,
+    rgba(0, 0, 0, 0.72) 100%
+  ) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-bg-kenburns {
+    animation: none;
+  }
+  .home-page .home-hero-word,
+  .home-page .home-hero-blur,
+  .home-page .home-hero-info,
+  .home-page .home-hero-ctas,
+  .home-page .home-stat-card {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
+/* ─── Hero content hierarchy ─── */
+.home-page .hero .container {
+  padding-top: clamp(1.5rem, 4vh, 3rem);
+  padding-bottom: clamp(3.5rem, 8vh, 5rem);
+}
+
+.home-page .home-hero-info {
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem) !important;
+  animation: homeFadeUp 0.7s var(--home-ease) both;
+}
+
+.home-page .hero-headline {
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  margin-bottom: 1.25rem !important;
+}
+
+.home-page .home-hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 0.65em, 0);
+  animation: homeSplitWord 0.75s var(--home-ease) forwards;
+  animation-delay: calc(0.35s + var(--i) * 0.09s);
+}
+
+@keyframes homeSplitWord {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.home-page .home-hero-accent-wrap {
+  display: inline-block;
+  min-height: 1.15em;
+}
+
+.home-page .home-hero-blur {
+  opacity: 0;
+  filter: blur(8px);
+  animation: homeBlurIn 0.7s var(--home-ease) 0.85s forwards;
+  max-width: 34rem;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+@keyframes homeBlurIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes homeFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ─── Hero CTAs ─── */
+.home-page .home-hero-ctas {
+  animation: homeFadeUp 0.7s var(--home-ease) 1.05s both;
+  gap: 0.85rem !important;
+}
+
+.home-page .home-hero-ctas .btn {
+  transition:
+    transform 0.3s var(--home-ease),
+    box-shadow 0.3s var(--home-ease),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+}
+
+.home-page .home-hero-ctas .btn:hover {
+  transform: translate3d(0, -3px, 0);
+}
+
+.home-page .home-hero-ctas .btn:active {
+  transform: translate3d(0, -1px, 0);
+}
+
+.home-page .home-hero-ctas .btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.home-page .home-hero-ctas .hero-call-pulse {
+  animation: none !important;
+  box-shadow:
+    0 8px 24px rgba(225, 6, 0, 0.35),
+    0 0 0 1px rgba(225, 6, 0, 0.2) !important;
+}
+
+.home-page .home-hero-ctas .hero-call-pulse:hover {
+  box-shadow:
+    0 12px 32px rgba(225, 6, 0, 0.45),
+    0 0 24px rgba(225, 6, 0, 0.25) !important;
+}
+
+.home-page .home-hero-ctas .btn-outline-light {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border-width: 1px;
+  backdrop-filter: blur(6px);
+}
+
+.home-page .home-hero-ctas .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(225, 6, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #fff;
+}
+
+/* ─── Scroll indicator ─── */
+.home-page .home-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 1.75rem;
+  z-index: 3;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 600;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  animation: homeScrollBob 2.4s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .home-page .home-scroll-indicator {
+    display: flex;
+  }
+}
+
+.home-page .home-scroll-indicator:hover {
+  color: #fff;
+}
+
+.home-page .home-scroll-indicator .hero-scroll-text {
+  opacity: 0.75;
+}
+
+.home-page .home-scroll-indicator i, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon {
+  font-size: 0.95rem;
+  color: var(--home-red);
+}
+
+@keyframes homeScrollBob {
+  0%,
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  50% {
+    transform: translate3d(-50%, 6px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-scroll-indicator {
+    animation: none;
+  }
+}
+
+/* ─── Info strip polish ─── */
+.home-page .home-stats-band .text-strip {
+  background: linear-gradient(180deg, #171717 0%, #101010 100%);
+  border-top: 1px solid rgba(225, 6, 0, 0.35);
+  border-bottom: 1px solid rgba(225, 6, 0, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  padding: 1.35rem 0;
+}
+
+.home-page .home-stats-band .text-strip-content span {
+  font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+  letter-spacing: 0.12em;
+}
+
+/* ─── Stats section ─── */
+.home-page .home-stats-band .stats-section {
+  padding: clamp(3.25rem, 7vw, 5rem) 0;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(225, 6, 0, 0.08) 0%, transparent 55%),
+    linear-gradient(168deg, #151515 0%, #0e0e0e 48%, #161616 100%);
+}
+
+.home-page .home-stats-band .tech-grid-bg {
+  opacity: 0.55;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 35%, transparent 100%);
+}
+
+.home-page .home-stats-band .stats-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.home-page .home-stats-band .row.g-4 {
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  .home-page .home-stats-band .row.g-4 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+  }
+}
+
+/* ─── Premium stat cards (home only) ─── */
+.home-page .home-stat-card,
+.home-page .home-stat-card[data-animate='stat'] {
+  background: rgba(22, 22, 22, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 12px 32px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    transform 0.4s var(--home-ease),
+    box-shadow 0.4s var(--home-ease),
+    border-color 0.4s ease,
+    background-color 0.4s ease !important;
+  animation: homeStatIn 0.7s var(--home-ease) forwards !important;
+  animation-delay: calc(0.08s + var(--delay, 0) * 0.1s) !important;
+  overflow: hidden;
+}
+
+.home-page .home-stat-card::before {
+  opacity: 0 !important;
+  background: none !important;
+}
+
+.home-page .home-stat-card.stat-card--red {
+  border-top: 1px solid rgba(225, 6, 0, 0.55) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 -1px 0 rgba(225, 6, 0, 0.15) inset,
+    0 12px 32px rgba(0, 0, 0, 0.35) !important;
+}
+
+.home-page .home-stat-card.stat-card--yellow {
+  border-top: 1px solid rgba(255, 193, 7, 0.45) !important;
+}
+
+.home-page .home-stat-card.stat-card--green {
+  border-top: 1px solid rgba(25, 135, 84, 0.45) !important;
+}
+
+.home-page .home-stat-card.stat-card--cyan {
+  border-top: 1px solid rgba(13, 202, 240, 0.4) !important;
+}
+
+.home-page .home-stat-card:hover {
+  transform: translate3d(0, -6px, 0) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  background: rgba(28, 28, 28, 0.96) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(225, 6, 0, 0.12),
+    0 0 28px rgba(225, 6, 0, 0.08) !important;
+}
+
+.home-page .home-stat-card .stat-icon i, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon {
+  transition: transform 0.4s var(--home-ease), filter 0.4s ease;
+}
+
+.home-page .home-stat-card:hover .stat-icon i, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.home-page .home-stat-card .stat-number {
+  letter-spacing: -0.03em;
+}
+
+.home-page .home-stat-card .stat-label {
+  color: rgba(180, 180, 180, 0.92) !important;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem !important;
+}
+
+@keyframes homeStatIn {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-page .home-hero-ctas .btn {
+    width: min(100%, 280px);
+  }
+
+  .home-page .home-stat-card:hover {
+    transform: translate3d(0, -3px, 0) !important;
+  }
+}

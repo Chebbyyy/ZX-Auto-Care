@@ -1,0 +1,40 @@
+/* Home strip + stats backdrop only — does not restyle .stat-card */
+
+.home-stats-band .text-strip {
+  background:
+    linear-gradient(180deg, #141414 0%, #0f0f0f 50%, #121212 100%);
+  border-top-color: rgba(225, 6, 0, 0.45);
+  border-bottom-color: rgba(225, 6, 0, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.home-stats-band .stats-section {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(225, 6, 0, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 80% 100%, rgba(30, 30, 30, 0.9) 0%, transparent 50%),
+    linear-gradient(165deg, #161616 0%, #0f0f0f 42%, #1a1a1a 78%, #121212 100%);
+  /* keep legacy padding / overflow */
+}
+
+.home-stats-band .tech-grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(225, 6, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225, 6, 0, 0.045) 1px, transparent 1px);
+  background-size:
+    50px 50px,
+    50px 50px,
+    50px 50px,
+    50px 50px;
+  opacity: 0.85;
+  /* soft vignette so edges feel deeper charcoal */
+  mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 40%, transparent 100%);
+}
+
+/* Lift card stack above the pattern without changing card chrome */
+.home-stats-band .stats-section > .container {
+  position: relative;
+  z-index: 1;
+}

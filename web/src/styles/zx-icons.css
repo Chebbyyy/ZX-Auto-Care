@@ -1,0 +1,7 @@
+/* Lucide icons — match Bootstrap Icons inline metrics */
+.zx-icon {
+  display: inline-block;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+  overflow: visible;
+}
