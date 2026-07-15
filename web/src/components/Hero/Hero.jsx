@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import heroBg from '../../assets/premium.jfif'
-import { IconCalendarCheckFill, IconChevronDown, IconGeoAltFill, IconLightningChargeFill, IconShieldCheck, IconTelephoneFill } from '../icons'
+import {
+  IconCalendarCheckFill,
+  IconGeoAltFill,
+  IconLightningChargeFill,
+  IconShieldCheck,
+  IconTelephoneFill,
+} from '../icons'
 
 const HERO_WORDS = ['Brake Repairs', 'Oil Changes', 'Suspension Work', 'Electrical Fixes']
 const HEADLINE_TOP = ["Darwin's", 'Mobile']
@@ -61,7 +67,7 @@ function Hero() {
         <div className="hero-bg-kenburns">
           <img
             src={heroBg}
-            alt="Professional car wash and mechanical services"
+            alt="Professional mobile garage and mechanical services"
             className="hero-bg-img"
             decoding="async"
             fetchPriority="high"
@@ -126,8 +132,8 @@ function Hero() {
             </h1>
 
             <p className="hero-subheadline mb-4 mx-auto home-hero-blur">
-              Brakes, oil changes, suspension, electrical and more. Professional mechanical
-              repairs brought straight to you, 24/7.
+              Brakes, oil changes, suspension, electrical and more. Professional mechanical repairs
+              brought straight to you, 24/7. Detailing packages also available as an add-on.
             </p>
 
             <div className="d-flex flex-wrap justify-content-center gap-3 hero-cta-buttons home-hero-ctas">
@@ -155,15 +161,6 @@ function Hero() {
           </div>
         </div>
       </div>
-
-      <Link
-        to="/services"
-        className="hero-scroll-indicator home-scroll-indicator"
-        aria-label="Scroll to explore services"
-      >
-        <span className="hero-scroll-text">Scroll</span>
-        <IconChevronDown aria-hidden="true" />
-      </Link>
     </section>
   )
 }

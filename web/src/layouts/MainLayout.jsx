@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
+import PageTransition from '../components/PageTransition/PageTransition'
 
 function MainLayout() {
   const location = useLocation()
@@ -9,19 +10,20 @@ function MainLayout() {
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1)
-      requestAnimationFrame(() => {
+      const timer = window.setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      })
-    } else {
-      window.scrollTo(0, 0)
+      }, 120)
+      return () => window.clearTimeout(timer)
     }
+    window.scrollTo(0, 0)
+    return undefined
   }, [location.pathname, location.hash])
 
   return (
     <>
       <Navbar />
       <main>
-        <Outlet />
+        <PageTransition />
       </main>
       <Footer />
     </>

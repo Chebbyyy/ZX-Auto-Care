@@ -1,0 +1,99 @@
+.services.services--darkveil {
+  padding: clamp(3.5rem, 6vw, 6.5rem) 0;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.services.services--darkveil::before {
+  display: none;
+}
+
+.services.services--darkveil .section-header h2 {
+  color: #ffffff !important;
+}
+
+.services.services--darkveil .section-header p {
+  color: rgba(226, 232, 240, 0.78);
+}
+
+.services.services--darkveil .header-line {
+  background: linear-gradient(90deg, #e10600, #c90500, #7f1d1d);
+  box-shadow: 0 0 16px rgba(225, 6, 0, 0.35);
+}
+
+.services.services--darkveil .svc-block {
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+}
+
+.services.services--darkveil .svc-block-title {
+  color: #111111;
+}
+
+.services.services--darkveil .svc-aob-tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  vertical-align: middle;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+  background: rgba(100, 116, 139, 0.12);
+  border: 1px solid rgba(100, 116, 139, 0.22);
+}
+
+.services.services--darkveil .svc-block-sub {
+  color: #555555;
+}
+
+.services.services--darkveil .garage-service-card,
+.services.services--darkveil .service-card {
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.services.services--darkveil .service-card.premium {
+  background: linear-gradient(145deg, #1a1a1a 0%, #121212 55%, #2a0f0f 100%);
+  border: 2px solid rgba(225, 6, 0, 0.55);
+  color: #ffffff;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(225, 6, 0, 0.12);
+}
+
+.services.services--darkveil .service-card.premium h4 {
+  color: #ffffff !important;
+}
+
+.services.services--darkveil .service-card.premium .service-desc {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.services.services--darkveil .service-card.premium .service-features small {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.services.services--darkveil .service-card.premium .service-price {
+  color: #ffffff !important;
+}
+
+.services.services--darkveil .service-card.premium .service-price strong {
+  color: #ff6b6b !important;
+}
+
+.services.services--darkveil .service-card.premium:hover {
+  border-color: #e10600;
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(225, 6, 0, 0.22);
+}
+
+.services.services--darkveil .pricing-notice {
+  color: rgba(248, 250, 252, 0.88);
+}

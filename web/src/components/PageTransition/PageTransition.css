@@ -1,0 +1,41 @@
+/* Thin top bar only — no dark splash / fade-in flash on navigation */
+.route-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, #e10600 0%, #ff4d4d 55%, #e10600 100%);
+  opacity: 0;
+}
+
+.route-progress.is-active {
+  opacity: 1;
+  animation: routeProgress 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes routeProgress {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  65% {
+    transform: scaleX(0.82);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-progress.is-active {
+    animation: none;
+    opacity: 0;
+  }
+}

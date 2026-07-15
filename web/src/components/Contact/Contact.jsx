@@ -1,9 +1,25 @@
 import { useEffect, useState } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { IconArrowUpRight, IconClockFill, IconGeoAltFill, IconTelephoneFill } from '../icons'
+import DarkVeil from '../DarkVeil/DarkVeil'
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.08 + i * 0.1,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+}
 
 function Contact() {
   const [toastMsg, setToastMsg] = useState('Number copied!')
   const [toastShow, setToastShow] = useState(false)
+  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
     if (!toastShow) return undefined
@@ -12,13 +28,12 @@ function Contact() {
   }, [toastShow, toastMsg])
 
   const handlePhoneClick = (e) => {
-    // Same as legacy: desktop copies; mobile uses tel:
     if (window.innerWidth >= 768) {
       e.preventDefault()
       navigator.clipboard
         .writeText('0432241883')
         .then(() => {
-          setToastMsg('Number copied — 0432 241 883')
+          setToastMsg('Number copied: 0432 241 883')
           setToastShow(true)
         })
         .catch(() => {
@@ -30,17 +45,42 @@ function Contact() {
   return (
     <>
       <section id="contact" className="ct-section">
+        <div className="darkveil-backdrop" aria-hidden="true">
+          <DarkVeil
+            hueShift={155}
+            noiseIntensity={0.03}
+            scanlineIntensity={0}
+            speed={0.2}
+            scanlineFrequency={0}
+            warpAmount={0.08}
+            resolutionScale={1}
+          />
+        </div>
+
         <div className="container">
-          <div className="ct-section-header">
+          <motion.div
+            className="ct-section-header"
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span className="ct-label">Contact Us</span>
             <h2 className="ct-title">Get in Touch</h2>
             <p className="ct-subtitle">
               Based in Durack, serving all of Darwin. 24 hours a day, every day of the year.
             </p>
-          </div>
+          </motion.div>
 
           <div className="ct-cards-row">
-            <div className="ct-card ct-card--red" data-ct-reveal="0">
+            <motion.div
+              className="ct-card ct-card--red"
+              custom={0}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <div className="ct-card-icon">
                 <IconTelephoneFill />
               </div>
@@ -65,9 +105,16 @@ function Contact() {
                 </svg>
                 WhatsApp us
               </a>
-            </div>
+            </motion.div>
 
-            <div className="ct-card ct-card--blue" data-ct-reveal="1">
+            <motion.div
+              className="ct-card ct-card--blue"
+              custom={1}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <div className="ct-card-icon">
                 <IconGeoAltFill />
               </div>
@@ -85,29 +132,42 @@ function Contact() {
               >
                 Get directions <IconArrowUpRight />
               </a>
-            </div>
+            </motion.div>
 
-            <div className="ct-card ct-card--green" data-ct-reveal="2">
+            <motion.div
+              className="ct-card ct-card--green"
+              custom={2}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <div className="ct-card-icon">
                 <IconClockFill />
               </div>
               <h3 className="ct-card-title">Opening Hours</h3>
               <p className="ct-hours">Open 24 / 7</p>
               <span className="ct-col-note">Every day, including public holidays</span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <div className="ct-map-divider">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f4f4f5" />
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" />
         </svg>
       </div>
 
       <section className="ct-map-section">
         <div className="container">
-          <div className="ct-map-wrap">
+          <motion.div
+            className="ct-map-wrap"
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.0!2d130.967458!3d-12.472991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s6+Myola+Ct%2C+Durack+NT+0830!5e0!3m2!1sen!2sau!4v1700000000000"
               width="100%"
@@ -116,9 +176,9 @@ function Contact() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Z Elite Auto Care — 6 Myola Ct, Durack NT 0830"
+              title="Z Elite Auto Care, 6 Myola Ct, Durack NT 0830"
             ></iframe>
-          </div>
+          </motion.div>
         </div>
       </section>
 

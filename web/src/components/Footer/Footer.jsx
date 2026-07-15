@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IconWhatsapp } from '../icons'
+import './Footer.css'
 
 function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -18,57 +19,45 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const linkStyle = {
-    color: '#aaaaaa',
-    textDecoration: 'none',
-    fontSize: '0.9rem',
-  }
-
   return (
     <>
-      <footer
-        className="site-footer"
-        style={{
-          background: '#000000',
-          borderTop: '1px solid rgba(255,255,255,0.1)',
-          padding: '1.25rem 0',
-        }}
-      >
+      <footer className="site-footer">
         <div className="container">
           <div className="row align-items-center gy-3">
             <div className="col-md-5 text-center text-md-start">
-              <p style={{ color: '#aaaaaa', margin: 0, fontSize: '0.9rem' }}>
+              <p className="site-footer__copy">
                 &copy; 2026 Z Elite Auto Care. All rights reserved.
               </p>
             </div>
             <div className="col-md-7">
-              <nav
-                className="d-flex flex-wrap justify-content-center justify-content-md-end gap-3"
-                aria-label="Footer"
-              >
-                <Link to="/" style={linkStyle}>
+              <nav className="site-footer__nav" aria-label="Footer">
+                <Link to="/" className="site-footer__link">
                   Home
                 </Link>
-                <Link to="/services" style={linkStyle}>
-                  Services
+                <Link to="/services#garageServices" className="site-footer__link site-footer__link--primary">
+                  Garage Services
                 </Link>
-                <Link to="/about" style={linkStyle}>
+                <Link to="/services#detailingPackages" className="site-footer__link site-footer__link--aob">
+                  Detailing
+                  <span className="site-footer__aob-tag">Add-on</span>
+                </Link>
+                <Link to="/about" className="site-footer__link">
                   About
                 </Link>
-                <Link to="/gallery" style={linkStyle}>
+                <Link to="/gallery" className="site-footer__link">
                   Gallery
                 </Link>
-                <Link to="/testimonials" style={linkStyle}>
+                <Link to="/testimonials" className="site-footer__link">
                   Testimonials
                 </Link>
-                <Link to="/contact" style={linkStyle}>
+                <Link to="/contact" className="site-footer__link">
                   Contact
                 </Link>
                 <a
                   href="https://wa.me/61432241883"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ ...linkStyle, color: '#198754' }}
+                  className="site-footer__link site-footer__whatsapp"
                   aria-label="WhatsApp"
                 >
                   <IconWhatsapp />

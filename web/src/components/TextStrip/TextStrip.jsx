@@ -14,7 +14,7 @@ function TextStrip() {
           </span>
           <span className="strip-divider">|</span>
           <span className="strip-highlight">
-            <IconInfoCircle className="me-2" />SUVs & DOUBLE CABS +$20
+            <IconInfoCircle className="me-2" />WE COME TO YOU
           </span>
           <span className="strip-divider">|</span>
           <span>
@@ -32,7 +32,7 @@ function TextStrip() {
           </span>
           <span className="strip-divider">|</span>
           <span className="strip-highlight">
-            <IconInfoCircle className="me-2" />SUVs & DOUBLE CABS +$20
+            <IconInfoCircle className="me-2" />WE COME TO YOU
           </span>
           <span className="strip-divider">|</span>
           <span>

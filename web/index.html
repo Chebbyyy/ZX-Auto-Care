@@ -2,15 +2,169 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%23E10600'>Z</text></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Z Elite Auto Care - Professional garage services and premium mobile car detailing. 24/7 availability. Expert mechanics, transparent pricing, and satisfaction guaranteed." />
-    <title>Z Elite Auto Care - Professional Garage Services & Mobile Car Detailing</title>
+    <meta
+      name="description"
+      content="Z Elite Auto Care. Professional mobile garage services in Darwin including brakes, oil, suspension and electrical repairs. 24/7 availability. Detailing packages also available as an add-on."
+    />
+    <title>Z Elite Auto Care | Mobile Garage Services Darwin</title>
+
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg" sizes="any" />
+    <link rel="shortcut icon" type="image/jpeg" href="/favicon.jpg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.jpg" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <link rel="preload" as="image" href="/logo.jpg" type="image/jpeg" fetchpriority="high" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #111111;
+      }
+
+      #zx-page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(ellipse 42% 36% at 50% 46%, rgba(225, 6, 0, 0.16) 0%, transparent 68%),
+          #111111;
+        transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: Manrope, system-ui, sans-serif;
+      }
+
+      #zx-page-loader.is-done {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .zx-loader-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: min(280px, 86vw);
+        animation: zxLoaderIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .zx-loader-logo {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+        border-radius: 14px;
+        margin-bottom: 1.1rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      .zx-loader-title {
+        margin: 0;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        color: #ffffff;
+        line-height: 1.2;
+      }
+
+      .zx-loader-tag {
+        margin: 0.45rem 0 1.35rem;
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        color: rgba(180, 180, 180, 0.85);
+        line-height: 1.35;
+      }
+
+      .zx-loader-bar {
+        width: 100%;
+        max-width: 168px;
+        height: 2px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        overflow: hidden;
+      }
+
+      .zx-loader-bar > span {
+        display: block;
+        height: 100%;
+        width: 0%;
+        border-radius: inherit;
+        background: #e10600;
+        animation: zxFill 1.05s ease-in-out infinite;
+      }
+
+      @keyframes zxLoaderIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes zxFill {
+        0% {
+          width: 8%;
+        }
+        50% {
+          width: 72%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .zx-loader-inner,
+        .zx-loader-bar > span {
+          animation: none;
+        }
+
+        .zx-loader-bar > span {
+          width: 60%;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="zx-page-loader" role="status" aria-label="Loading Z Elite Auto Care">
+      <div class="zx-loader-inner">
+        <img
+          class="zx-loader-logo"
+          src="/logo.jpg"
+          alt="Z Elite Auto Care"
+          width="72"
+          height="72"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <p class="zx-loader-title">Z ELITE AUTO CARE</p>
+        <p class="zx-loader-tag">DARWIN'S TRUSTED MOBILE WORKSHOP</p>
+        <div class="zx-loader-bar" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

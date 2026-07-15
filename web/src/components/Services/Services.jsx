@@ -1,4 +1,7 @@
 import { IconArrowUpDown, IconClipboardCheck, IconDisc, IconDropletFill, IconGearFill, IconGem, IconHouseFill, IconLightbulb, IconLightningChargeFill, IconRadio, IconStarFill, IconTools } from '../icons'
+import DarkVeil from '../DarkVeil/DarkVeil'
+import './Services.css'
+
 function pulseCard(event, duration = 300) {
   const el = event.currentTarget
   el.style.transform = 'scale(1.05)'
@@ -9,8 +12,19 @@ function pulseCard(event, duration = 300) {
 
 function Services() {
   return (
-    <section id="services" className="services">
-      <div className="container">
+    <section id="services" className="services services--darkveil">
+      <div className="darkveil-backdrop" aria-hidden="true">
+        <DarkVeil
+          hueShift={155}
+          noiseIntensity={0.03}
+          scanlineIntensity={0}
+          speed={0.22}
+          scanlineFrequency={0}
+          warpAmount={0.1}
+          resolutionScale={1}
+        />
+      </div>
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header animate-on-scroll fade-up" data-animate="fade-up">
           <h2>Our Services</h2>
           <div className="header-line"></div>
@@ -188,16 +202,19 @@ function Services() {
             </span>
           </div>
 
-          <div className="svc-block">
+          <div className="svc-block" id="detailingPackages">
             <div className="svc-block-header">
               <span className="svc-block-icon svc-block-icon--blue">
                 <IconDropletFill />
               </span>
               <div>
-                <h3 className="svc-block-title">Detailing Packages</h3>
+                <h3 className="svc-block-title">
+                  Detailing Packages
+                  <span className="svc-aob-tag">Add-on</span>
+                </h3>
                 <p className="svc-block-sub">
                   Premium car detailing delivered to your door. From a quick wash to full ceramic
-                  coating.
+                  coating. Available alongside our garage services.
                 </p>
               </div>
             </div>

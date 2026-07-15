@@ -1,5 +1,14 @@
 import { useMemo, useState } from 'react'
-import { IconCalendarCheckFill, IconCheckCircleFill, IconCheckLg, IconTelephoneFill, IconWhatsapp } from '../icons'
+import { motion, useReducedMotion } from 'framer-motion'
+import {
+  IconCalendarCheckFill,
+  IconCheckCircleFill,
+  IconCheckLg,
+  IconTelephoneFill,
+  IconTools,
+  IconWhatsapp,
+} from '../icons'
+import DarkVeil from '../DarkVeil/DarkVeil'
 
 const WEB3FORMS_KEY = 'b9328dd0-046e-4699-9523-3c806566fa89'
 
@@ -64,6 +73,8 @@ function Booking() {
   const [submitted, setSubmitted] = useState(false)
   const [confirmPhone, setConfirmPhone] = useState('')
   const [confirmDate, setConfirmDate] = useState('')
+  const [confirmService, setConfirmService] = useState('')
+  const reduceMotion = useReducedMotion()
 
   const minDate = useMemo(() => {
     const today = new Date()
@@ -174,6 +185,7 @@ function Booking() {
     sendBookingEmail(bookingData)
 
     setConfirmPhone(form.phone)
+    setConfirmService(form.service)
     const dateObj = new Date(`${form.date}T00:00:00`)
     const formattedDate = dateObj.toLocaleDateString('en-AU', {
       weekday: 'long',
@@ -199,15 +211,26 @@ function Booking() {
 
   return (
     <>
-      <div className="booking-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#000000" />
-        </svg>
-      </div>
-
       <section id="booking" className="booking py-5">
+        <div className="darkveil-backdrop" aria-hidden="true">
+          <DarkVeil
+            hueShift={155}
+            noiseIntensity={0.03}
+            scanlineIntensity={0}
+            speed={0.2}
+            scanlineFrequency={0}
+            warpAmount={0.08}
+            resolutionScale={1}
+          />
+        </div>
         <div className="container">
-          <div className="section-header text-center mb-5">
+          <motion.div
+            className="section-header text-center mb-5"
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h2 className="display-4 fw-bold" style={{ color: '#ffffff' }}>
               Book Your Service
             </h2>
@@ -215,90 +238,90 @@ function Booking() {
             <p style={{ color: 'rgba(255,255,255,0.65)' }} className="mt-3">
               Schedule your appointment at your convenience
             </p>
-          </div>
+          </motion.div>
 
           <div className="row justify-content-center">
-            <div className="col-lg-8">
-              <div
-                className="card border-danger border-3 shadow-lg"
-                style={{ borderRadius: '20px', overflow: 'hidden' }}
-              >
-                <div className="card-header bg-danger text-white text-center py-4">
+            <motion.div
+              className="col-lg-8"
+              initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="card border-danger shadow-lg booking-card">
+                <div className="card-header bg-danger text-white text-center booking-card-header">
                   <h4 className="mb-0">
                     <IconTelephoneFill className="me-2" />CALL NOW: 0432 241 883
                   </h4>
                   <small>Or fill the form below for callback</small>
                 </div>
                 <div className="card-body p-4">
-                  <div
-                    id="formSuccess"
-                    className={submitted ? '' : 'hidden'}
-                    style={{
-                      display: submitted ? 'block' : 'none',
-                      textAlign: 'center',
-                      padding: '2.5rem 1.5rem',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '80px',
-                        height: '80px',
-                        background: 'linear-gradient(135deg,#E10600,#c90500)',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin: '0 auto 1.5rem',
-                      }}
+                  {submitted && (
+                    <motion.div
+                      id="formSuccess"
+                      className="booking-success"
+                      initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                     >
-                      <IconCheckLg style={{ fontSize: '2.5rem', color: '#ffffff' }} />
-                    </div>
-                    <h3
-                      style={{
-                        color: '#0a0a0a',
-                        fontWeight: 800,
-                        fontSize: '1.6rem',
-                        marginBottom: '0.5rem',
-                      }}
-                    >
-                      Booking Confirmed!
-                    </h3>
-                    <p style={{ color: '#555555', fontSize: '1rem', marginBottom: '1.5rem' }}>
-                      Thanks! We&apos;ll call you back shortly to confirm your appointment.
-                    </p>
-                    <div
-                      style={{
-                        background: '#f8f9fa',
-                        borderRadius: '12px',
-                        padding: '1.25rem',
-                        marginBottom: '1.5rem',
-                        borderLeft: '4px solid #E10600',
-                      }}
-                    >
-                      <p style={{ margin: '0 0 0.4rem', color: '#333', fontSize: '0.92rem' }}>
-                        <IconTelephoneFill className="text-danger me-2" />
-                        We&apos;ll call: <strong id="confirmPhone">{confirmPhone}</strong>
+                      <div className="booking-success__icon" aria-hidden="true">
+                        <IconCheckLg />
+                      </div>
+                      <p className="booking-success__eyebrow">Z Elite AutoCare</p>
+                      <h3 className="booking-success__title">Request Received</h3>
+                      <p className="booking-success__copy">
+                        Thanks for booking with us. Our team will call you shortly to confirm your
+                        appointment and arrange the mobile garage visit.
                       </p>
-                      <p style={{ margin: 0, color: '#333', fontSize: '0.92rem' }}>
-                        <IconCalendarCheckFill className="text-danger me-2" />
-                        Requested: <strong id="confirmDate">{confirmDate}</strong>
+                      <div className="booking-success__summary">
+                        <p className="booking-success__row">
+                          <IconTools className="booking-success__row-icon" aria-hidden="true" />
+                          <span>
+                            <span className="booking-success__label">Service</span>
+                            <strong id="confirmService">{confirmService}</strong>
+                          </span>
+                        </p>
+                        <p className="booking-success__row">
+                          <IconTelephoneFill className="booking-success__row-icon" aria-hidden="true" />
+                          <span>
+                            <span className="booking-success__label">We&apos;ll call</span>
+                            <strong id="confirmPhone">{confirmPhone}</strong>
+                          </span>
+                        </p>
+                        <p className="booking-success__row">
+                          <IconCalendarCheckFill
+                            className="booking-success__row-icon"
+                            aria-hidden="true"
+                          />
+                          <span>
+                            <span className="booking-success__label">Preferred time</span>
+                            <strong id="confirmDate">{confirmDate}</strong>
+                          </span>
+                        </p>
+                      </div>
+                      <p className="booking-success__note">
+                        Need something sooner? Reach us directly and we&apos;ll help right away.
                       </p>
-                    </div>
-                    <a
-                      href="tel:0432241883"
-                      className="btn btn-danger rounded-pill px-4 py-2 fw-bold me-2"
-                    >
-                      <IconTelephoneFill className="me-1" />Call Us Now
-                    </a>
-                    <a
-                      href="https://wa.me/61432241883"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn btn-success rounded-pill px-4 py-2 fw-bold"
-                    >
-                      <IconWhatsapp className="me-1" />WhatsApp
-                    </a>
-                  </div>
+                      <div className="booking-success__actions">
+                        <a
+                          href="tel:0432241883"
+                          className="btn btn-danger rounded-pill px-4 py-2 fw-bold"
+                        >
+                          <IconTelephoneFill className="me-1" />
+                          Call 0432 241 883
+                        </a>
+                        <a
+                          href="https://wa.me/61432241883"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn btn-success rounded-pill px-4 py-2 fw-bold"
+                        >
+                          <IconWhatsapp className="me-1" />
+                          WhatsApp
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
 
                   {!submitted && (
                     <form id="bookingForm" className="booking-form" onSubmit={handleSubmit} noValidate>
@@ -450,7 +473,7 @@ function Booking() {
                           ></textarea>
                         </div>
                         <div className="col-12 text-center mt-4">
-                          <button type="submit" className="btn btn-danger btn-lg px-5 py-3">
+                          <button type="submit" className="btn btn-danger btn-lg px-5 py-3 booking-submit">
                             <IconCheckCircleFill className="me-2" />CONFIRM BOOKING
                           </button>
                         </div>
@@ -459,7 +482,7 @@ function Booking() {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

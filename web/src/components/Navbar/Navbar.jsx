@@ -1,7 +1,27 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import logo from '../../assets/Z Elite Logo.jpg'
 import { IconCalendarCheckFill } from '../icons'
+import './Navbar.css'
+
+const LOGO_SRC = '/logo.jpg'
+
+const PREFETCH = {
+  '/services': () => import('../../pages/Services'),
+  '/about': () => import('../../pages/About'),
+  '/gallery': () => import('../../pages/Gallery'),
+  '/testimonials': () => import('../../pages/Testimonials'),
+  '/contact': () => import('../../pages/Contact'),
+}
+
+function prefetchRoute(path) {
+  const load = PREFETCH[path]
+  if (!load) return
+  try {
+    load()
+  } catch {
+    // ignore prefetch errors
+  }
+}
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -22,16 +42,50 @@ function Navbar() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  // Warm all routes after first paint so nav never shows a splash screen
+  useEffect(() => {
+    const idle =
+      typeof window.requestIdleCallback === 'function'
+        ? window.requestIdleCallback
+        : (cb) => window.setTimeout(cb, 700)
+
+    const id = idle(() => {
+      Object.keys(PREFETCH).forEach((path) => prefetchRoute(path))
+    })
+
+    return () => {
+      if (typeof window.cancelIdleCallback === 'function') {
+        window.cancelIdleCallback(id)
+      } else {
+        window.clearTimeout(id)
+      }
+    }
+  }, [])
+
   const closeMenu = () => setMenuOpen(false)
+
+  const linkProps = (path) => ({
+    onMouseEnter: () => prefetchRoute(path),
+    onFocus: () => prefetchRoute(path),
+    onTouchStart: () => prefetchRoute(path),
+  })
 
   return (
     <nav
-      className={`navbar navbar-expand-md navbar-light sticky-top shadow-sm${scrolled ? ' scrolled' : ''}`}
+      className={`navbar navbar-expand-md navbar-light sticky-top shadow-sm zx-navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' is-open' : ''}`}
       style={{ background: '#ffffff', borderBottom: '3px solid #E10600' }}
     >
       <div className="container">
         <Link to="/" className="navbar-brand" aria-label="Z Elite Auto Care Home" onClick={closeMenu}>
-          <img src={logo} alt="Z Elite Auto Care" className="nav-logo-img" />
+          <img
+            src={LOGO_SRC}
+            alt="Z Elite Auto Care"
+            className="nav-logo-img"
+            width={160}
+            height={48}
+            decoding="async"
+            fetchPriority="high"
+          />
         </Link>
 
         <button
@@ -62,6 +116,7 @@ function Navbar() {
                 to="/services"
                 className={({ isActive }) => `nav-link px-3${isActive ? ' nav-link--active' : ''}`}
                 onClick={closeMenu}
+                {...linkProps('/services')}
               >
                 Services
               </NavLink>
@@ -71,6 +126,7 @@ function Navbar() {
                 to="/about"
                 className={({ isActive }) => `nav-link px-3${isActive ? ' nav-link--active' : ''}`}
                 onClick={closeMenu}
+                {...linkProps('/about')}
               >
                 About
               </NavLink>
@@ -80,6 +136,7 @@ function Navbar() {
                 to="/gallery"
                 className={({ isActive }) => `nav-link px-3${isActive ? ' nav-link--active' : ''}`}
                 onClick={closeMenu}
+                {...linkProps('/gallery')}
               >
                 Gallery
               </NavLink>
@@ -89,6 +146,7 @@ function Navbar() {
                 to="/testimonials"
                 className={({ isActive }) => `nav-link px-3${isActive ? ' nav-link--active' : ''}`}
                 onClick={closeMenu}
+                {...linkProps('/testimonials')}
               >
                 Testimonials
               </NavLink>
@@ -98,6 +156,7 @@ function Navbar() {
                 to="/contact"
                 className={({ isActive }) => `nav-link px-3${isActive ? ' nav-link--active' : ''}`}
                 onClick={closeMenu}
+                {...linkProps('/contact')}
               >
                 Contact
               </NavLink>
@@ -107,6 +166,7 @@ function Navbar() {
                 to="/contact#booking"
                 className="btn btn-danger rounded-pill px-4 py-2 fw-bold nav-cta"
                 onClick={closeMenu}
+                {...linkProps('/contact')}
               >
                 <IconCalendarCheckFill className="me-1" /> Book Service
               </Link>

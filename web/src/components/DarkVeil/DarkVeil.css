@@ -1,0 +1,35 @@
+.darkveil-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.darkveil-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #0a0a0a;
+}
+
+.darkveil-backdrop .darkveil-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.28;
+  /* Bias remaining cool tones toward warm charcoal/red */
+  filter: saturate(0.7) brightness(0.85);
+}
+
+.darkveil-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 20%, rgba(225, 6, 0, 0.1) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.45) 0%, rgba(10, 10, 10, 0.65) 100%);
+}

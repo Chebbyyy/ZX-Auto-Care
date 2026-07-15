@@ -650,8 +650,8 @@ html {
     --shadow-dark: rgba(0, 0, 0, 0.25);
 
     /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-primary: 'Manrope', 'Segoe UI', sans-serif;
+    --font-heading: 'Outfit', 'Segoe UI', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -2372,10 +2372,10 @@ a {
    STATS SECTION
    ============================================ */
 .stats-section {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: #ffffff;
     padding: 4rem 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .tech-grid-bg {
@@ -2385,10 +2385,11 @@ a {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(rgba(225, 6, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(225, 6, 0, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: gridMove 20s linear infinite;
+    pointer-events: none;
 }
 
 @keyframes gridMove {
@@ -2481,7 +2482,7 @@ a {
 .stat-label {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #999;
+    color: #334155;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -2563,76 +2564,62 @@ a {
    ============================================ */
 .why-us {
     padding: 8rem 0;
-    background: #f4f4f5;
+    background: #ffffff;
     position: relative;
+    overflow: visible;
 }
 
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.75rem;
 }
 
-.why-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 2.5rem 2rem 2rem;
-    text-align: center;
-    border-left: 4px solid var(--accent-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.why-glow-card {
     opacity: 0;
-    position: relative;
+    animation: fadeUpCard 0.65s ease-out forwards;
+    animation-delay: calc(0.08s + var(--delay, 0) * 0.08s);
 }
 
-.why-card[data-animate="feature"] {
-    animation: fadeUpCard 0.6s ease-out forwards;
-}
-
-.why-card:nth-of-type(1)[data-animate="feature"] { animation-delay: 0.1s; }
-.why-card:nth-of-type(2)[data-animate="feature"] { animation-delay: 0.2s; }
-.why-card:nth-of-type(3)[data-animate="feature"] { animation-delay: 0.3s; }
-.why-card:nth-of-type(4)[data-animate="feature"] { animation-delay: 0.4s; }
-.why-card:nth-of-type(5)[data-animate="feature"] { animation-delay: 0.5s; }
-.why-card:nth-of-type(6)[data-animate="feature"] { animation-delay: 0.6s; }
-
-.why-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(225, 6, 0, 0.12);
+.why-card-body {
+    padding: 2.25rem 1.75rem 2rem;
+    text-align: center;
+    height: 100%;
 }
 
 .why-icon-badge {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 1.5rem;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.35rem;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-color) 0%, #a00400 100%);
+    background: linear-gradient(145deg, #E10600 0%, #8f0400 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 18px rgba(225, 6, 0, 0.35);
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+    box-shadow: 0 8px 18px rgba(225, 6, 0, 0.28);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.why-icon-badge i, .why-icon-badge .zx-icon, .why-icon-badge .zx-icon, .why-icon-badge .zx-icon, .why-icon-badge .zx-icon, .why-icon-badge .zx-icon {
-    font-size: 1.6rem;
+.why-icon-badge i,
+.why-icon-badge .zx-icon {
+    font-size: 1.45rem;
     color: #ffffff;
 }
 
-.why-card:hover .why-icon-badge {
-    transform: scale(1.12) rotate(8deg);
-    box-shadow: 0 10px 28px rgba(225, 6, 0, 0.5);
+.why-glow-card:hover .why-icon-badge {
+    transform: scale(1.06);
+    box-shadow: 0 10px 22px rgba(225, 6, 0, 0.38);
 }
 
-.why-card h3 {
-    font-size: 1.2rem;
+.why-card-body h3 {
+    font-size: 1.15rem;
     font-weight: 700;
     color: #111111;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.7rem;
     letter-spacing: -0.2px;
 }
 
-.why-card p {
+.why-card-body p {
     font-size: 0.92rem;
     color: #555555;
     line-height: 1.7;
@@ -2652,7 +2639,7 @@ a {
         gap: 1.25rem;
     }
 
-    .why-card {
+    .why-card-body {
         padding: 2rem 1.5rem;
     }
 }

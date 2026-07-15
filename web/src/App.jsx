@@ -1,15 +1,19 @@
+import { lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
+import PageLoader from './components/PageLoader/PageLoader'
 import Home from './pages/Home'
-import ServicesPage from './pages/Services'
-import GalleryPage from './pages/Gallery'
-import About from './pages/About'
-import TestimonialsPage from './pages/Testimonials'
-import ContactPage from './pages/Contact'
+
+const ServicesPage = lazy(() => import('./pages/Services'))
+const GalleryPage = lazy(() => import('./pages/Gallery'))
+const About = lazy(() => import('./pages/About'))
+const TestimonialsPage = lazy(() => import('./pages/Testimonials'))
+const ContactPage = lazy(() => import('./pages/Contact'))
 
 function App() {
   return (
     <BrowserRouter>
+      <PageLoader minMs={720} />
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />

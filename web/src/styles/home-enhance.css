@@ -63,7 +63,7 @@
   .home-page .home-hero-blur,
   .home-page .home-hero-info,
   .home-page .home-hero-ctas,
-  .home-page .home-stat-card {
+  .home-page .home-stat-glow {
     animation: none !important;
     opacity: 1 !important;
     filter: none !important;
@@ -192,61 +192,6 @@
   color: #fff;
 }
 
-/* ─── Scroll indicator ─── */
-.home-page .home-scroll-indicator {
-  position: absolute;
-  left: 50%;
-  bottom: 1.75rem;
-  z-index: 3;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  color: rgba(255, 255, 255, 0.72);
-  text-decoration: none;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-  font-weight: 600;
-  transition: color 0.3s ease, opacity 0.3s ease;
-  animation: homeScrollBob 2.4s ease-in-out infinite;
-}
-
-@media (min-width: 768px) {
-  .home-page .home-scroll-indicator {
-    display: flex;
-  }
-}
-
-.home-page .home-scroll-indicator:hover {
-  color: #fff;
-}
-
-.home-page .home-scroll-indicator .hero-scroll-text {
-  opacity: 0.75;
-}
-
-.home-page .home-scroll-indicator i, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon, .home-page .home-scroll-indicator .zx-icon {
-  font-size: 0.95rem;
-  color: var(--home-red);
-}
-
-@keyframes homeScrollBob {
-  0%,
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
-  50% {
-    transform: translate3d(-50%, 6px, 0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-page .home-scroll-indicator {
-    animation: none;
-  }
-}
-
 /* ─── Info strip polish ─── */
 .home-page .home-stats-band .text-strip {
   background: linear-gradient(180deg, #171717 0%, #101010 100%);
@@ -264,16 +209,17 @@
 /* ─── Stats section ─── */
 .home-page .home-stats-band .stats-section {
   padding: clamp(3.25rem, 7vw, 5rem) 0;
+  overflow: visible;
   background:
-    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(225, 6, 0, 0.08) 0%, transparent 55%),
-    linear-gradient(168deg, #151515 0%, #0e0e0e 48%, #161616 100%);
+    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(225, 6, 0, 0.05) 0%, transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #ffffff 100%);
 }
 
 .home-page .home-stats-band .tech-grid-bg {
-  opacity: 0.55;
+  opacity: 0.5;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 35%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 35%, transparent 100%);
@@ -296,82 +242,55 @@
   }
 }
 
-/* ─── Premium stat cards (home only) ─── */
-.home-page .home-stat-card,
-.home-page .home-stat-card[data-animate='stat'] {
-  background: rgba(22, 22, 22, 0.92) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 14px !important;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 12px 32px rgba(0, 0, 0, 0.35) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* ─── Premium stat cards (home only — BorderGlow) ─── */
+.home-page .home-stat-glow {
   opacity: 0;
-  transform: translate3d(0, 22px, 0);
-  transition:
-    transform 0.4s var(--home-ease),
-    box-shadow 0.4s var(--home-ease),
-    border-color 0.4s ease,
-    background-color 0.4s ease !important;
+  transform: translate3d(0, 18px, 0);
   animation: homeStatIn 0.7s var(--home-ease) forwards !important;
   animation-delay: calc(0.08s + var(--delay, 0) * 0.1s) !important;
-  overflow: hidden;
+  overflow: visible !important;
 }
 
-.home-page .home-stat-card::before {
-  opacity: 0 !important;
-  background: none !important;
+.home-page .home-stat-glow .stat-card-body {
+  justify-content: center;
 }
 
-.home-page .home-stat-card.stat-card--red {
-  border-top: 1px solid rgba(225, 6, 0, 0.55) !important;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 -1px 0 rgba(225, 6, 0, 0.15) inset,
-    0 12px 32px rgba(0, 0, 0, 0.35) !important;
-}
-
-.home-page .home-stat-card.stat-card--yellow {
-  border-top: 1px solid rgba(255, 193, 7, 0.45) !important;
-}
-
-.home-page .home-stat-card.stat-card--green {
-  border-top: 1px solid rgba(25, 135, 84, 0.45) !important;
-}
-
-.home-page .home-stat-card.stat-card--cyan {
-  border-top: 1px solid rgba(13, 202, 240, 0.4) !important;
-}
-
-.home-page .home-stat-card:hover {
-  transform: translate3d(0, -6px, 0) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  background: rgba(28, 28, 28, 0.96) !important;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 18px 40px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(225, 6, 0, 0.12),
-    0 0 28px rgba(225, 6, 0, 0.08) !important;
-}
-
-.home-page .home-stat-card .stat-icon i, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon, .home-page .home-stat-card .stat-icon .zx-icon {
-  transition: transform 0.4s var(--home-ease), filter 0.4s ease;
-}
-
-.home-page .home-stat-card:hover .stat-icon i, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon, .home-page .home-stat-card:hover .stat-icon .zx-icon {
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 8px currentColor);
-}
-
-.home-page .home-stat-card .stat-number {
+.home-page .home-stat-glow .stat-number {
   letter-spacing: -0.03em;
+  text-shadow: none !important;
 }
 
-.home-page .home-stat-card .stat-label {
-  color: rgba(180, 180, 180, 0.92) !important;
+.home-page .home-stat-glow--yellow .stat-number,
+.home-page .home-stat-glow--yellow .stat-icon .zx-icon,
+.home-page .home-stat-glow--yellow .text-warning {
+  color: #b45309 !important;
+}
+
+.home-page .home-stat-glow--green .stat-number,
+.home-page .home-stat-glow--green .stat-icon .zx-icon,
+.home-page .home-stat-glow--green .text-success {
+  color: #15803d !important;
+}
+
+.home-page .home-stat-glow--cyan .stat-number,
+.home-page .home-stat-glow--cyan .stat-icon .zx-icon,
+.home-page .home-stat-glow--cyan .text-info {
+  color: #0e7490 !important;
+}
+
+.home-page .home-stat-glow .stat-label {
+  color: #334155 !important;
   letter-spacing: 0.08em;
   font-size: 0.78rem !important;
+}
+
+.home-page .home-stat-glow .stat-icon .zx-icon {
+  transition: transform 0.35s var(--home-ease);
+}
+
+.home-page .home-stat-glow:hover .stat-icon .zx-icon {
+  transform: scale(1.06);
+  filter: none;
 }
 
 @keyframes homeStatIn {
@@ -386,7 +305,7 @@
     width: min(100%, 280px);
   }
 
-  .home-page .home-stat-card:hover {
+  .home-page .home-stat-glow:hover {
     transform: translate3d(0, -3px, 0) !important;
   }
 }

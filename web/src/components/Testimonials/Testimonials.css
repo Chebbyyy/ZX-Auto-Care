@@ -1,0 +1,107 @@
+.testimonials-page .testi-section {
+  --testi-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  padding: clamp(3.5rem, 6vw, 6rem) 0 4rem;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(225, 6, 0, 0.22);
+}
+
+.testimonials-page .testi-section::before {
+  display: none;
+}
+
+.testimonials-page .testi-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials-page .testi-eyebrow {
+  color: rgba(254, 202, 202, 0.95);
+  border-color: rgba(225, 6, 0, 0.4);
+  background: rgba(225, 6, 0, 0.08);
+}
+
+.testimonials-page .testi-title {
+  color: #ffffff;
+}
+
+.testimonials-page .testi-line {
+  background: linear-gradient(90deg, #e10600, #c90500, #7f1d1d);
+  box-shadow: 0 0 14px rgba(225, 6, 0, 0.3);
+}
+
+.testimonials-page .testi-subtitle {
+  color: rgba(226, 232, 240, 0.72);
+}
+
+.testimonials-page .testi-card {
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.4s var(--testi-ease),
+    box-shadow 0.4s var(--testi-ease),
+    border-color 0.4s ease;
+}
+
+.testimonials-page .testi-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.26),
+    0 0 0 1px rgba(225, 6, 0, 0.12);
+  border-color: rgba(225, 6, 0, 0.22);
+}
+
+.testimonials-page .testi-card--featured {
+  border-color: rgba(225, 6, 0, 0.28);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.24),
+    0 0 0 1px rgba(225, 6, 0, 0.1);
+}
+
+.testimonials-page .testi-card--featured:hover {
+  box-shadow:
+    0 20px 44px rgba(0, 0, 0, 0.28),
+    0 0 24px rgba(225, 6, 0, 0.12);
+}
+
+.testimonials-page .testi-bottom-bar {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.testimonials-page .testi-big-score {
+  color: #ffffff;
+}
+
+.testimonials-page .testi-review-count {
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.testimonials-page .testi-cta-btn {
+  transition:
+    transform 0.25s var(--testi-ease),
+    box-shadow 0.25s var(--testi-ease),
+    filter 0.25s ease;
+}
+
+.testimonials-page .testi-cta-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-page .testi-card,
+  .testimonials-page .testi-cta-btn {
+    transition: none;
+  }
+
+  .testimonials-page .testi-card:hover,
+  .testimonials-page .testi-cta-btn:hover {
+    transform: none;
+  }
+}

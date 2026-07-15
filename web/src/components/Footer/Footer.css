@@ -1,0 +1,70 @@
+.site-footer {
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 0;
+}
+
+.site-footer__copy {
+  margin: 0;
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 1rem;
+}
+
+.site-footer__link {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.site-footer__link:hover {
+  color: #ffffff;
+}
+
+.site-footer__link--primary {
+  color: #e5e5e5;
+  font-weight: 600;
+}
+
+.site-footer__link--primary:hover {
+  color: #e10600;
+}
+
+.site-footer__link--aob {
+  color: #7a8494;
+  font-size: 0.82rem;
+}
+
+.site-footer__link--aob:hover {
+  color: #94a3b8;
+}
+
+.site-footer__aob-tag {
+  margin-left: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.site-footer__whatsapp {
+  color: #198754 !important;
+}
+
+.site-footer__whatsapp:hover {
+  color: #20c997 !important;
+}
+
+@media (min-width: 768px) {
+  .site-footer__nav {
+    justify-content: flex-end;
+  }
+}

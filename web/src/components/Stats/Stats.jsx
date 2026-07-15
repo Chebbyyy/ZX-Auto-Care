@@ -5,6 +5,8 @@ import {
   IconStarFill,
   IconTools,
 } from '../icons'
+import BorderGlow from '../BorderGlow/BorderGlow'
+import { ZX_GLOW_LIGHT } from '../BorderGlow/zxGlowPresets'
 
 function animateCounterValue(target, onUpdate) {
   const duration = 1800
@@ -13,7 +15,6 @@ function animateCounterValue(target, onUpdate) {
 
   function step(now) {
     const t = Math.min(1, (now - start) / duration)
-    // easeOutCubic
     const eased = 1 - (1 - t) ** 3
     onUpdate(Math.round(target * eased))
     if (t < 1) {
@@ -33,7 +34,7 @@ function Stats() {
   const countedRef = useRef(false)
 
   useEffect(() => {
-    const cards = sectionRef.current?.querySelectorAll('.stat-card')
+    const cards = sectionRef.current?.querySelectorAll('.home-stat-glow')
     if (!cards?.length) return undefined
 
     let cancelCounter = null
@@ -98,31 +99,34 @@ function Stats() {
   ]
 
   return (
-    <section className="stats-section" ref={sectionRef}>
+    <section className="stats-section stats-section--light" ref={sectionRef}>
       <div className="tech-grid-bg" aria-hidden="true"></div>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="row g-4">
           {cards.map((card) => {
             const Icon = card.Icon
             return (
-            <div className="col-md-3 col-6" key={card.label}>
-              <div
-                className={`stat-card home-stat-card stat-card--${card.variant} text-center p-4 h-100`}
-                data-animate="stat"
-                style={{ '--delay': card.delay }}
-              >
-                <div className="stat-icon mb-3">
-                  <Icon className={card.iconClass} />
-                </div>
-                <div
-                  className={`stat-number ${card.numberClass}`}
-                  {...(card.content === 'count' ? { 'data-count': 100 } : {})}
+              <div className="col-md-3 col-6" key={card.label}>
+                <BorderGlow
+                  className={`zx-glow home-stat-glow home-stat-glow--${card.variant}`}
+                  style={{ '--delay': card.delay }}
+                  {...ZX_GLOW_LIGHT}
+                  borderRadius={14}
                 >
-                  {card.content === 'count' ? count : card.content}
-                </div>
-                <div className="stat-label">{card.label}</div>
+                  <div className="stat-card-body text-center p-4 h-100">
+                    <div className="stat-icon mb-3">
+                      <Icon className={card.iconClass} />
+                    </div>
+                    <div
+                      className={`stat-number ${card.numberClass}`}
+                      {...(card.content === 'count' ? { 'data-count': 100 } : {})}
+                    >
+                      {card.content === 'count' ? count : card.content}
+                    </div>
+                    <div className="stat-label">{card.label}</div>
+                  </div>
+                </BorderGlow>
               </div>
-            </div>
             )
           })}
         </div>

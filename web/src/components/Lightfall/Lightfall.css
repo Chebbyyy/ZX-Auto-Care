@@ -1,0 +1,34 @@
+.lightfall-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lightfall-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lightfall-backdrop .lightfall-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+}
+
+.lightfall-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.55) 0%,
+    rgba(10, 10, 10, 0.35) 40%,
+    rgba(10, 10, 10, 0.55) 100%
+  );
+}
