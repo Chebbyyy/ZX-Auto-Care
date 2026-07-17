@@ -8,6 +8,30 @@
 /* CSS variables                                                              */
 /* -------------------------------------------------------------------------- */
 :root {
+  /* Brand reds */
+  --zx-red-deep: #7a0500;
+  --zx-red-primary: #e10600;
+  --zx-red-mid: #c90500;
+  --zx-red-soft: #ff4a42;
+  --zx-red-tint: #fecaca;
+  --zx-red-wash: rgba(225, 6, 0, 0.08);
+  --zx-red-wash-strong: rgba(225, 6, 0, 0.16);
+  --zx-red-glow: rgba(225, 6, 0, 0.35);
+
+  /* Neutrals */
+  --zx-black: #000;
+  --zx-charcoal: #0a0a0a;
+  --zx-gray-dark: #1a1a1a;
+  --zx-gray: #555;
+  --zx-gray-mid: #737373;
+  --zx-gray-light: #e5e5e5;
+  --zx-off-white: #f7f7f8;
+  --zx-white: #fff;
+
+  --zx-grad-red: linear-gradient(135deg, var(--zx-red-primary) 0%, var(--zx-red-mid) 55%, var(--zx-red-deep) 100%);
+  --zx-grad-red-hover: linear-gradient(135deg, var(--zx-red-soft) 0%, var(--zx-red-primary) 50%, var(--zx-red-mid) 100%);
+  --zx-grad-red-line: linear-gradient(90deg, var(--zx-red-soft), var(--zx-red-primary), var(--zx-red-deep));
+
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -32,21 +56,21 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
 
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
+  --bs-primary: #e10600;
+  --bs-secondary: #737373;
+  --bs-success: #e10600;
+  --bs-info: #e10600;
+  --bs-warning: #e10600;
+  --bs-danger: #e10600;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
 
-  --bs-primary-rgb: 13, 110, 253;
-  --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 25, 135, 84;
-  --bs-info-rgb: 13, 202, 240;
-  --bs-warning-rgb: 255, 193, 7;
-  --bs-danger-rgb: 220, 53, 69;
+  --bs-primary-rgb: 225, 6, 0;
+  --bs-secondary-rgb: 115, 115, 115;
+  --bs-success-rgb: 225, 6, 0;
+  --bs-info-rgb: 225, 6, 0;
+  --bs-warning-rgb: 225, 6, 0;
+  --bs-danger-rgb: 225, 6, 0;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
@@ -54,7 +78,9 @@
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
 
-  --bs-font-sans-serif: 'Manrope', "Segoe UI", sans-serif;
+  --zx-font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --zx-font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bs-font-sans-serif: var(--zx-font-body);
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -123,7 +149,8 @@ hr {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-family: var(--zx-font-heading);
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -644,33 +671,39 @@ textarea {
 .fs-6 { font-size: 1rem !important; }
 
 .display-1 {
+  font-family: var(--zx-font-heading);
   font-size: calc(1.625rem + 4.5vw);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 .display-2 {
+  font-family: var(--zx-font-heading);
   font-size: calc(1.575rem + 3.9vw);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 .display-3 {
+  font-family: var(--zx-font-heading);
   font-size: calc(1.525rem + 3.3vw);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 .display-4 {
+  font-family: var(--zx-font-heading);
   font-size: calc(1.475rem + 2.7vw);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 .display-5 {
+  font-family: var(--zx-font-heading);
   font-size: calc(1.425rem + 2.1vw);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 .display-6 {
+  font-family: var(--zx-font-heading);
   font-size: calc(1.375rem + 1.5vw);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -822,9 +855,9 @@ textarea {
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
-  --bs-btn-font-family: ;
+  --bs-btn-font-family: var(--zx-font-body);
   --bs-btn-font-size: 1rem;
-  --bs-btn-font-weight: 400;
+  --bs-btn-font-weight: 600;
   --bs-btn-line-height: 1.5;
   --bs-btn-color: var(--bs-body-color);
   --bs-btn-bg: transparent;
@@ -987,18 +1020,23 @@ fieldset:disabled .btn {
 
 .btn-danger {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #dc3545;
-  --bs-btn-border-color: #dc3545;
+  --bs-btn-bg: var(--zx-red-primary);
+  --bs-btn-border-color: var(--zx-red-primary);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #bb2d3b;
-  --bs-btn-hover-border-color: #b02a37;
-  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-hover-bg: var(--zx-red-soft);
+  --bs-btn-hover-border-color: var(--zx-red-soft);
+  --bs-btn-focus-shadow-rgb: 225, 6, 0;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #b02a37;
-  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-bg: var(--zx-red-deep);
+  --bs-btn-active-border-color: var(--zx-red-deep);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #dc3545;
-  --bs-btn-disabled-border-color: #dc3545;
+  --bs-btn-disabled-bg: var(--zx-red-mid);
+  --bs-btn-disabled-border-color: var(--zx-red-mid);
+  background-image: var(--zx-grad-red);
+}
+
+.btn-danger:hover {
+  background-image: var(--zx-grad-red-hover);
 }
 
 .btn-dark {
@@ -1453,7 +1491,7 @@ textarea.form-control-lg {
 .navbar-nav {
   --bs-nav-link-padding-x: 0;
   --bs-nav-link-padding-y: 0.5rem;
-  --bs-nav-link-font-weight: ;
+  --bs-nav-link-font-weight: 500;
   --bs-nav-link-color: var(--bs-navbar-color);
   --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
   --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);

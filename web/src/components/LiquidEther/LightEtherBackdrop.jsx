@@ -1,7 +1,7 @@
 import LiquidEther from '../LiquidEther/LiquidEther'
 import './LightEtherBackdrop.css'
 
-const BRAND_COLORS = ['#E10600', '#94a3b8', '#fecaca']
+const BRAND_COLORS = ['#E10600', '#7a0500', '#ff4a42']
 
 /**
  * Reusable Liquid Ether layer for light pages/sections.

@@ -108,7 +108,7 @@ function Contact() {
             </motion.div>
 
             <motion.div
-              className="ct-card ct-card--blue"
+              className="ct-card ct-card--red"
               custom={1}
               variants={cardVariants}
               initial="hidden"
@@ -135,7 +135,7 @@ function Contact() {
             </motion.div>
 
             <motion.div
-              className="ct-card ct-card--green"
+              className="ct-card ct-card--red"
               custom={2}
               variants={cardVariants}
               initial="hidden"

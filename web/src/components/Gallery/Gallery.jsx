@@ -15,7 +15,7 @@ import mw13 from '../../assets/gallery/mw13.jpeg'
 import mw14 from '../../assets/gallery/mw14.jpeg'
 import DarkVeil from '../DarkVeil/DarkVeil'
 import {
-  IconArrowRightCircleFill,
+  IconArrowUpRight,
   IconClock,
   IconCpu,
   IconGearFill,
@@ -47,13 +47,10 @@ const WORK_ITEMS = [
     id: 1,
     img: mw6,
     alt: 'Engine repair',
-    badge: 'GARAGE',
-    tone: 'danger',
+    badge: 'Garage',
     Icon: IconGearFill,
-    iconClass: 'text-warning',
     title: 'Engine Overhaul',
     serviceTag: 'Engine Repair',
-    blurb: 'Complete engine component repair and reconditioning',
     modalTitle: 'Engine Component Overhaul',
     lead: 'Professional Engine Repair Service',
     points: [
@@ -67,13 +64,10 @@ const WORK_ITEMS = [
     id: 2,
     img: mw7,
     alt: 'CV axle repair',
-    badge: 'REPAIR',
-    tone: 'warning',
+    badge: 'Repair',
     Icon: IconTools,
-    iconClass: 'text-info',
     title: 'CV Axle Replacement',
-    serviceTag: 'Drivetrain Service',
-    blurb: 'Professional drivetrain and suspension service',
+    serviceTag: 'Drivetrain',
     modalTitle: 'CV Axle & Drivetrain Repair',
     lead: 'Expert Drivetrain Service',
     points: [
@@ -87,13 +81,10 @@ const WORK_ITEMS = [
     id: 3,
     img: mw8,
     alt: 'Engine timing',
-    badge: 'PRECISION',
-    tone: 'success',
+    badge: 'Precision',
     Icon: IconStopwatch,
-    iconClass: 'text-success',
     title: 'Engine Timing',
     serviceTag: 'Engine Repair',
-    blurb: 'Precision valve adjustment and timing service',
     modalTitle: 'Engine Valve Adjustment & Timing',
     lead: 'Precision Engine Timing Service',
     points: [
@@ -107,13 +98,10 @@ const WORK_ITEMS = [
     id: 4,
     img: mw1,
     alt: 'Brake service',
-    badge: 'SAFETY',
-    tone: 'info',
+    badge: 'Safety',
     Icon: IconShieldCheck,
-    iconClass: 'text-info',
     title: 'Brake System',
     serviceTag: 'Brake Service',
-    blurb: 'Complete brake and suspension safety service',
     modalTitle: 'Brake System & Suspension Service',
     lead: 'Complete Brake & Safety Service',
     points: [
@@ -127,13 +115,10 @@ const WORK_ITEMS = [
     id: 5,
     img: mw9,
     alt: 'Camshaft inspection',
-    badge: 'TIMING',
-    tone: 'primary',
+    badge: 'Timing',
     Icon: IconClock,
-    iconClass: 'text-primary',
     title: 'Camshaft Service',
     serviceTag: 'Engine Repair',
-    blurb: 'Detailed camshaft and valve timing inspection',
     modalTitle: 'Camshaft Inspection & Timing Service',
     lead: 'Precision Camshaft Service',
     points: [
@@ -147,13 +132,10 @@ const WORK_ITEMS = [
     id: 6,
     img: mw10,
     alt: 'Engine bay repair',
-    badge: 'SYSTEM',
-    tone: 'secondary',
+    badge: 'System',
     Icon: IconCpu,
-    iconClass: 'text-secondary',
     title: 'Engine Bay Service',
     serviceTag: 'Maintenance',
-    blurb: 'Detailed engine bay system repair and maintenance',
     modalTitle: 'Engine Bay System Repair',
     lead: 'Complete Engine Bay Service',
     points: [
@@ -167,13 +149,10 @@ const WORK_ITEMS = [
     id: 7,
     img: mw3,
     alt: 'Engine removal',
-    badge: 'REBUILD',
-    tone: 'dark',
+    badge: 'Rebuild',
     Icon: IconWrench,
-    iconClass: 'text-light',
     title: 'Engine Removal',
     serviceTag: 'Engine Repair',
-    blurb: 'Complete engine removal and replacement service',
     modalTitle: 'Complete Engine Removal & Replacement',
     lead: 'Professional Engine Replacement',
     points: [
@@ -187,13 +166,10 @@ const WORK_ITEMS = [
     id: 8,
     img: mw2,
     alt: 'Dashboard wiring',
-    badge: 'ELECTRICAL',
-    tone: 'danger',
+    badge: 'Electrical',
     Icon: IconLightning,
-    iconClass: 'text-warning',
     title: 'Dashboard Wiring',
     serviceTag: 'Electrical',
-    blurb: 'Dashboard wiring and electronics repair service',
     modalTitle: 'Dashboard Wiring & Electronics Repair',
     lead: 'Expert Electronics Service',
     points: [
@@ -212,7 +188,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      delay: 0.08 + i * 0.07,
+      delay: 0.08 + i * 0.06,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
@@ -253,7 +229,7 @@ function Gallery() {
 
   return (
     <>
-      <section id="gallery" className="gallery gallery--premium">
+      <section id="gallery" className="gallery gallery--premium gallery--shop">
         <div className="darkveil-backdrop" aria-hidden="true">
           <DarkVeil
             hueShift={155}
@@ -268,15 +244,16 @@ function Gallery() {
 
         <div className="container">
           <motion.div
-            className="section-header"
+            className="section-header gallery-header"
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2>Our Work Gallery</h2>
-            <div className="header-line"></div>
-            <p className="text-muted">See the quality of our craftsmanship</p>
+            <h2>
+              Our Work <span>Gallery</span>
+            </h2>
+            <p className="text-muted">Real repairs. Real results.</p>
           </motion.div>
 
           <div id="workCarousel" className="gallery-ba">
@@ -334,55 +311,48 @@ function Gallery() {
             </div>
           </div>
 
-          <div className="row g-4">
+          <div className="gallery-shop-grid">
             {WORK_ITEMS.map((item, index) => {
               const Icon = item.Icon
               return (
-                <motion.div
+                <motion.article
                   key={item.id}
-                  className="col-lg-6"
+                  className="gallery-shop-card"
                   custom={index}
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
                 >
-                  <div
-                    className="card h-100 work-card"
+                  <button
+                    type="button"
+                    className="gallery-shop-card__hit"
                     onClick={() => setOpenModal(item.id)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault()
-                        setOpenModal(item.id)
-                      }
-                    }}
-                    role="button"
-                    tabIndex={0}
+                    aria-label={`View details for ${item.title}`}
                   >
-                    <div className="card-media">
-                      <img src={item.img} className="card-img-top" alt={item.alt} />
-                      <div className="card-media-shade" aria-hidden="true" />
-                      <span className={`work-glass-badge tone-${item.tone}`}>{item.badge}</span>
-                      <div className="card-title-overlay">
-                        <h5>
-                          <Icon className={`${item.iconClass} me-2`} />
-                          {item.title}
-                        </h5>
-                      </div>
+                    <div className="gallery-shop-card__media">
+                      <img src={item.img} alt={item.alt} loading="lazy" decoding="async" />
+                      <span className="gallery-shop-card__view">View Project</span>
+                      <span className="gallery-shop-card__badge">{item.badge}</span>
                     </div>
-                    <div className="card-body">
-                      <span className="work-service-tag">{item.serviceTag}</span>
-                      <p className="card-text text-dark">{item.blurb}</p>
-                      <div className="work-card-meta">
-                        <small className="text-muted">Click to view details</small>
-                        <span className="work-view-btn">
-                          View Project →
-                          <IconArrowRightCircleFill className="fs-5" />
+
+                    <div className="gallery-shop-card__body">
+                      <div className="gallery-shop-card__title-row">
+                        <h3>{item.title}</h3>
+                        <span className="gallery-shop-card__icon" aria-hidden="true">
+                          <Icon />
                         </span>
                       </div>
+                      <p className="gallery-shop-card__meta">
+                        <span>{item.serviceTag}</span>
+                      </p>
+                      <span className="gallery-shop-card__cta">
+                        View Details
+                        <IconArrowUpRight aria-hidden="true" />
+                      </span>
                     </div>
-                  </div>
-                </motion.div>
+                  </button>
+                </motion.article>
               )
             })}
           </div>

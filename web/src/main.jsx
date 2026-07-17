@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client'
 import './styles/zx-ui.css'
 import './styles/zx-icons.css'
 import '../../style.css'
+import './styles/typography.css'
 
 import App from './App.jsx'
 

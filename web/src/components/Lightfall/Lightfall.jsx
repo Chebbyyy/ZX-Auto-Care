@@ -13,7 +13,7 @@ const hexToRGB = (hex) => {
 }
 
 const prepColors = (input) => {
-  const base = (input && input.length ? input : ['#A6C8FF', '#5227FF', '#FF9FFC']).slice(
+  const base = (input && input.length ? input : ['#E10600', '#1a1a1a', '#e5e5e5']).slice(
     0,
     MAX_COLORS,
   )
@@ -173,7 +173,7 @@ const Lightfall = ({
   className,
   dpr,
   paused = false,
-  colors = ['#A6C8FF', '#5227FF', '#FF9FFC'],
+  colors = ['#E10600', '#1a1a1a', '#e5e5e5'],
   backgroundColor = '#0A29FF',
   speed = 0.5,
   streakCount = 2,

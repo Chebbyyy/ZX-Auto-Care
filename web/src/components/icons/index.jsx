@@ -1,97 +1,119 @@
 /**
- * Shared Lucide icons used across the app.
- * size defaults to 1em so CSS font-size rules continue to scale icons.
+ * Icons from web/src/assets/icons/*.svg
+ * Color follows each SVG's own structure (stroke/fill + currentColor)
+ * and inherits from CSS `color` on the parent.
  */
-import {
-  ArrowRightCircle,
-  ArrowUpDown,
-  ArrowUpRight,
-  Award,
-  BadgeCheck,
-  CalendarCheck,
-  Check,
-  CheckCircle2,
-  ChevronDown,
-  ClipboardCheck,
-  Clock,
-  Cpu,
-  Disc3,
-  DollarSign,
-  Droplet,
-  Gem,
-  Hammer,
-  Home,
-  Images,
-  Info,
-  Lightbulb,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-  Radio,
-  Settings,
-  ShieldCheck,
-  Star,
-  Timer,
-  Truck,
-  Users,
-  Wrench,
-  Zap,
-} from 'lucide-react'
+import IconArrowRightCircleFillRaw from '../../assets/icons/IconArrowRightCircleFill.svg?raw'
+import IconArrowUpDownRaw from '../../assets/icons/IconArrowUpDown.svg?raw'
+import IconArrowUpRightRaw from '../../assets/icons/IconArrowUpRight.svg?raw'
+import IconAwardRaw from '../../assets/icons/IconAward.svg?raw'
+import IconCalendarCheckFillRaw from '../../assets/icons/IconCalendarCheckFill.svg?raw'
+import IconCheckCircleFillRaw from '../../assets/icons/IconCheckCircleFill.svg?raw'
+import IconCheckLgRaw from '../../assets/icons/IconCheckLg.svg?raw'
+import IconChevronDownRaw from '../../assets/icons/IconChevronDown.svg?raw'
+import IconClipboardCheckRaw from '../../assets/icons/IconClipboardCheck.svg?raw'
+import IconClockRaw from '../../assets/icons/IconClock.svg?raw'
+import IconClockFillRaw from '../../assets/icons/IconClockFill.svg?raw'
+import IconCpuRaw from '../../assets/icons/IconCpu.svg?raw'
+import IconCurrencyDollarRaw from '../../assets/icons/IconCurrencyDollar.svg?raw'
+import IconDiscRaw from '../../assets/icons/IconDisc.svg?raw'
+import IconDropletFillRaw from '../../assets/icons/IconDropletFill.svg?raw'
+import IconEnvelopeFillRaw from '../../assets/icons/IconEnvelopeFill.svg?raw'
+import IconGemRaw from '../../assets/icons/IconGem.svg?raw'
+import IconGearFillRaw from '../../assets/icons/IconGearFill.svg?raw'
+import IconGeoAltFillRaw from '../../assets/icons/IconGeoAltFill.svg?raw'
+import IconHouseFillRaw from '../../assets/icons/IconHouseFill.svg?raw'
+import IconImagesRaw from '../../assets/icons/IconImages.svg?raw'
+import IconInfoCircleRaw from '../../assets/icons/IconInfoCircle.svg?raw'
+import IconLightbulbRaw from '../../assets/icons/IconLightbulb.svg?raw'
+import IconLightningRaw from '../../assets/icons/IconLightning.svg?raw'
+import IconLightningChargeFillRaw from '../../assets/icons/IconLightningChargeFill.svg?raw'
+import IconPatchCheckRaw from '../../assets/icons/IconPatchCheck.svg?raw'
+import IconPatchCheckFillRaw from '../../assets/icons/IconPatchCheckFill.svg?raw'
+import IconPeopleFillRaw from '../../assets/icons/IconPeopleFill.svg?raw'
+import IconRadioRaw from '../../assets/icons/IconRadio.svg?raw'
+import IconShieldCheckRaw from '../../assets/icons/IconShieldCheck.svg?raw'
+import IconStarFillRaw from '../../assets/icons/IconStarFill.svg?raw'
+import IconStopwatchRaw from '../../assets/icons/IconStopwatch.svg?raw'
+import IconTelephoneFillRaw from '../../assets/icons/IconTelephoneFill.svg?raw'
+import IconToolsRaw from '../../assets/icons/IconTools.svg?raw'
+import IconTruckRaw from '../../assets/icons/IconTruck.svg?raw'
+import IconWhatsappRaw from '../../assets/icons/IconWhatsapp.svg?raw'
+import IconWrenchRaw from '../../assets/icons/IconWrench.svg?raw'
 
-function createIcon(LucideIcon, { fill = false } = {}) {
+/** Keep the SVG's fill/stroke/currentColor as authored; only size for layout. */
+function prepareSvg(raw) {
+  return raw
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/\swidth="[^"]*"/, '')
+    .replace(/\sheight="[^"]*"/, '')
+    .replace(/\saria-hidden="[^"]*"/, '')
+    .trim()
+}
+
+function createIcon(rawSvg, displayName) {
+  const html = prepareSvg(rawSvg)
+
   function ZxIcon({ className = '', style, size = '1em', ...rest }) {
     const classes = ['zx-icon', className].filter(Boolean).join(' ')
     return (
-      <LucideIcon
+      <span
         className={classes}
-        style={style}
-        size={size}
-        strokeWidth={fill ? 1.5 : 2}
-        {...(fill ? { fill: 'currentColor' } : {})}
+        style={{ width: size, height: size, ...style }}
+        dangerouslySetInnerHTML={{ __html: html }}
         aria-hidden="true"
         {...rest}
       />
     )
   }
-  ZxIcon.displayName = LucideIcon.displayName || LucideIcon.name
+
+  ZxIcon.displayName = displayName
   return ZxIcon
 }
 
-export const IconStarFill = createIcon(Star, { fill: true })
-export const IconArrowRightCircleFill = createIcon(ArrowRightCircle, { fill: true })
-export const IconTools = createIcon(Hammer)
-export const IconTelephoneFill = createIcon(Phone, { fill: true })
-export const IconClockFill = createIcon(Clock, { fill: true })
-export const IconGearFill = createIcon(Settings, { fill: true })
-export const IconShieldCheck = createIcon(ShieldCheck)
-export const IconDropletFill = createIcon(Droplet, { fill: true })
-export const IconPatchCheckFill = createIcon(BadgeCheck, { fill: true })
-export const IconCalendarCheckFill = createIcon(CalendarCheck, { fill: true })
-export const IconLightningChargeFill = createIcon(Zap, { fill: true })
-export const IconGeoAltFill = createIcon(MapPin, { fill: true })
-export const IconWhatsapp = createIcon(MessageCircle)
-export const IconWrench = createIcon(Wrench)
-export const IconClock = createIcon(Clock)
-export const IconCpu = createIcon(Cpu)
-export const IconLightning = createIcon(Zap)
-export const IconCheckCircleFill = createIcon(CheckCircle2, { fill: true })
-export const IconInfoCircle = createIcon(Info)
-export const IconGem = createIcon(Gem)
-export const IconTruck = createIcon(Truck)
-export const IconStopwatch = createIcon(Timer)
-export const IconEnvelopeFill = createIcon(Mail, { fill: true })
-export const IconCheckLg = createIcon(Check)
-export const IconHouseFill = createIcon(Home, { fill: true })
-export const IconPeopleFill = createIcon(Users, { fill: true })
-export const IconClipboardCheck = createIcon(ClipboardCheck)
-export const IconImages = createIcon(Images)
-export const IconCurrencyDollar = createIcon(DollarSign)
-export const IconLightbulb = createIcon(Lightbulb)
-export const IconChevronDown = createIcon(ChevronDown)
-export const IconAward = createIcon(Award)
-export const IconPatchCheck = createIcon(BadgeCheck)
-export const IconDisc = createIcon(Disc3)
-export const IconArrowUpRight = createIcon(ArrowUpRight)
-export const IconRadio = createIcon(Radio)
-export const IconArrowUpDown = createIcon(ArrowUpDown)
+export const IconStarFill = createIcon(IconStarFillRaw, 'IconStarFill')
+export const IconArrowRightCircleFill = createIcon(
+  IconArrowRightCircleFillRaw,
+  'IconArrowRightCircleFill',
+)
+export const IconTools = createIcon(IconToolsRaw, 'IconTools')
+export const IconTelephoneFill = createIcon(IconTelephoneFillRaw, 'IconTelephoneFill')
+export const IconClockFill = createIcon(IconClockFillRaw, 'IconClockFill')
+export const IconGearFill = createIcon(IconGearFillRaw, 'IconGearFill')
+export const IconShieldCheck = createIcon(IconShieldCheckRaw, 'IconShieldCheck')
+export const IconDropletFill = createIcon(IconDropletFillRaw, 'IconDropletFill')
+export const IconPatchCheckFill = createIcon(IconPatchCheckFillRaw, 'IconPatchCheckFill')
+export const IconCalendarCheckFill = createIcon(
+  IconCalendarCheckFillRaw,
+  'IconCalendarCheckFill',
+)
+export const IconLightningChargeFill = createIcon(
+  IconLightningChargeFillRaw,
+  'IconLightningChargeFill',
+)
+export const IconGeoAltFill = createIcon(IconGeoAltFillRaw, 'IconGeoAltFill')
+export const IconWhatsapp = createIcon(IconWhatsappRaw, 'IconWhatsapp')
+export const IconWrench = createIcon(IconWrenchRaw, 'IconWrench')
+export const IconClock = createIcon(IconClockRaw, 'IconClock')
+export const IconCpu = createIcon(IconCpuRaw, 'IconCpu')
+export const IconLightning = createIcon(IconLightningRaw, 'IconLightning')
+export const IconCheckCircleFill = createIcon(IconCheckCircleFillRaw, 'IconCheckCircleFill')
+export const IconInfoCircle = createIcon(IconInfoCircleRaw, 'IconInfoCircle')
+export const IconGem = createIcon(IconGemRaw, 'IconGem')
+export const IconTruck = createIcon(IconTruckRaw, 'IconTruck')
+export const IconStopwatch = createIcon(IconStopwatchRaw, 'IconStopwatch')
+export const IconEnvelopeFill = createIcon(IconEnvelopeFillRaw, 'IconEnvelopeFill')
+export const IconCheckLg = createIcon(IconCheckLgRaw, 'IconCheckLg')
+export const IconHouseFill = createIcon(IconHouseFillRaw, 'IconHouseFill')
+export const IconPeopleFill = createIcon(IconPeopleFillRaw, 'IconPeopleFill')
+export const IconClipboardCheck = createIcon(IconClipboardCheckRaw, 'IconClipboardCheck')
+export const IconImages = createIcon(IconImagesRaw, 'IconImages')
+export const IconCurrencyDollar = createIcon(IconCurrencyDollarRaw, 'IconCurrencyDollar')
+export const IconLightbulb = createIcon(IconLightbulbRaw, 'IconLightbulb')
+export const IconChevronDown = createIcon(IconChevronDownRaw, 'IconChevronDown')
+export const IconAward = createIcon(IconAwardRaw, 'IconAward')
+export const IconPatchCheck = createIcon(IconPatchCheckRaw, 'IconPatchCheck')
+export const IconDisc = createIcon(IconDiscRaw, 'IconDisc')
+export const IconArrowUpRight = createIcon(IconArrowUpRightRaw, 'IconArrowUpRight')
+export const IconRadio = createIcon(IconRadioRaw, 'IconRadio')
+export const IconArrowUpDown = createIcon(IconArrowUpDownRaw, 'IconArrowUpDown')

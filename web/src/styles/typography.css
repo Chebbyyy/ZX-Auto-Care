@@ -1,0 +1,158 @@
+/*
+ * ZX Auto Care — site-wide typography
+ * Sora (700–800): headings & display text
+ * Jost (400–600): body, UI, navigation, cards, forms
+ */
+
+:root {
+  --zx-font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --zx-font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Headings & display */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6,
+.card-title,
+.modal-title,
+.hero-headline,
+.section-header h2,
+.split-heading__title,
+.stat-number,
+.garage-cta-heading,
+.footer-brand-name,
+.footer-col-title,
+.footer-phone {
+  font-family: var(--zx-font-heading, var(--font-heading));
+}
+
+/* Body & UI surfaces */
+body,
+p,
+li,
+dt,
+dd,
+blockquote,
+small,
+.card,
+.card-body,
+.card-text,
+.card-subtitle,
+label,
+legend,
+input,
+textarea,
+select,
+option,
+.form-control,
+.form-select,
+.form-label,
+.form-check-label,
+.dropdown-item,
+.list-group-item,
+.badge,
+.alert,
+.table,
+.btn,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+.nav-link,
+.navbar-nav,
+.navbar-toggler,
+.navbar-text,
+.service-tab-btn,
+.text-strip-content span,
+.services-eyebrow,
+.hero-subheadline,
+.section-header p,
+.zx-loader-tag {
+  font-family: var(--zx-font-body, var(--font-primary));
+}
+
+/* Navigation weight */
+.nav-link,
+.navbar-brand,
+.service-tab-btn {
+  font-weight: 500;
+}
+
+.navbar-brand {
+  font-family: var(--zx-font-heading, var(--font-heading));
+  font-weight: 700;
+}
+
+/* Buttons & form emphasis */
+.btn,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  font-weight: 600;
+}
+
+label,
+.form-label {
+  font-weight: 500;
+}
+
+/* Card content */
+.card-body,
+.card-text {
+  font-weight: 400;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+/* Eyebrows & strip labels */
+.services-eyebrow,
+.text-strip-content span {
+  font-weight: 600;
+}
+
+/* Hierarchy rhythm */
+.hero-headline {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.section-header {
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.section-header h2 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.section-header p {
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  line-height: 1.7;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-number {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.stat-label {
+  font-family: var(--zx-font-body, var(--font-primary));
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}

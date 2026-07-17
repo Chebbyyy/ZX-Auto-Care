@@ -267,7 +267,7 @@ function Booking() {
                       <div className="booking-success__icon" aria-hidden="true">
                         <IconCheckLg />
                       </div>
-                      <p className="booking-success__eyebrow">Z Elite AutoCare</p>
+                      <p className="booking-success__eyebrow">Z Elite Auto Care</p>
                       <h3 className="booking-success__title">Request Received</h3>
                       <p className="booking-success__copy">
                         Thanks for booking with us. Our team will call you shortly to confirm your

@@ -44,8 +44,8 @@
   height: 4px;
   border-radius: 999px;
   transform-origin: center;
-  background: linear-gradient(90deg, #e10600 0%, #c90500 55%, #7f1d1d 100%);
-  box-shadow: 0 0 18px rgba(225, 6, 0, 0.35);
+  background: var(--zx-grad-red-line, linear-gradient(90deg, #ff4a42 0%, #e10600 55%, #7a0500 100%));
+  box-shadow: 0 0 18px var(--zx-red-glow, rgba(225, 6, 0, 0.35));
 }
 
 @media (prefers-reduced-motion: reduce) {

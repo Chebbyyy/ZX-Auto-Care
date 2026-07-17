@@ -11,8 +11,8 @@ function Home() {
     <div className="home-page">
       <Hero />
       <div className="home-stats-band">
-        <TextStrip />
         <Stats />
+        <TextStrip />
       </div>
       <HomeGarage />
       <PromoBanner />

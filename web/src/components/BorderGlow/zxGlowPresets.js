@@ -1,4 +1,4 @@
-/** Shared ZX BorderGlow presets — restrained, brand-first */
+/** Shared ZX BorderGlow presets — multi-shade brand reds + charcoal */
 
 export const ZX_GLOW_LIGHT = {
   backgroundColor: '#ffffff',
@@ -8,8 +8,8 @@ export const ZX_GLOW_LIGHT = {
   edgeSensitivity: 34,
   coneSpread: 20,
   fillOpacity: 0.22,
-  glowColor: '0 78 48',
-  colors: ['#E10600', '#64748b', '#1f2937'],
+  glowColor: '225 6 0',
+  colors: ['#ff4a42', '#E10600', '#7a0500'],
   animated: false,
 }
 
@@ -21,7 +21,7 @@ export const ZX_GLOW_DARK = {
   edgeSensitivity: 32,
   coneSpread: 20,
   fillOpacity: 0.28,
-  glowColor: '0 85 52',
-  colors: ['#E10600', '#737373', '#7f1d1d'],
+  glowColor: '225 6 0',
+  colors: ['#E10600', '#7a0500', '#1a1a1a'],
   animated: false,
 }

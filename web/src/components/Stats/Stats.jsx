@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import {
   IconClockFill,
   IconPatchCheckFill,
@@ -28,10 +29,13 @@ function animateCounterValue(target, onUpdate) {
   return () => cancelAnimationFrame(frame)
 }
 
+const ease = [0.22, 1, 0.36, 1]
+
 function Stats() {
   const [count, setCount] = useState(0)
   const sectionRef = useRef(null)
   const countedRef = useRef(false)
+  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
     const cards = sectionRef.current?.querySelectorAll('.home-stat-glow')
@@ -99,19 +103,26 @@ function Stats() {
   ]
 
   return (
-    <section className="stats-section stats-section--light" ref={sectionRef}>
+    <section className="stats-section stats-section--light home-stats-float" ref={sectionRef}>
       <div className="tech-grid-bg" aria-hidden="true"></div>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="row g-4">
-          {cards.map((card) => {
+          {cards.map((card, i) => {
             const Icon = card.Icon
             return (
-              <div className="col-md-3 col-6" key={card.label}>
+              <motion.div
+                className="col-md-3 col-6"
+                key={card.label}
+                initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.55, delay: i * 0.08, ease }}
+              >
                 <BorderGlow
                   className={`zx-glow home-stat-glow home-stat-glow--${card.variant}`}
                   style={{ '--delay': card.delay }}
                   {...ZX_GLOW_LIGHT}
-                  borderRadius={14}
+                  borderRadius={20}
                 >
                   <div className="stat-card-body text-center p-4 h-100">
                     <div className="stat-icon mb-3">
@@ -126,7 +137,7 @@ function Stats() {
                     <div className="stat-label">{card.label}</div>
                   </div>
                 </BorderGlow>
-              </div>
+              </motion.div>
             )
           })}
         </div>

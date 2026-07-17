@@ -56,11 +56,11 @@
 }
 
 .site-footer__whatsapp {
-  color: #198754 !important;
+  color: #e5e5e5 !important;
 }
 
 .site-footer__whatsapp:hover {
-  color: #20c997 !important;
+  color: #e10600 !important;
 }
 
 @media (min-width: 768px) {
