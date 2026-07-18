@@ -2,7 +2,7 @@
   --promo-bg: var(--ze-charcoal, #0a0a0a);
   --promo-red: var(--ze-red-primary, #e10600);
   --promo-red-deep: var(--ze-red-deep, #7a0500);
-  --promo-red-soft: var(--ze-red-soft, #ff4a42);
+  --promo-red-soft: var(--ze-red-soft, #ef4444);
   --promo-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   padding: clamp(2.5rem, 6vw, 4.5rem) 0;
@@ -131,7 +131,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(254, 202, 202, 0.9);
+  color: var(--ze-red-tint);
 }
 
 .promo-banner__eyebrow::before {
@@ -155,7 +155,7 @@
   margin: 0 0 1.75rem;
   font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   line-height: 1.65;
-  color: rgba(226, 232, 240, 0.78);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .promo-banner__cta {

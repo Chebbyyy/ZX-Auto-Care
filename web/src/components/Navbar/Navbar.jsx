@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { IconCalendarCheckFill } from '../icons'
+import { IconTelephoneFill } from '../icons'
 import './Navbar.css'
 
 const LOGO_SRC = '/logo.jpg'
@@ -100,7 +100,7 @@ function Navbar() {
         </button>
 
         <div className={`collapse navbar-collapse${menuOpen ? ' show' : ''}`} id="mainNav">
-          <ul className="navbar-nav ms-auto align-items-md-center gap-md-1">
+          <ul className="navbar-nav mx-auto align-items-md-center gap-md-1">
             <li className="nav-item">
               <NavLink
                 to="/"
@@ -161,17 +161,17 @@ function Navbar() {
                 Contact
               </NavLink>
             </li>
-            <li className="nav-item ms-md-2">
-              <Link
-                to="/contact#booking"
-                className="btn btn-danger rounded-pill px-4 py-2 fw-bold nav-cta"
-                onClick={closeMenu}
-                {...linkProps('/contact')}
-              >
-                <IconCalendarCheckFill className="me-1" /> Book Service
-              </Link>
-            </li>
           </ul>
+
+          <a href="tel:0432241883" className="nav-call" onClick={closeMenu}>
+            <span className="nav-call__icon" aria-hidden="true">
+              <IconTelephoneFill />
+            </span>
+            <span className="nav-call__text">
+              <span className="nav-call__label">Call Us</span>
+              <span className="nav-call__number">0432 241 883</span>
+            </span>
+          </a>
         </div>
       </div>
     </nav>

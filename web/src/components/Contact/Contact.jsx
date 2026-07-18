@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { IconArrowUpRight, IconClockFill, IconGeoAltFill, IconTelephoneFill } from '../icons'
-import DarkVeil from '../DarkVeil/DarkVeil'
+import AnimatedGrid from '../AnimatedGrid/AnimatedGrid'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 18 },
@@ -45,17 +45,7 @@ function Contact() {
   return (
     <>
       <section id="contact" className="ct-section">
-        <div className="darkveil-backdrop" aria-hidden="true">
-          <DarkVeil
-            hueShift={155}
-            noiseIntensity={0.03}
-            scanlineIntensity={0}
-            speed={0.2}
-            scanlineFrequency={0}
-            warpAmount={0.08}
-            resolutionScale={1}
-          />
-        </div>
+        <AnimatedGrid />
 
         <div className="container">
           <motion.div

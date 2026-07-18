@@ -79,7 +79,7 @@ const BorderGlow = ({
   glowIntensity = 1.0,
   coneSpread = 25,
   animated = false,
-  colors = ['#ff4a42', '#E10600', '#7a0500'],
+  colors = ['#ef4444', '#E10600', '#7a0500'],
   fillOpacity = 0.5,
   ...rest
 }) => {

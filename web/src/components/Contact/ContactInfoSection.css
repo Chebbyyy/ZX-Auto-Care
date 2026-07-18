@@ -158,7 +158,7 @@
 }
 
 .contact-info-link__icon--aob {
-  color: #64748b;
+  color: var(--ze-gray-mid, #737373);
 }
 
 .contact-info-link--primary {
@@ -187,7 +187,7 @@
 }
 
 .contact-info-link--primary small {
-  color: rgba(254, 202, 202, 0.85);
+  color: var(--ze-red-tint);
   font-size: 0.78rem;
   font-weight: 500;
 }
@@ -212,9 +212,9 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #94a3b8;
-  background: rgba(148, 163, 184, 0.12);
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: var(--ze-gray-mid, #737373);
+  background: rgba(115, 115, 115, 0.12);
+  border: 1px solid rgba(115, 115, 115, 0.22);
 }
 
 /* Get in touch */

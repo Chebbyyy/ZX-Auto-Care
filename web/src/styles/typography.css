@@ -2,6 +2,9 @@
  * Z Elite Auto Care — site-wide typography
  * Sora (700–800): headings & display text
  * Jost (400–600): body, UI, navigation, cards, forms
+ *
+ * Size / weight / spacing tokens live in ze-ui.css (:root).
+ * This file wires those tokens into shared elements.
  */
 
 :root {
@@ -80,9 +83,17 @@ button,
   font-family: var(--ze-font-body, var(--font-primary));
 }
 
+body {
+  font-size: var(--ze-fs-body, 0.95rem);
+  line-height: var(--ze-lh-body, 1.65);
+  color: var(--ze-text-light-strong, #0a0a0a);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Navigation weight */
 .nav-link,
-.navbar-brand,
+.navbar-nav,
 .service-tab-btn {
   font-weight: 500;
 }
@@ -99,6 +110,7 @@ button,
 [type='reset'],
 [type='submit'] {
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 label,
@@ -110,22 +122,40 @@ label,
 .card-body,
 .card-text {
   font-weight: 400;
+  line-height: var(--ze-lh-body, 1.65);
 }
 
 .card-title {
   font-weight: 700;
+  font-size: var(--ze-fs-h4, 1.08rem);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
 }
 
 /* Eyebrows & strip labels */
 .services-eyebrow,
-.text-strip-content span {
-  font-weight: 600;
+.text-strip-content span,
+.page-hero__crumb,
+.why-us__cta-eyebrow,
+.promo-banner__eyebrow {
+  font-size: var(--ze-fs-eyebrow, 0.75rem);
+  font-weight: 700;
+  letter-spacing: var(--ze-ls-eyebrow, 0.14em);
+  text-transform: uppercase;
 }
 
 /* Hierarchy rhythm */
 .hero-headline {
+  font-size: var(--ze-fs-display, clamp(2.2rem, 4.8vw, 3.5rem));
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--ze-ls-display, -0.03em);
+  line-height: var(--ze-lh-display, 1.08);
+}
+
+.hero-subheadline {
+  font-size: var(--ze-fs-lead, clamp(0.95rem, 1.4vw, 1.06rem));
+  line-height: var(--ze-lh-body, 1.65);
+  font-weight: 400;
 }
 
 .section-header {
@@ -133,26 +163,36 @@ label,
 }
 
 .section-header h2 {
+  font-size: var(--ze-fs-h2, clamp(1.9rem, 4vw, 2.9rem));
   font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
+  letter-spacing: var(--ze-ls-heading, -0.02em);
+  line-height: var(--ze-lh-heading, 1.18);
 }
 
 .section-header p {
-  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
-  line-height: 1.7;
+  font-size: var(--ze-fs-lead, clamp(0.95rem, 1.4vw, 1.06rem));
+  line-height: var(--ze-lh-body, 1.65);
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
+  color: var(--ze-text-dark-body, rgba(255, 255, 255, 0.78));
 }
 
 .stat-number {
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--ze-ls-display, -0.03em);
 }
 
 .stat-label {
   font-family: var(--ze-font-body, var(--font-primary));
+  font-size: var(--ze-fs-sm, 0.88rem);
   font-weight: 600;
   letter-spacing: 0.06em;
+}
+
+/* Secondary body copy on light surfaces */
+.text-muted,
+.card-text.text-muted,
+.form-text {
+  color: var(--ze-text-light-muted, #737373) !important;
 }

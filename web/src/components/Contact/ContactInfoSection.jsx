@@ -17,7 +17,7 @@ import {
   IconWhatsapp,
   IconWrench,
 } from '../icons'
-import DarkVeil from '../DarkVeil/DarkVeil'
+import AnimatedGrid from '../AnimatedGrid/AnimatedGrid'
 import './ContactInfoSection.css'
 
 const cardVariants = {
@@ -45,17 +45,7 @@ function ContactInfoSection() {
       </div>
 
       <section className="contact-info-band" aria-label="Contact information">
-        <div className="darkveil-backdrop contact-info-band__veil" aria-hidden="true">
-          <DarkVeil
-            hueShift={155}
-            noiseIntensity={0.025}
-            scanlineIntensity={0}
-            speed={0.18}
-            scanlineFrequency={0}
-            warpAmount={0.06}
-            resolutionScale={1}
-          />
-        </div>
+        <AnimatedGrid />
 
         <div className="container contact-info-band__inner">
           <div className="row g-4 py-5">

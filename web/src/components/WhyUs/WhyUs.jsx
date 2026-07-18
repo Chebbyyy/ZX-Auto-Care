@@ -13,7 +13,8 @@ import {
 } from '../icons'
 import AnimatedGrid from '../AnimatedGrid/AnimatedGrid'
 import aboutHeroImg from '../../assets/gallery/mw7.jpeg'
-import whyBgImg from '../../assets/premium.jfif'
+import whyBgImg from '../../assets/gallery/mw21.jpeg'
+import aboutBgImg from '../../assets/mobile-cleaning.jfif'
 import './WhyUs.css'
 
 const FOCUS_POINTS = [
@@ -69,7 +70,10 @@ function WhyUs() {
   return (
     <section id="why-us" className="why-us why-us--shouty">
       <div className="why-us__top">
-        <AnimatedGrid />
+        <div className="why-us__top-bg" aria-hidden="true">
+          <img src={aboutBgImg} alt="" loading="lazy" decoding="async" />
+          <div className="why-us__top-shade" />
+        </div>
         <div className="container why-us__content">
           <motion.div
             className="about-intro"

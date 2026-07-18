@@ -1,35 +1,77 @@
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import {
+  IconArrowUpRight,
   IconArrowUpDown,
   IconCalendarCheckFill,
-  IconClipboardCheck,
   IconDisc,
   IconDropletFill,
   IconGearFill,
   IconGem,
   IconHouseFill,
-  IconLightbulb,
   IconLightningChargeFill,
-  IconRadio,
   IconStarFill,
-  IconTools,
 } from '../icons'
-import DarkVeil from '../DarkVeil/DarkVeil'
-import servicesHeroImg from '../../assets/gallery/mw12.jpeg'
+import servicesBg from '../../assets/gallery/mw23-2.jpeg'
+import brakeImg from '../../assets/gallery/mw1.jpeg'
+import oilImg from '../../assets/gallery/mw12.jpeg'
+import transmissionImg from '../../assets/gallery/mw13.jpeg'
+import suspensionImg from '../../assets/gallery/mw14.jpeg'
+import electricalImg from '../../assets/gallery/mw2.jpeg'
+import inspectionImg from '../../assets/gallery/mw7.jpeg'
 import './Services.css'
 
 const ease = [0.22, 1, 0.36, 1]
 
-const GARAGE_SERVICES = [
-  { Icon: IconDisc, title: 'Brake Repairs', blurb: 'Pads, rotors & fluid service' },
-  { Icon: IconDropletFill, title: 'Oil Changes', blurb: 'Full synthetic with filter' },
-  { Icon: IconGearFill, title: 'Transmission', blurb: 'Fluid & filter service' },
-  { Icon: IconArrowUpDown, title: 'Suspension', blurb: 'Shocks & strut repairs' },
-  { Icon: IconLightningChargeFill, title: 'Jump Starting', blurb: '24/7 emergency boosts' },
-  { Icon: IconRadio, title: 'Radio Fitting', blurb: 'Install & wiring setup' },
-  { Icon: IconClipboardCheck, title: 'Pre-Purchase', blurb: 'Full inspection & report' },
-  { Icon: IconLightbulb, title: 'Headlight Cleaning', blurb: 'Restore & UV protect' },
+const SERVICES_GRID = [
+  {
+    Icon: IconDisc,
+    title: 'Brake Repairs',
+    desc: 'Pads, rotors and brake fluid replaced at your home or roadside, restoring safe, confident stopping power.',
+    img: brakeImg,
+    alt: 'Brake system service',
+  },
+  {
+    Icon: IconDropletFill,
+    title: 'Oil Changes',
+    desc: 'Full synthetic oil and filter changes done on the spot to keep your engine running clean and strong.',
+    img: oilImg,
+    alt: 'Engine oil service',
+  },
+  {
+    Icon: IconGearFill,
+    title: 'Transmission Service',
+    desc: 'Fluid and filter service that keeps shifting smooth and protects your gearbox from costly wear.',
+    img: transmissionImg,
+    alt: 'Transmission service work',
+  },
+  {
+    Icon: IconArrowUpDown,
+    title: 'Suspension Repairs',
+    desc: 'Shocks, struts and bushes sorted for a smooth, controlled ride on any Darwin road.',
+    img: suspensionImg,
+    alt: 'Suspension repair work',
+  },
+  {
+    Icon: IconLightningChargeFill,
+    title: 'Electrical & Radio Fitting',
+    desc: 'Diagnostics, batteries, wiring and car stereo installs — sorted quickly wherever you are parked.',
+    img: electricalImg,
+    alt: 'Dashboard wiring and electrical work',
+  },
+  {
+    Icon: IconCalendarCheckFill,
+    title: 'Jump Start & Inspections',
+    desc: '24/7 jump starting, pre-purchase inspections and headlight restoration whenever you need us.',
+    img: inspectionImg,
+    alt: 'Vehicle inspection work',
+  },
+]
+
+const STATS = [
+  { value: '24/7', label: 'Emergency Repairs Available' },
+  { value: '100%', label: 'Mobile — We Come To You' },
+  { value: '99%', label: 'Customer Satisfaction' },
 ]
 
 const DETAILING = [
@@ -80,89 +122,77 @@ function Services() {
 
   return (
     <section id="services" className="services services--darkveil services--shouty">
-      <div className="darkveil-backdrop" aria-hidden="true">
-        <DarkVeil
-          hueShift={155}
-          noiseIntensity={0.03}
-          scanlineIntensity={0}
-          speed={0.22}
-          scanlineFrequency={0}
-          warpAmount={0.1}
-          resolutionScale={1}
-        />
+      <div className="services__bg" aria-hidden="true">
+        <img src={servicesBg} alt="" loading="lazy" decoding="async" />
+        <div className="services__shade" />
       </div>
 
       <div className="container services__inner">
         <motion.div
-          className="svc-intro"
+          className="svc-head"
+          id="garageServices"
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6, ease }}
         >
-          <div className="svc-intro__copy">
+          <div className="svc-head__left">
             <p className="svc-eyebrow">
-              <span aria-hidden="true">//</span> Services
+              <span aria-hidden="true">//</span> Our Services
             </p>
             <h2 className="svc-title">
-              Our <span>Services</span>
+              Trusted Car Care, From <span>Repairs</span> To Detailing
             </h2>
+          </div>
+          <div className="svc-head__right">
             <p className="svc-lead">
-              Mobile garage repairs across Darwin. Detailing available as an add-on.
+              Mobile garage repairs across Darwin, 24 hours a day. Brakes, oil, suspension,
+              electrical and more — with premium detailing available as an add-on.
             </p>
             <Link to="/contact#booking" className="svc-cta">
               <IconCalendarCheckFill aria-hidden="true" />
               Book a Service
             </Link>
           </div>
-          <div className="svc-intro__media">
-            <img
-              src={servicesHeroImg}
-              alt="Finished vehicle after Z Elite Auto Care service"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
         </motion.div>
 
-        <div className="svc-block svc-block--garage" id="garageServices">
-          <div className="svc-block-header svc-block-header--dark">
-            <span className="svc-block-icon">
-              <IconTools />
-            </span>
-            <div>
-              <h3 className="svc-block-title">Garage Services</h3>
-              <p className="svc-block-sub">Mechanical repairs brought to you.</p>
-            </div>
-          </div>
-
-          <div className="svc-shout-grid">
-            {GARAGE_SERVICES.map((service, i) => {
-              const Icon = service.Icon
-              return (
-                <motion.article
-                  key={service.title}
-                  className="svc-shout-card"
-                  initial={reduceMotion ? false : { opacity: 0, y: 22 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.45, delay: i * 0.04, ease }}
-                >
-                  <span className="svc-shout-card__icon" aria-hidden="true">
+        <div className="svc-grid">
+          {SERVICES_GRID.map((service, i) => {
+            const Icon = service.Icon
+            return (
+              <motion.article
+                key={service.title}
+                className="svc-grid-card"
+                initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease }}
+              >
+                <div className="svc-grid-card__media">
+                  <img src={service.img} alt={service.alt} loading="lazy" decoding="async" />
+                </div>
+                <div className="svc-grid-card__body">
+                  <span className="svc-grid-card__badge" aria-hidden="true">
                     <Icon />
                   </span>
-                  <h4>{service.title}</h4>
-                  <p>{service.blurb}</p>
-                </motion.article>
-              )
-            })}
-          </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.desc}</p>
+                  <Link to="/contact#booking" className="svc-grid-card__link">
+                    Book Now <IconArrowUpRight aria-hidden="true" />
+                  </Link>
+                </div>
+              </motion.article>
+            )
+          })}
         </div>
 
-        <div className="svc-divider" aria-hidden="true">
-          <span className="svc-divider-icon">
-            <IconDropletFill />
-          </span>
+        <div className="svc-stats" role="list">
+          {STATS.map((stat) => (
+            <div className="svc-stat" role="listitem" key={stat.label}>
+              <span className="svc-stat__value">{stat.value}</span>
+              <span className="svc-stat__label">{stat.label}</span>
+            </div>
+          ))}
         </div>
 
         <div className="svc-block svc-block--detail" id="detailingPackages">

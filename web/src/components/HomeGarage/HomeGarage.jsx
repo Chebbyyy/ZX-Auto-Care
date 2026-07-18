@@ -11,7 +11,7 @@ import {
   IconRadio,
   IconWrench,
 } from '../icons'
-import carBg from '../../assets/premium.jfif'
+import carBg from '../../assets/gallery/mw21.jpeg'
 import './HomeGarage.css'
 
 const SERVICES = [

@@ -2,7 +2,7 @@
   position: relative;
   border-radius: 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.94) 100%);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 242, 242, 0.94) 100%);
   overflow: hidden;
   --mouse-x: 50%;
   --mouse-y: 50%;

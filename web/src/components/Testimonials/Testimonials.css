@@ -17,7 +17,7 @@
 }
 
 .testimonials-page .testi-eyebrow {
-  color: rgba(254, 202, 202, 0.95);
+  color: var(--ze-red-tint);
   border-color: rgba(225, 6, 0, 0.4);
   background: rgba(225, 6, 0, 0.08);
 }
@@ -27,12 +27,12 @@
 }
 
 .testimonials-page .testi-line {
-  background: var(--ze-grad-red-line, linear-gradient(90deg, #ff4a42, #e10600, #7a0500));
+  background: var(--ze-grad-red-line, linear-gradient(90deg, #ef4444, #e10600, #7a0500));
   box-shadow: 0 0 14px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
 .testimonials-page .testi-subtitle {
-  color: rgba(226, 232, 240, 0.72);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .testimonials-page .testi-card {
@@ -79,7 +79,7 @@
 }
 
 .testimonials-page .testi-review-count {
-  color: rgba(226, 232, 240, 0.7);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .testimonials-page .testi-cta-btn {

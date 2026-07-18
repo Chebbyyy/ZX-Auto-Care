@@ -54,7 +54,7 @@ function prepareSvg(raw) {
 function createIcon(rawSvg, displayName) {
   const html = prepareSvg(rawSvg)
 
-  function ZeIcon({ className = '', style, size = '1em', ...rest }) {
+  function ZxIcon({ className = '', style, size = '1em', ...rest }) {
     const classes = ['ze-icon', className].filter(Boolean).join(' ')
     return (
       <span
@@ -67,8 +67,8 @@ function createIcon(rawSvg, displayName) {
     )
   }
 
-  ZeIcon.displayName = displayName
-  return ZeIcon
+  ZxIcon.displayName = displayName
+  return ZxIcon
 }
 
 export const IconStarFill = createIcon(IconStarFillRaw, 'IconStarFill')

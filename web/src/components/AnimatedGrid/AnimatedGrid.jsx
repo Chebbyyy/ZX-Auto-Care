@@ -6,8 +6,9 @@ import './AnimatedGrid.css'
  * Brand colors: black / dark gray / red.
  */
 function AnimatedGrid({
-  color = 'rgba(225, 6, 0, 0.45)',
-  gridColor = 'rgba(148, 163, 184, 0.14)',
+  variant = 'dark',
+  color = variant === 'light' ? 'rgba(225, 6, 0, 0.35)' : 'rgba(225, 6, 0, 0.45)',
+  gridColor = variant === 'light' ? 'rgba(10, 10, 10, 0.08)' : 'rgba(148, 163, 184, 0.14)',
   speed = 0.35,
   cellSize = 48,
   opacity = 0.55,
@@ -47,21 +48,30 @@ function AnimatedGrid({
       if (!running) return
       ctx.clearRect(0, 0, w, h)
 
-      // Dark base wash
+      // Base wash
+      const isLight = variant === 'light'
       const bg = ctx.createLinearGradient(0, 0, w, h)
-      bg.addColorStop(0, '#0a0a0a')
-      bg.addColorStop(0.45, '#121212')
-      bg.addColorStop(1, '#0d0d0d')
+      if (isLight) {
+        bg.addColorStop(0, '#ffffff')
+        bg.addColorStop(0.45, '#f6f6f7')
+        bg.addColorStop(1, '#fbfbfc')
+      } else {
+        bg.addColorStop(0, '#0a0a0a')
+        bg.addColorStop(0.45, '#121212')
+        bg.addColorStop(1, '#0d0d0d')
+      }
       ctx.fillStyle = bg
       ctx.fillRect(0, 0, w, h)
 
       // Soft red aurora blobs
       const pulse = 0.5 + Math.sin(t * 0.9) * 0.5
+      const blobScale = isLight ? 0.4 : 1
       const blob = (x, y, r, a) => {
+        const alpha = a * blobScale
         const g = ctx.createRadialGradient(x, y, 0, x, y, r)
-        g.addColorStop(0, `rgba(225, 6, 0, ${a})`)
-        g.addColorStop(0.45, `rgba(201, 5, 0, ${a * 0.35})`)
-        g.addColorStop(1, 'rgba(0, 0, 0, 0)')
+        g.addColorStop(0, `rgba(225, 6, 0, ${alpha})`)
+        g.addColorStop(0.45, `rgba(201, 5, 0, ${alpha * 0.35})`)
+        g.addColorStop(1, isLight ? 'rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)')
         ctx.fillStyle = g
         ctx.fillRect(x - r, y - r, r * 2, r * 2)
       }
@@ -102,8 +112,13 @@ function AnimatedGrid({
 
       // Edge vignette
       const vig = ctx.createRadialGradient(w * 0.5, h * 0.5, Math.min(w, h) * 0.2, w * 0.5, h * 0.5, Math.max(w, h) * 0.75)
-      vig.addColorStop(0, 'rgba(0,0,0,0)')
-      vig.addColorStop(1, 'rgba(0,0,0,0.55)')
+      if (isLight) {
+        vig.addColorStop(0, 'rgba(255,255,255,0)')
+        vig.addColorStop(1, 'rgba(255,255,255,0.6)')
+      } else {
+        vig.addColorStop(0, 'rgba(0,0,0,0)')
+        vig.addColorStop(1, 'rgba(0,0,0,0.55)')
+      }
       ctx.fillStyle = vig
       ctx.fillRect(0, 0, w, h)
 
@@ -122,7 +137,7 @@ function AnimatedGrid({
       cancelAnimationFrame(rafRef.current)
       window.removeEventListener('resize', resize)
     }
-  }, [cellSize, color, gridColor, opacity, speed])
+  }, [cellSize, color, gridColor, opacity, speed, variant])
 
   return (
     <div className={`animated-grid ${className}`.trim()} aria-hidden="true">

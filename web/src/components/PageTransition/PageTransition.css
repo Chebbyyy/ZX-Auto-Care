@@ -9,7 +9,7 @@
   pointer-events: none;
   transform: scaleX(0);
   transform-origin: left center;
-  background: linear-gradient(90deg, var(--ze-red-deep, #7a0500) 0%, var(--ze-red-soft, #ff4a42) 50%, var(--ze-red-primary, #e10600) 100%);
+  background: linear-gradient(90deg, var(--ze-red-deep, #7a0500) 0%, var(--ze-red-soft, #ef4444) 50%, var(--ze-red-primary, #e10600) 100%);
   opacity: 0;
 }
 

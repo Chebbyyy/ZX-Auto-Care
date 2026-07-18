@@ -154,16 +154,26 @@ function Hero() {
             </p>
 
             <div className="d-flex flex-wrap align-items-center hero-cta-buttons home-hero-ctas">
-              <a
-                href="tel:0432241883"
-                className="btn btn-danger rounded-pill hero-call-pulse home-hero-call"
-                title="Call Z Elite Auto Care"
-              >
-                <IconTelephoneFill aria-hidden="true" />
-                <span className="home-hero-call__label">Call Now</span>
-                <span className="home-hero-call__divider" aria-hidden="true" />
-                <span className="home-hero-call__number">0432 241 883</span>
-              </a>
+              <div className="home-hero-call-group">
+                <a
+                  href="tel:0432241883"
+                  className="home-hero-call-round"
+                  title="Call Z Elite Auto Care"
+                >
+                  <span>Call</span>
+                  <span>Now</span>
+                </a>
+                <a
+                  href="tel:0432241883"
+                  className="btn btn-danger rounded-pill hero-call-pulse home-hero-call"
+                  title="Call 0432 241 883"
+                >
+                  <IconTelephoneFill aria-hidden="true" />
+                  <span className="home-hero-call__label">Call Now</span>
+                  <span className="home-hero-call__divider" aria-hidden="true" />
+                  <span className="home-hero-call__number">0432 241 883</span>
+                </a>
+              </div>
               <Link
                 to="/contact#booking"
                 className="btn btn-outline-light rounded-pill home-hero-book"

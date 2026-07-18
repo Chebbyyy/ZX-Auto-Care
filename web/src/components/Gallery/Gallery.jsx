@@ -13,7 +13,7 @@ import mw11 from '../../assets/gallery/mw11.jpeg'
 import mw12 from '../../assets/gallery/mw12.jpeg'
 import mw13 from '../../assets/gallery/mw13.jpeg'
 import mw14 from '../../assets/gallery/mw14.jpeg'
-import DarkVeil from '../DarkVeil/DarkVeil'
+import galleryBg from '../../assets/gallery/mw20.jpeg'
 import {
   IconArrowUpRight,
   IconClock,
@@ -230,19 +230,12 @@ function Gallery() {
   return (
     <>
       <section id="gallery" className="gallery gallery--premium gallery--shop">
-        <div className="darkveil-backdrop" aria-hidden="true">
-          <DarkVeil
-            hueShift={155}
-            noiseIntensity={0.03}
-            scanlineIntensity={0}
-            speed={0.2}
-            scanlineFrequency={0}
-            warpAmount={0.1}
-            resolutionScale={1}
-          />
+        <div className="gallery__bg" aria-hidden="true">
+          <img src={galleryBg} alt="" loading="lazy" decoding="async" />
+          <div className="gallery__shade" />
         </div>
 
-        <div className="container">
+        <div className="gallery-hero">
           <motion.div
             className="section-header gallery-header"
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
@@ -255,6 +248,10 @@ function Gallery() {
             </h2>
             <p className="text-muted">Real repairs. Real results.</p>
           </motion.div>
+        </div>
+
+        <div className="container">
+          <div className="gallery-panel">
 
           <div id="workCarousel" className="gallery-ba">
             <div className="gallery-ba__panels">
@@ -332,20 +329,15 @@ function Gallery() {
                   >
                     <div className="gallery-shop-card__media">
                       <img src={item.img} alt={item.alt} loading="lazy" decoding="async" />
-                      <span className="gallery-shop-card__view">View Project</span>
-                      <span className="gallery-shop-card__badge">{item.badge}</span>
+                      <span className="gallery-shop-card__tag">{item.badge}</span>
                     </div>
 
                     <div className="gallery-shop-card__body">
-                      <div className="gallery-shop-card__title-row">
-                        <h3>{item.title}</h3>
-                        <span className="gallery-shop-card__icon" aria-hidden="true">
-                          <Icon />
-                        </span>
-                      </div>
-                      <p className="gallery-shop-card__meta">
-                        <span>{item.serviceTag}</span>
-                      </p>
+                      <span className="gallery-shop-card__badge" aria-hidden="true">
+                        <Icon />
+                      </span>
+                      <h3>{item.title}</h3>
+                      <p className="gallery-shop-card__meta">{item.serviceTag}</p>
                       <span className="gallery-shop-card__cta">
                         View Details
                         <IconArrowUpRight aria-hidden="true" />
@@ -356,6 +348,30 @@ function Gallery() {
               )
             })}
           </div>
+          </div>
+        </div>
+
+        <div className="gallery-qual-band">
+          <div className="gallery-qual-band__bg" aria-hidden="true">
+            <img src={mw2} alt="" loading="lazy" decoding="async" />
+            <div className="gallery-qual-band__shade" />
+          </div>
+          <motion.div
+            className="gallery-qual-band__content"
+            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="gallery-qual-band__eyebrow">Z Elite Auto Care</p>
+            <h3>
+              Trusted hands for <span>every repair</span>
+            </h3>
+            <p className="gallery-qual-band__copy">
+              From quick fixes to major jobs, our skilled team delivers dependable, honest service
+              that keeps your vehicle running at its best.
+            </p>
+          </motion.div>
         </div>
       </section>
 

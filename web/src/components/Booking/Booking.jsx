@@ -8,7 +8,8 @@ import {
   IconTools,
   IconWhatsapp,
 } from '../icons'
-import DarkVeil from '../DarkVeil/DarkVeil'
+import bookingBg from '../../assets/gallery/mw3.jpeg'
+import bookingCar from '../../assets/booking-car.png'
 
 const WEB3FORMS_KEY = 'b9328dd0-046e-4699-9523-3c806566fa89'
 
@@ -206,22 +207,15 @@ function Booking() {
   }
 
   const fieldStyle = (field) => ({
-    borderColor: errors[field] ? '#dc2626' : '#e5e7eb',
+    borderColor: errors[field] ? '#dc2626' : 'transparent',
   })
 
   return (
     <>
       <section id="booking" className="booking py-5">
-        <div className="darkveil-backdrop" aria-hidden="true">
-          <DarkVeil
-            hueShift={155}
-            noiseIntensity={0.03}
-            scanlineIntensity={0}
-            speed={0.2}
-            scanlineFrequency={0}
-            warpAmount={0.08}
-            resolutionScale={1}
-          />
+        <div className="booking__bg" aria-hidden="true">
+          <img src={bookingBg} alt="" loading="lazy" decoding="async" />
+          <div className="booking__shade" />
         </div>
         <div className="container">
           <motion.div
@@ -231,13 +225,11 @@ function Booking() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="display-4 fw-bold" style={{ color: '#ffffff' }}>
-              Book Your Service
+            <p className="booking-hello">Z Elite Auto Care</p>
+            <h2 className="booking-brand">
+              Need a Reliable <span>Mobile Mechanic?</span>
             </h2>
-            <div className="header-line mx-auto"></div>
-            <p style={{ color: 'rgba(255,255,255,0.65)' }} className="mt-3">
-              Schedule your appointment at your convenience
-            </p>
+            <p className="booking-sub">We Bring the Garage to You.</p>
           </motion.div>
 
           <div className="row justify-content-center">
@@ -248,14 +240,17 @@ function Booking() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="card border-danger shadow-lg booking-card">
-                <div className="card-header bg-danger text-white text-center booking-card-header">
+              <div className="booking-car" aria-hidden="true">
+                <img src={bookingCar} alt="" loading="lazy" decoding="async" />
+              </div>
+              <div className="booking-panel">
+                <div className="booking-panel__head">
                   <h4 className="mb-0">
-                    <IconTelephoneFill className="me-2" />CALL NOW: 0432 241 883
+                    <IconTelephoneFill className="me-2" />CALL NOW: <a href="tel:0432241883">0432 241 883</a>
                   </h4>
                   <small>Or fill the form below for callback</small>
                 </div>
-                <div className="card-body p-4">
+                <div className="booking-panel__body">
                   {submitted && (
                     <motion.div
                       id="formSuccess"
@@ -264,16 +259,48 @@ function Booking() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                     >
-                      <div className="booking-success__icon" aria-hidden="true">
+                      <motion.div
+                        className="booking-success__icon"
+                        aria-hidden="true"
+                        initial={reduceMotion ? false : { scale: 0, rotate: -20 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 16, delay: 0.1 }}
+                      >
                         <IconCheckLg />
-                      </div>
-                      <p className="booking-success__eyebrow">Z Elite Auto Care</p>
-                      <h3 className="booking-success__title">Request Received</h3>
-                      <p className="booking-success__copy">
-                        Thanks for booking with us. Our team will call you shortly to confirm your
-                        appointment and arrange the mobile garage visit.
-                      </p>
-                      <div className="booking-success__summary">
+                      </motion.div>
+                      <motion.p
+                        className="booking-success__eyebrow"
+                        initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        Z Elite Auto Care
+                      </motion.p>
+                      <motion.h3
+                        className="booking-success__title"
+                        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        Booking Request Received!
+                      </motion.h3>
+                      <motion.p
+                        className="booking-success__copy"
+                        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        Thank you for choosing Z Elite Auto Care. We&apos;ve successfully received
+                        your booking request. Our team will contact you{' '}
+                        <strong>as soon as possible</strong> to confirm your appointment and arrange
+                        your mobile mechanic service.
+                      </motion.p>
+                      <motion.div
+                        className="booking-success__summary"
+                        initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      >
                         <p className="booking-success__row">
                           <IconTools className="booking-success__row-icon" aria-hidden="true" />
                           <span>
@@ -298,11 +325,21 @@ function Booking() {
                             <strong id="confirmDate">{confirmDate}</strong>
                           </span>
                         </p>
-                      </div>
-                      <p className="booking-success__note">
+                      </motion.div>
+                      <motion.p
+                        className="booking-success__note"
+                        initial={reduceMotion ? false : { opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.4, delay: 0.62 }}
+                      >
                         Need something sooner? Reach us directly and we&apos;ll help right away.
-                      </p>
-                      <div className="booking-success__actions">
+                      </motion.p>
+                      <motion.div
+                        className="booking-success__actions"
+                        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                      >
                         <a
                           href="tel:0432241883"
                           className="btn btn-danger rounded-pill px-4 py-2 fw-bold"
@@ -319,7 +356,7 @@ function Booking() {
                           <IconWhatsapp className="me-1" />
                           WhatsApp
                         </a>
-                      </div>
+                      </motion.div>
                     </motion.div>
                   )}
 
