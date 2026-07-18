@@ -157,14 +157,6 @@ function Hero() {
               <div className="home-hero-call-group">
                 <a
                   href="tel:0432241883"
-                  className="home-hero-call-round"
-                  title="Call Z Elite Auto Care"
-                >
-                  <span>Call</span>
-                  <span>Now</span>
-                </a>
-                <a
-                  href="tel:0432241883"
                   className="btn btn-danger rounded-pill hero-call-pulse home-hero-call"
                   title="Call 0432 241 883"
                 >

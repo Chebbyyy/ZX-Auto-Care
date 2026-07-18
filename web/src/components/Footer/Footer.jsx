@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { IconWhatsapp } from '../icons'
 import './Footer.css'
 
 function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false)
-  const { pathname } = useLocation()
-  const hideFloatingCall = pathname === '/'
 
   useEffect(() => {
     const onScroll = () => {
@@ -70,11 +68,9 @@ function Footer() {
         </div>
       </footer>
 
-      {!hideFloatingCall ? (
-        <a href="tel:0432241883" className="floating-call-btn" aria-label="Call Z Elite Auto Care">
-          Call Now
-        </a>
-      ) : null}
+      <a href="tel:0432241883" className="floating-call-btn" aria-label="Call Z Elite Auto Care">
+        Call Now
+      </a>
 
       <a
         href="https://wa.me/61432241883"

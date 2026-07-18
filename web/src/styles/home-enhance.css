@@ -409,37 +409,6 @@
   gap: 0.9rem;
 }
 
-.home-page .home-hero-call-round {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 3.6rem;
-  height: 3.6rem;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
-  color: #ffffff !important;
-  text-decoration: none;
-  font-size: 0.68rem;
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
-  text-align: center;
-  box-shadow: 0 8px 22px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
-  transition:
-    transform 0.3s var(--home-ease),
-    box-shadow 0.3s var(--home-ease),
-    filter 0.25s ease;
-}
-
-.home-page .home-hero-call-round:hover {
-  color: #ffffff !important;
-  transform: translate3d(0, -3px, 0);
-  filter: brightness(1.06);
-  box-shadow: 0 12px 28px var(--ze-red-glow, rgba(225, 6, 0, 0.45));
-}
-
 .home-page .home-hero-call {
   display: inline-flex;
   align-items: center;
@@ -671,6 +640,14 @@
   .home-page .home-hero-ctas {
     justify-content: center;
     gap: 0.85rem !important;
+  }
+
+  .home-page .home-hero-call-group {
+    width: min(100%, 300px);
+  }
+
+  .home-page .home-hero-call-group .home-hero-call {
+    width: 100%;
   }
 
   .home-page .home-hero-ctas .btn,
