@@ -49,8 +49,16 @@
 }
 
 /* Header — eyebrow line + big red brand word */
+.contact-page .booking .section-header {
+  display: block;
+  text-align: center;
+}
+
+
 .contact-page .booking-hello {
-  margin: 0 0 0.35rem;
+  display: block;
+  margin: 0 auto 0.35rem;
+  text-align: center;
   color: rgba(255, 255, 255, 0.85);
   font-size: var(--ze-fs-eyebrow, 0.75rem);
   font-weight: 700;
@@ -243,54 +251,60 @@
 }
 
 /* ─── Booking confirmation ─── */
+/* Compact the panel when the confirmation replaces the form so it fits on screen */
+.contact-page .booking-panel__body:has(.booking-success) {
+  padding-top: 0.5rem;
+  padding-bottom: 1.25rem;
+}
+
 .contact-page .booking-success {
   text-align: center;
-  padding: 2.25rem 0.75rem 1.25rem;
+  padding: 0.5rem 0.25rem 0.25rem;
 }
 
 .contact-page .booking-success__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  margin: 0 auto 1.15rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin: 0 auto 0.5rem;
   border-radius: 0;
   background: transparent;
   color: var(--ze-red-primary, #e10600);
-  font-size: 2.4rem;
+  font-size: 1.5rem;
   box-shadow: 0 10px 28px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
 .contact-page .booking-success__eyebrow {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.2rem;
   color: #e10600;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .contact-page .booking-success__title {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.4rem;
   color: #ffffff;
-  font-size: 1.55rem;
+  font-size: 1.18rem;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .contact-page .booking-success__copy {
-  max-width: 28rem;
-  margin: 0 auto 1.35rem;
+  max-width: 26rem;
+  margin: 0 auto 0.7rem;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.98rem;
-  line-height: 1.65;
+  font-size: 0.85rem;
+  line-height: 1.45;
 }
 
 .contact-page .booking-success__summary {
-  max-width: 26rem;
-  margin: 0.35rem auto 1.35rem;
-  padding: 1.35rem 1.5rem;
+  max-width: 24rem;
+  margin: 0.2rem auto 0.7rem;
+  padding: 0.7rem 0.9rem;
   text-align: left;
   border-radius: 0;
   background: rgba(255, 255, 255, 0.06);
@@ -301,10 +315,10 @@
 .contact-page .booking-success__row {
   display: flex;
   align-items: flex-start;
-  gap: 0.8rem;
-  margin: 0 0 0.95rem;
+  gap: 0.7rem;
+  margin: 0 0 0.55rem;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .contact-page .booking-success__row:last-child {
@@ -335,7 +349,7 @@
 
 .contact-page .booking-success__row strong {
   color: #ffffff;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
   word-break: break-word;
 }
@@ -343,7 +357,7 @@
 /* Phone number pops */
 .contact-page .booking-success__row strong#confirmPhone {
   color: var(--contact-red-soft, #ff4a42);
-  font-size: 1.12rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.01em;
 }
@@ -354,23 +368,28 @@
 }
 
 .contact-page .booking-success__note {
-  max-width: 26rem;
-  margin: 0 0.75rem 1.25rem;
+  max-width: 24rem;
+  margin: 0 0.75rem 0.7rem;
   margin-inline: auto;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.88rem;
-  line-height: 1.5;
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 .contact-page .booking-success__actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
+}
+
+.contact-page .booking-success__actions .ze-btn {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 575.98px) {
-  .contact-page .booking-success__actions .btn {
+  .contact-page .booking-success__actions .ze-btn {
     width: 100%;
   }
 }
