@@ -1,16 +1,7 @@
-/* Home strip + stats backdrop only — does not restyle .stat-card */
-
-.home-stats-band .text-strip {
-  background:
-    linear-gradient(180deg, #141414 0%, #0f0f0f 50%, #121212 100%);
-  border-top-color: rgba(225, 6, 0, 0.45);
-  border-bottom-color: rgba(225, 6, 0, 0.35);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-}
+/* Home stats band backdrop */
 
 .home-stats-band .stats-section {
   background: #ffffff;
-  /* keep legacy padding / overflow */
 }
 
 .home-stats-band .tech-grid-bg {
@@ -29,7 +20,6 @@
   -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 40%, transparent 100%);
 }
 
-/* Lift card stack above the pattern without changing card chrome */
 .home-stats-band .stats-section > .container {
   position: relative;
   z-index: 1;

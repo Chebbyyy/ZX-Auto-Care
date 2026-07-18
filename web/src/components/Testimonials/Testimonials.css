@@ -1,6 +1,6 @@
 .testimonials-page .testi-section {
   --testi-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  padding: clamp(3.5rem, 6vw, 6rem) 0 4rem;
+  padding: var(--ze-section-pad) 0;
   background: #0a0a0a;
   position: relative;
   overflow: hidden;
@@ -36,22 +36,30 @@
 }
 
 .testimonials-page .testi-card {
-  background: rgba(255, 255, 255, 0.97);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  background: rgba(22, 22, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  box-shadow: var(--ze-shadow-sm);
+  color: var(--ze-text-dark-strong);
   transition:
-    transform 0.4s var(--testi-ease),
-    box-shadow 0.4s var(--testi-ease),
-    border-color 0.4s ease;
+    transform var(--ze-duration) var(--ze-ease),
+    box-shadow var(--ze-duration) var(--ze-ease),
+    border-color var(--ze-duration) var(--ze-ease);
 }
 
 .testimonials-page .testi-card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.26),
-    0 0 0 1px rgba(225, 6, 0, 0.12);
-  border-color: rgba(225, 6, 0, 0.22);
+  transform: translateY(var(--ze-lift));
+  box-shadow: var(--ze-shadow-md);
+  border-color: rgba(225, 6, 0, 0.35);
+}
+
+.testimonials-page .testi-text,
+.testimonials-page .testi-name {
+  color: var(--ze-text-dark-strong);
+}
+
+.testimonials-page .testi-badge {
+  color: var(--ze-text-dark-muted);
 }
 
 .testimonials-page .testi-card--featured {
@@ -70,7 +78,7 @@
 .testimonials-page .testi-bottom-bar {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
+  border-radius: 0;
   backdrop-filter: blur(8px);
 }
 

@@ -11,7 +11,7 @@ import {
   IconShieldCheck,
   IconTools,
 } from '../icons'
-import AnimatedGrid from '../AnimatedGrid/AnimatedGrid'
+import SectionHeader from '../SectionHeader/SectionHeader'
 import aboutHeroImg from '../../assets/gallery/mw7.jpeg'
 import whyBgImg from '../../assets/gallery/mw21.jpeg'
 import aboutBgImg from '../../assets/mobile-cleaning.jfif'
@@ -83,16 +83,16 @@ function WhyUs() {
             variants={fadeUp}
           >
             <div className="about-intro__copy">
-              <p className="about-eyebrow">
-                <span aria-hidden="true">//</span> About
-              </p>
-              <h1 className="about-title">
-                About <span>Us</span>
-              </h1>
-              <p className="about-lead">
-                Mobile garage repairs across Darwin — brakes, oil, suspension, electrical and more.
-                Transparent pricing, done right the first time.
-              </p>
+              <SectionHeader
+                as="h2"
+                align="start"
+                light
+                eyebrow="About Us"
+                title="About Us"
+                titleHighlight="Us"
+                lead="Mobile garage repairs across Darwin — brakes, oil, suspension, electrical and more. Transparent pricing, done right the first time."
+                className="about-intro__header"
+              />
 
               <ul className="about-focus-list">
                 {FOCUS_POINTS.map((point) => (
@@ -116,7 +116,7 @@ function WhyUs() {
                 ))}
               </div>
 
-              <Link to="/contact#booking" className="about-cta">
+              <Link to="/contact#booking" className="ze-btn ze-btn--primary">
                 <IconCalendarCheckFill aria-hidden="true" />
                 Book a Service
               </Link>
@@ -154,9 +154,11 @@ function WhyUs() {
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.55, ease }}
           >
-            <h2 className="why-choose__title">
-              Why <span>Choose Us</span>
-            </h2>
+            <SectionHeader
+              eyebrow="Our Promise"
+              title="Why Choose Us"
+              titleHighlight="Choose Us"
+            />
           </motion.div>
 
           <div className="why-choose-grid">
@@ -165,7 +167,7 @@ function WhyUs() {
               return (
                 <motion.article
                   key={feature.title}
-                  className="why-choose-item"
+                  className="why-choose-item ze-card ze-card--dark"
                   custom={index}
                   variants={fadeUp}
                   initial={reduceMotion ? false : 'hidden'}
@@ -184,8 +186,8 @@ function WhyUs() {
         </div>
       </div>
 
-      <div className="why-us__cta">
-        <AnimatedGrid />
+      <div className="why-us__cta ze-section">
+        <div className="ze-bg-static" aria-hidden="true" />
         <motion.div
           className="container why-us__cta-inner"
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}
@@ -193,12 +195,12 @@ function WhyUs() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.65, ease }}
         >
-          <p className="why-us__cta-eyebrow">Z Elite Auto Care</p>
-          <h3 className="why-us__cta-title">Ready to book?</h3>
+          <p className="ze-eyebrow">Next Step</p>
+          <h3 className="why-us__cta-title">Ready to Book?</h3>
           <p className="why-us__cta-text">
             Certified technicians. Mobile, reliable, and done right.
           </p>
-          <Link to="/contact#booking" className="why-us__cta-btn">
+          <Link to="/contact#booking" className="ze-btn ze-btn--primary">
             <IconCalendarCheckFill aria-hidden="true" />
             Book Your Service
           </Link>

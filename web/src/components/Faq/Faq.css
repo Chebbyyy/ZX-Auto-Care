@@ -1,0 +1,139 @@
+.faq {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.faq__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.faq__header .ze-section-title {
+  color: var(--ze-text-dark-strong);
+}
+
+.faq__header .ze-section-lead {
+  color: var(--ze-text-dark-body);
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 48rem;
+  margin: 0 auto var(--ze-space-7);
+}
+
+.faq__item {
+  overflow: hidden;
+  padding: 0;
+}
+
+.faq__item:hover {
+  transform: none;
+}
+
+.faq__question {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.faq__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.15rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--ze-white);
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--ze-font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+.faq__chevron {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  color: var(--ze-red-primary);
+  transition: transform var(--ze-duration) var(--ze-ease);
+}
+
+.faq__item.is-open .faq__chevron {
+  transform: rotate(180deg);
+}
+
+.faq__panel {
+  overflow: hidden;
+}
+
+.faq__answer {
+  margin: 0;
+  padding: 0 1.25rem 1.2rem;
+  color: var(--ze-text-dark-body);
+  font-size: var(--ze-fs-sm);
+  line-height: var(--ze-lh-body);
+}
+
+.faq__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.5rem 1.5rem;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(22, 22, 22, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.faq__cta-title {
+  margin: 0 0 0.35rem;
+  color: var(--ze-white);
+  font-family: var(--ze-font-heading);
+  font-size: var(--ze-fs-h4);
+  font-weight: 800;
+}
+
+.faq__cta-text {
+  margin: 0;
+  color: var(--ze-text-dark-body);
+  font-size: var(--ze-fs-sm);
+}
+
+.faq__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+@media (max-width: 767.98px) {
+  .faq__cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .faq__cta-actions {
+    justify-content: center;
+  }
+
+  .faq__cta-actions .ze-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__chevron {
+    transition: none;
+  }
+}

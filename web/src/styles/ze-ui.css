@@ -65,39 +65,33 @@
   --ze-ls-heading: -0.02em;
   --ze-ls-eyebrow: 0.14em;
 
-  /* Surfaces — darkest to lightest for section rhythm */
-  --ze-surface-0: #0a0a0a;
-  --ze-surface-1: #111111;
-  --ze-surface-2: #161616;
-  --ze-surface-3: #1e1e1e;
+  /* Spacing */
+  --ze-section-pad: clamp(4rem, 7vw, 6.5rem);
+  --ze-space-1: 0.25rem;
+  --ze-space-2: 0.5rem;
+  --ze-space-3: 0.75rem;
+  --ze-space-4: 1rem;
+  --ze-space-5: 1.5rem;
+  --ze-space-6: 2rem;
+  --ze-space-7: 3rem;
 
-  /* Text on dark backgrounds */
-  --ze-text-dark-strong: #ffffff;
-  --ze-text-dark-body: rgba(255, 255, 255, 0.78);
-  --ze-text-dark-muted: rgba(255, 255, 255, 0.62);
+  /* Radius (zeroed for sharp, boxy corners site-wide) */
+  --ze-radius-sm: 0;
+  --ze-radius-md: 0;
+  --ze-radius-lg: 0;
+  --ze-radius-xl: 0;
+  --ze-radius-pill: 0;
 
-  /* Text on light backgrounds */
-  --ze-text-light-strong: #0a0a0a;
-  --ze-text-light-body: #555555;
-  --ze-text-light-muted: #737373;
+  /* Shadows */
+  --ze-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --ze-shadow-md: 0 12px 32px rgba(0, 0, 0, 0.22);
+  --ze-shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.32);
+  --ze-shadow-red: 0 10px 28px rgba(225, 6, 0, 0.35);
 
-  /* Type scale — one hierarchy for every page */
-  --ze-fs-display: clamp(2.2rem, 4.8vw, 3.5rem); /* page heroes */
-  --ze-fs-h2: clamp(1.9rem, 4vw, 2.9rem); /* section titles */
-  --ze-fs-h3: clamp(1.4rem, 2.6vw, 1.8rem); /* block titles */
-  --ze-fs-h4: 1.08rem; /* card titles */
-  --ze-fs-lead: clamp(0.95rem, 1.4vw, 1.06rem); /* section intros */
-  --ze-fs-body: 0.95rem;
-  --ze-fs-sm: 0.88rem;
-  --ze-fs-eyebrow: 0.75rem;
-
-  --ze-lh-display: 1.08;
-  --ze-lh-heading: 1.18;
-  --ze-lh-body: 1.65;
-
-  --ze-ls-display: -0.03em;
-  --ze-ls-heading: -0.02em;
-  --ze-ls-eyebrow: 0.14em;
+  /* Motion */
+  --ze-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ze-duration: 0.3s;
+  --ze-lift: -4px;
 
   --ze-grad-red: linear-gradient(135deg, var(--ze-red-primary) 0%, var(--ze-red-mid) 55%, var(--ze-red-deep) 100%);
   --ze-grad-red-hover: linear-gradient(135deg, var(--ze-red-soft) 0%, var(--ze-red-primary) 50%, var(--ze-red-mid) 100%);
@@ -162,12 +156,12 @@
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
-  --bs-border-radius: 0.375rem;
-  --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.5rem;
-  --bs-border-radius-xl: 1rem;
-  --bs-border-radius-2xl: 2rem;
-  --bs-border-radius-pill: 50rem;
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-border-radius-xl: 0;
+  --bs-border-radius-2xl: 0;
+  --bs-border-radius-pill: 0;
 
   --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -577,6 +571,10 @@ textarea {
     flex: 0 0 auto;
     width: 25%;
   }
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
   .col-md-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
@@ -852,15 +850,15 @@ textarea {
 .border-dark { border-color: rgba(var(--bs-dark-rgb), var(--bs-border-opacity, 1)) !important; }
 .border-white { border-color: rgba(var(--bs-white-rgb), var(--bs-border-opacity, 1)) !important; }
 
-.rounded { border-radius: var(--bs-border-radius) !important; }
+.rounded { border-radius: 0 !important; }
 .rounded-0 { border-radius: 0 !important; }
-.rounded-1 { border-radius: var(--bs-border-radius-sm) !important; }
-.rounded-2 { border-radius: var(--bs-border-radius) !important; }
-.rounded-3 { border-radius: var(--bs-border-radius-lg) !important; }
-.rounded-4 { border-radius: var(--bs-border-radius-xl) !important; }
-.rounded-5 { border-radius: var(--bs-border-radius-2xl) !important; }
-.rounded-circle { border-radius: 50% !important; }
-.rounded-pill { border-radius: var(--bs-border-radius-pill) !important; }
+.rounded-1 { border-radius: 0 !important; }
+.rounded-2 { border-radius: 0 !important; }
+.rounded-3 { border-radius: 0 !important; }
+.rounded-4 { border-radius: 0 !important; }
+.rounded-5 { border-radius: 0 !important; }
+.rounded-circle { border-radius: 0 !important; }
+.rounded-pill { border-radius: 0 !important; }
 
 /* -------------------------------------------------------------------------- */
 /* Shadows                                                                    */
@@ -915,7 +913,7 @@ textarea {
   padding: 0.25rem;
   background-color: var(--bs-body-bg);
   border: var(--bs-border-width) solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius);
+  border-radius: 0;
   max-width: 100%;
   height: auto;
 }
@@ -934,7 +932,7 @@ textarea {
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
   --bs-btn-border-color: transparent;
-  --bs-btn-border-radius: 0.375rem;
+  --bs-btn-border-radius: 0;
   --bs-btn-hover-border-color: transparent;
   --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   --bs-btn-disabled-opacity: 0.65;
@@ -952,7 +950,7 @@ textarea {
   cursor: pointer;
   user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
-  border-radius: var(--bs-btn-border-radius);
+  border-radius: 0;
   background-color: var(--bs-btn-bg);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -999,14 +997,14 @@ fieldset:disabled .btn {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
-  --bs-btn-border-radius: 0.5rem;
+  --bs-btn-border-radius: 0;
 }
 
 .btn-sm {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
   --bs-btn-font-size: 0.875rem;
-  --bs-btn-border-radius: 0.25rem;
+  --bs-btn-border-radius: 0;
 }
 
 .btn-primary {
@@ -1193,7 +1191,7 @@ fieldset:disabled .btn {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   appearance: none;
-  border-radius: 0.375rem;
+  border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -1225,14 +1223,14 @@ fieldset:disabled .btn {
   min-height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
 }
 
 .form-control-sm {
   min-height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  border-radius: 0.25rem;
+  border-radius: 0;
 }
 
 textarea.form-control {
@@ -1257,7 +1255,7 @@ textarea.form-control-lg {
   background-position: right 0.75rem center;
   background-size: 16px 12px;
   border: 1px solid #ced4da;
-  border-radius: 0.375rem;
+  border-radius: 0;
   appearance: none;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -1283,7 +1281,7 @@ textarea.form-control-lg {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   font-size: 1.25rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
 }
 
 .form-select-sm {
@@ -1291,7 +1289,7 @@ textarea.form-control-lg {
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
   font-size: 0.875rem;
-  border-radius: 0.25rem;
+  border-radius: 0;
 }
 
 .form-check {
@@ -1317,7 +1315,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input[type="checkbox"] {
-  border-radius: 0.25em;
+  border-radius: 0;
 }
 
 .form-check-input:checked {
@@ -1340,8 +1338,8 @@ textarea.form-control-lg {
   --bs-card-title-spacer-y: 0.5rem;
   --bs-card-border-width: 1px;
   --bs-card-border-color: var(--bs-border-color);
-  --bs-card-border-radius: var(--bs-border-radius);
-  --bs-card-inner-border-radius: calc(var(--bs-border-radius) - 1px);
+  --bs-card-border-radius: 0;
+  --bs-card-inner-border-radius: 0;
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
@@ -1357,7 +1355,7 @@ textarea.form-control-lg {
   background-color: var(--bs-card-bg);
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-  border-radius: var(--bs-card-border-radius);
+  border-radius: 0;
 }
 
 .card > hr {
@@ -1393,7 +1391,7 @@ textarea.form-control-lg {
 }
 
 .card-header:first-child {
-  border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+  border-radius: 0;
 }
 
 .card-footer {
@@ -1405,14 +1403,14 @@ textarea.form-control-lg {
 
 .card-img-top {
   width: 100%;
-  border-top-left-radius: var(--bs-card-inner-border-radius);
-  border-top-right-radius: var(--bs-card-inner-border-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .card-img-bottom {
   width: 100%;
-  border-bottom-right-radius: var(--bs-card-inner-border-radius);
-  border-bottom-left-radius: var(--bs-card-inner-border-radius);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1424,7 +1422,7 @@ textarea.form-control-lg {
   --bs-badge-font-size: 0.75em;
   --bs-badge-font-weight: 700;
   --bs-badge-color: #fff;
-  --bs-badge-border-radius: var(--bs-border-radius);
+  --bs-badge-border-radius: 0;
   display: inline-block;
   padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
   font-size: var(--bs-badge-font-size);
@@ -1434,7 +1432,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: var(--bs-badge-border-radius);
+  border-radius: 0;
 }
 
 .badge:empty {
@@ -1449,7 +1447,7 @@ textarea.form-control-lg {
   --bs-list-group-bg: var(--bs-body-bg);
   --bs-list-group-border-color: var(--bs-border-color);
   --bs-list-group-border-width: 1px;
-  --bs-list-group-border-radius: var(--bs-border-radius);
+  --bs-list-group-border-radius: 0;
   --bs-list-group-item-padding-x: 1rem;
   --bs-list-group-item-padding-y: 0.5rem;
   --bs-list-group-action-color: var(--bs-secondary-color, #6c757d);
@@ -1466,7 +1464,7 @@ textarea.form-control-lg {
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
-  border-radius: var(--bs-list-group-border-radius);
+  border-radius: 0;
 }
 
 .list-group-item {
@@ -1525,7 +1523,7 @@ textarea.form-control-lg {
   --bs-navbar-toggler-font-size: 1.25rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
-  --bs-navbar-toggler-border-radius: 0.375rem;
+  --bs-navbar-toggler-border-radius: 0;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
   position: relative;
@@ -1601,7 +1599,7 @@ textarea.form-control-lg {
   color: var(--bs-navbar-color);
   background-color: transparent;
   border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
-  border-radius: var(--bs-navbar-toggler-border-radius);
+  border-radius: 0;
   transition: var(--bs-navbar-toggler-transition);
 }
 
@@ -1924,9 +1922,9 @@ textarea.form-control-lg {
   --bs-modal-bg: var(--bs-body-bg);
   --bs-modal-border-color: var(--bs-border-color);
   --bs-modal-border-width: 1px;
-  --bs-modal-border-radius: var(--bs-border-radius-lg);
+  --bs-modal-border-radius: 0;
   --bs-modal-box-shadow: var(--bs-box-shadow-sm);
-  --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - 1px);
+  --bs-modal-inner-border-radius: 0;
   --bs-modal-header-padding-x: 1rem;
   --bs-modal-header-padding-y: 1rem;
   --bs-modal-header-padding: 1rem 1rem;
@@ -2018,7 +2016,7 @@ textarea.form-control-lg {
   background-color: var(--bs-modal-bg);
   background-clip: padding-box;
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
-  border-radius: var(--bs-modal-border-radius);
+  border-radius: 0;
   box-shadow: var(--bs-modal-box-shadow);
   outline: 0;
 }
@@ -2051,8 +2049,8 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding: var(--bs-modal-header-padding);
   border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
-  border-top-left-radius: var(--bs-modal-inner-border-radius);
-  border-top-right-radius: var(--bs-modal-inner-border-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .modal-header .btn-close {
@@ -2083,8 +2081,8 @@ textarea.form-control-lg {
   padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
   background-color: var(--bs-modal-footer-bg);
   border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
-  border-bottom-right-radius: var(--bs-modal-inner-border-radius);
-  border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .modal-footer > * {
@@ -2137,7 +2135,7 @@ textarea.form-control-lg {
   color: var(--bs-btn-close-color);
   background: transparent var(--bs-btn-close-bg) center / 1em auto no-repeat;
   border: 0;
-  border-radius: 0.375rem;
+  border-radius: 0;
   opacity: var(--bs-btn-close-opacity);
 }
 

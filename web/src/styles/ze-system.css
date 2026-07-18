@@ -1,0 +1,408 @@
+/* Z Elite design system — buttons, cards, section headers, backgrounds, FABs */
+
+/* -------------------------------------------------------------------------- */
+/* Buttons                                                                    */
+/* -------------------------------------------------------------------------- */
+.ze-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 0;
+  border: 1px solid transparent;
+  font-family: var(--ze-font-heading);
+  font-size: var(--ze-fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--ze-duration) var(--ze-ease),
+    box-shadow var(--ze-duration) var(--ze-ease),
+    background var(--ze-duration) var(--ze-ease),
+    border-color var(--ze-duration) var(--ze-ease),
+    color var(--ze-duration) var(--ze-ease);
+}
+
+.ze-btn:focus-visible {
+  outline: 2px solid var(--ze-red-soft);
+  outline-offset: 3px;
+}
+
+.ze-btn--primary {
+  background: var(--ze-grad-red);
+  color: var(--ze-white);
+  box-shadow: var(--ze-shadow-red);
+}
+
+.ze-btn--primary:hover {
+  background: var(--ze-grad-red-hover);
+  color: var(--ze-white);
+  transform: translateY(var(--ze-lift));
+  box-shadow: 0 14px 36px var(--ze-red-glow);
+}
+
+.ze-btn--ghost-light {
+  background: transparent;
+  color: var(--ze-white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.ze-btn--ghost-light:hover {
+  color: var(--ze-white);
+  border-color: var(--ze-red-soft);
+  background: var(--ze-red-wash-strong);
+  transform: translateY(var(--ze-lift));
+}
+
+.ze-btn--ghost-dark {
+  background: transparent;
+  color: var(--ze-text-light-strong);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.ze-btn--ghost-dark:hover {
+  color: var(--ze-red-primary);
+  border-color: var(--ze-red-primary);
+  background: var(--ze-red-wash);
+  transform: translateY(var(--ze-lift));
+}
+
+.ze-btn--success {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: var(--ze-white);
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+}
+
+.ze-btn--success:hover {
+  color: var(--ze-white);
+  transform: translateY(var(--ze-lift));
+  filter: brightness(1.05);
+}
+
+.ze-btn--sm {
+  min-height: 2.35rem;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.8rem;
+}
+
+.ze-btn--lg {
+  min-height: 3.15rem;
+  padding: 0.85rem 2rem;
+  font-size: 0.95rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cards                                                                      */
+/* -------------------------------------------------------------------------- */
+.ze-card {
+  border-radius: 0;
+  transition:
+    transform var(--ze-duration) var(--ze-ease),
+    box-shadow var(--ze-duration) var(--ze-ease),
+    border-color var(--ze-duration) var(--ze-ease);
+}
+
+.ze-card--light {
+  background: var(--ze-white);
+  color: var(--ze-text-light-strong);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--ze-shadow-sm);
+}
+
+.ze-card--light:hover {
+  transform: translateY(var(--ze-lift));
+  box-shadow: var(--ze-shadow-md);
+  border-color: rgba(225, 6, 0, 0.18);
+}
+
+.ze-card--dark {
+  background: rgba(22, 22, 22, 0.72);
+  color: var(--ze-text-dark-strong);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--ze-shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ze-card--dark:hover {
+  transform: translateY(var(--ze-lift));
+  box-shadow: var(--ze-shadow-md);
+  border-color: rgba(225, 6, 0, 0.35);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sections + headers                                                         */
+/* -------------------------------------------------------------------------- */
+.ze-section {
+  position: relative;
+  padding: var(--ze-section-pad) 0;
+}
+
+.ze-section-header {
+  margin-bottom: var(--ze-space-7);
+  max-width: 42rem;
+}
+
+.ze-section-header--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.ze-eyebrow {
+  display: inline-block;
+  margin: 0 0 var(--ze-space-3);
+  font-family: var(--ze-font-body);
+  font-size: var(--ze-fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ze-ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--ze-red-primary);
+}
+
+.ze-section-title {
+  margin: 0 0 var(--ze-space-4);
+  font-family: var(--ze-font-heading);
+  font-size: var(--ze-fs-h2);
+  font-weight: 800;
+  line-height: var(--ze-lh-heading);
+  letter-spacing: var(--ze-ls-heading);
+  color: var(--ze-text-dark-strong);
+}
+
+.ze-section-title__mark,
+.ze-section-title span {
+  color: var(--ze-red-primary);
+}
+
+.ze-section-lead {
+  margin: 0;
+  font-size: var(--ze-fs-lead);
+  line-height: var(--ze-lh-body);
+  color: var(--ze-text-dark-body);
+}
+
+.ze-section-header--light .ze-section-title {
+  color: var(--ze-text-light-strong);
+}
+
+.ze-section-header--light .ze-section-lead {
+  color: var(--ze-text-light-body);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Static premium background (no canvas)                                      */
+/* -------------------------------------------------------------------------- */
+.ze-bg-static {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 55% 45% at 20% 15%, rgba(225, 6, 0, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(225, 6, 0, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ze-surface-0) 0%, var(--ze-surface-1) 100%);
+}
+
+.ze-bg-static::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
+}
+
+.ze-bg-static::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Focus                                                                      */
+/* -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--ze-red-soft);
+  outline-offset: 3px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Floating action buttons                                                    */
+/* -------------------------------------------------------------------------- */
+.floating-whatsapp-btn,
+.floating-call-btn,
+.scroll-top-btn {
+  position: fixed;
+  z-index: 998;
+  width: 56px;
+  height: 56px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform var(--ze-duration) var(--ze-ease),
+    box-shadow var(--ze-duration) var(--ze-ease);
+}
+
+.floating-whatsapp-btn {
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: var(--ze-white);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+.floating-whatsapp-btn:hover {
+  color: var(--ze-white);
+  transform: translateY(var(--ze-lift)) scale(1.05);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+}
+
+.floating-whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.floating-call-btn {
+  bottom: 24px;
+  left: 24px;
+  background: var(--ze-grad-red);
+  color: var(--ze-white);
+  box-shadow: var(--ze-shadow-red);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.15;
+  padding: 0.5rem;
+}
+
+.floating-call-btn:hover {
+  color: var(--ze-white);
+  transform: translateY(var(--ze-lift)) scale(1.05);
+  background: var(--ze-grad-red-hover);
+}
+
+.scroll-top-btn {
+  bottom: 92px;
+  right: 24px;
+  background: var(--ze-grad-red);
+  color: var(--ze-white);
+  box-shadow: var(--ze-shadow-red);
+  display: none;
+  z-index: 997;
+}
+
+.scroll-top-btn.show {
+  display: flex;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(var(--ze-lift)) scale(1.05);
+}
+
+.scroll-top-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 768px) {
+  .floating-whatsapp-btn,
+  .floating-call-btn,
+  .scroll-top-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-whatsapp-btn {
+    bottom: 18px;
+    right: 16px;
+  }
+
+  .floating-call-btn {
+    bottom: 18px;
+    left: 16px;
+    font-size: 0.62rem;
+  }
+
+  .scroll-top-btn {
+    bottom: 80px;
+    right: 16px;
+  }
+}
+
+/* Kill legacy pulse animations for restrained motion */
+.hero-call-pulse {
+  animation: none !important;
+}
+
+.home-hero-float-stat__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  color: var(--ze-red-primary);
+}
+
+.home-hero-float-stat__stars .ze-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.gallery-ba__chevron {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.gallery-ba__chevron--prev {
+  transform: rotate(90deg);
+}
+
+.gallery-ba__chevron--next {
+  transform: rotate(-90deg);
+}
+
+.about-intro__header {
+  margin-bottom: var(--ze-space-5);
+}
+
+.svc-head__header {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ze-btn,
+  .ze-card,
+  .floating-whatsapp-btn,
+  .floating-call-btn,
+  .scroll-top-btn {
+    transition: none;
+  }
+
+  .ze-btn:hover,
+  .ze-card:hover,
+  .floating-whatsapp-btn:hover,
+  .floating-call-btn:hover,
+  .scroll-top-btn:hover {
+    transform: none;
+  }
+}

@@ -1,7 +1,10 @@
 import Hero from '../components/Hero/Hero'
-import TextStrip from '../components/TextStrip/TextStrip'
 import Stats from '../components/Stats/Stats'
+import TrustStrip from '../components/TrustStrip/TrustStrip'
 import HomeGarage from '../components/HomeGarage/HomeGarage'
+import HowWeWork from '../components/HowWeWork/HowWeWork'
+import PricingStrip from '../components/PricingStrip/PricingStrip'
+import Faq from '../components/Faq/Faq'
 import PromoBanner from '../components/PromoBanner/PromoBanner'
 import '../styles/home-stats-band.css'
 import '../styles/home-enhance.css'
@@ -12,9 +15,12 @@ function Home() {
       <Hero />
       <div className="home-stats-band">
         <Stats />
-        <TextStrip />
+        <TrustStrip />
       </div>
       <HomeGarage />
+      <HowWeWork />
+      <PricingStrip />
+      <Faq />
       <PromoBanner />
     </div>
   )

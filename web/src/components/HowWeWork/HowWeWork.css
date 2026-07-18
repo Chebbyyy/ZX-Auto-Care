@@ -1,0 +1,121 @@
+.how-we-work {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.how-we-work__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.how-we-work__header .ze-section-title,
+.how-we-work__header .ze-section-lead {
+  color: var(--ze-text-dark-strong);
+}
+
+.how-we-work__header .ze-section-lead {
+  color: var(--ze-text-dark-body);
+}
+
+.how-we-work__steps {
+  list-style: none;
+  margin: 0 0 var(--ze-space-7);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  position: relative;
+}
+
+.how-we-work__steps::before {
+  content: '';
+  position: absolute;
+  top: 3.1rem;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(225, 6, 0, 0.45) 20%,
+    rgba(225, 6, 0, 0.45) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.how-we-work__step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 1.35rem 1.4rem;
+  text-align: left;
+}
+
+.how-we-work__step.ze-card {
+  border-radius: 0;
+}
+
+.how-we-work__number {
+  display: block;
+  margin-bottom: 0.85rem;
+  font-family: var(--ze-font-heading);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ze-red-primary);
+}
+
+.how-we-work__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 0.9rem;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ze-red-primary);
+  box-shadow: none;
+}
+
+.how-we-work__icon .ze-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.how-we-work__title {
+  margin: 0 0 0.55rem;
+  color: var(--ze-white);
+  font-family: var(--ze-font-heading);
+  font-size: var(--ze-fs-h4);
+  font-weight: 800;
+  letter-spacing: var(--ze-ls-heading);
+  line-height: 1.3;
+}
+
+.how-we-work__body {
+  margin: 0;
+  color: var(--ze-text-dark-body);
+  font-size: var(--ze-fs-sm);
+  line-height: var(--ze-lh-body);
+}
+
+.how-we-work__actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 991.98px) {
+  .how-we-work__steps {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .how-we-work__steps::before {
+    display: none;
+  }
+}

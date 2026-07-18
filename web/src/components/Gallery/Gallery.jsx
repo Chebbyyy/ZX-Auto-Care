@@ -13,9 +13,9 @@ import mw11 from '../../assets/gallery/mw11.jpeg'
 import mw12 from '../../assets/gallery/mw12.jpeg'
 import mw13 from '../../assets/gallery/mw13.jpeg'
 import mw14 from '../../assets/gallery/mw14.jpeg'
-import galleryBg from '../../assets/gallery/mw20.jpeg'
 import {
   IconArrowUpRight,
+  IconChevronDown,
   IconClock,
   IconCpu,
   IconGearFill,
@@ -230,26 +230,6 @@ function Gallery() {
   return (
     <>
       <section id="gallery" className="gallery gallery--premium gallery--shop">
-        <div className="gallery__bg" aria-hidden="true">
-          <img src={galleryBg} alt="" loading="lazy" decoding="async" />
-          <div className="gallery__shade" />
-        </div>
-
-        <div className="gallery-hero">
-          <motion.div
-            className="section-header gallery-header"
-            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <h2>
-              Our Work <span>Gallery</span>
-            </h2>
-            <p className="text-muted">Real repairs. Real results.</p>
-          </motion.div>
-        </div>
-
         <div className="container">
           <div className="gallery-panel">
 
@@ -283,7 +263,7 @@ function Gallery() {
               aria-label="Previous slide"
               onClick={() => setSlideIndex((prev) => (prev === 0 ? 1 : 0))}
             >
-              ‹
+              <IconChevronDown className="gallery-ba__chevron gallery-ba__chevron--prev" />
             </button>
             <button
               type="button"
@@ -291,7 +271,7 @@ function Gallery() {
               aria-label="Next slide"
               onClick={() => setSlideIndex((prev) => (prev === 0 ? 1 : 0))}
             >
-              ›
+              <IconChevronDown className="gallery-ba__chevron gallery-ba__chevron--next" />
             </button>
 
             <div className="gallery-ba__dots">
@@ -314,7 +294,7 @@ function Gallery() {
               return (
                 <motion.article
                   key={item.id}
-                  className="gallery-shop-card"
+                  className="gallery-shop-card ze-card ze-card--light"
                   custom={index}
                   variants={cardVariants}
                   initial="hidden"
@@ -363,7 +343,7 @@ function Gallery() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="gallery-qual-band__eyebrow">Z Elite Auto Care</p>
+            <p className="gallery-qual-band__eyebrow ze-eyebrow">Our Craft</p>
             <h3>
               Trusted hands for <span>every repair</span>
             </h3>
@@ -407,7 +387,7 @@ function Lightbox({ item, reduceMotion, onClose }) {
             {item.modalTitle}
           </h5>
           <button type="button" className="gallery-lightbox__close" aria-label="Close" onClick={onClose}>
-            ×
+            <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div className="gallery-lightbox__body">
@@ -420,10 +400,10 @@ function Lightbox({ item, reduceMotion, onClose }) {
           </ul>
         </div>
         <div className="gallery-lightbox__footer">
-          <button type="button" className="btn btn-outline-secondary" onClick={onClose}>
+          <button type="button" className="ze-btn ze-btn--ghost-dark" onClick={onClose}>
             Close
           </button>
-          <Link to="/contact#booking" className="btn btn-danger" onClick={onClose}>
+          <Link to="/contact#booking" className="ze-btn ze-btn--primary" onClick={onClose}>
             Book This Service
           </Link>
         </div>

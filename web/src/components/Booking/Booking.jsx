@@ -225,7 +225,7 @@ function Booking() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="booking-hello">Z Elite Auto Care</p>
+            <p className="booking-hello ze-eyebrow">Book Online</p>
             <h2 className="booking-brand">
               Need a Reliable <span>Mobile Mechanic?</span>
             </h2>
@@ -342,7 +342,7 @@ function Booking() {
                       >
                         <a
                           href="tel:0432241883"
-                          className="btn btn-danger rounded-pill px-4 py-2 fw-bold"
+                          className="ze-btn ze-btn--primary"
                         >
                           <IconTelephoneFill className="me-1" />
                           Call 0432 241 883
@@ -351,7 +351,7 @@ function Booking() {
                           href="https://wa.me/61432241883"
                           target="_blank"
                           rel="noreferrer"
-                          className="btn btn-success rounded-pill px-4 py-2 fw-bold"
+                          className="ze-btn ze-btn--success"
                         >
                           <IconWhatsapp className="me-1" />
                           WhatsApp
@@ -510,8 +510,9 @@ function Booking() {
                           ></textarea>
                         </div>
                         <div className="col-12 text-center mt-4">
-                          <button type="submit" className="btn btn-danger btn-lg px-5 py-3 booking-submit">
-                            <IconCheckCircleFill className="me-2" />CONFIRM BOOKING
+                          <button type="submit" className="ze-btn ze-btn--primary ze-btn--lg booking-submit">
+                            <IconCheckCircleFill className="me-2" />
+                            Confirm Booking
                           </button>
                         </div>
                       </div>

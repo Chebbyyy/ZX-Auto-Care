@@ -6,8 +6,6 @@ import {
   IconStarFill,
   IconTools,
 } from '../icons'
-import BorderGlow from '../BorderGlow/BorderGlow'
-import { ZX_GLOW_LIGHT } from '../BorderGlow/zxGlowPresets'
 
 function animateCounterValue(target, onUpdate) {
   const duration = 1800
@@ -87,7 +85,7 @@ function Stats() {
       Icon: IconStarFill,
       iconClass: 'text-success display-4',
       numberClass: 'text-success',
-      content: '5★',
+      content: '5.0',
       label: 'Quality Mechanical Work',
       delay: 2,
     },
@@ -118,11 +116,9 @@ function Stats() {
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.55, delay: i * 0.08, ease }}
               >
-                <BorderGlow
-                  className={`zx-glow home-stat-glow home-stat-glow--${card.variant}`}
+                <div
+                  className={`home-stat-glow ze-card ze-card--light home-stat-glow--${card.variant}`}
                   style={{ '--delay': card.delay }}
-                  {...ZX_GLOW_LIGHT}
-                  borderRadius={20}
                 >
                   <div className="stat-card-body text-center p-4 h-100">
                     <div className="stat-icon mb-3">
@@ -136,7 +132,7 @@ function Stats() {
                     </div>
                     <div className="stat-label">{card.label}</div>
                   </div>
-                </BorderGlow>
+                </div>
               </motion.div>
             )
           })}

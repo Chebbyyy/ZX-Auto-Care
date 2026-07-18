@@ -19,6 +19,7 @@ import transmissionImg from '../../assets/gallery/mw13.jpeg'
 import suspensionImg from '../../assets/gallery/mw14.jpeg'
 import electricalImg from '../../assets/gallery/mw2.jpeg'
 import inspectionImg from '../../assets/gallery/mw7.jpeg'
+import SectionHeader from '../SectionHeader/SectionHeader'
 import './Services.css'
 
 const ease = [0.22, 1, 0.36, 1]
@@ -137,19 +138,20 @@ function Services() {
           transition={{ duration: 0.6, ease }}
         >
           <div className="svc-head__left">
-            <p className="svc-eyebrow">
-              <span aria-hidden="true">//</span> Our Services
-            </p>
-            <h2 className="svc-title">
-              Trusted Car Care, From <span>Repairs</span> To Detailing
-            </h2>
+            <SectionHeader
+              align="start"
+              eyebrow="Our Services"
+              title="Trusted Car Care, From Repairs To Detailing"
+              titleHighlight="Repairs"
+              className="svc-head__header"
+            />
           </div>
           <div className="svc-head__right">
             <p className="svc-lead">
               Mobile garage repairs across Darwin, 24 hours a day. Brakes, oil, suspension,
               electrical and more — with premium detailing available as an add-on.
             </p>
-            <Link to="/contact#booking" className="svc-cta">
+            <Link to="/contact#booking" className="ze-btn ze-btn--primary">
               <IconCalendarCheckFill aria-hidden="true" />
               Book a Service
             </Link>
@@ -162,7 +164,7 @@ function Services() {
             return (
               <motion.article
                 key={service.title}
-                className="svc-grid-card"
+                className="svc-grid-card ze-card ze-card--light"
                 initial={reduceMotion ? false : { opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
@@ -220,6 +222,8 @@ function Services() {
                   key={pkg.title}
                   className={[
                     'svc-detail-card',
+                    'ze-card',
+                    'ze-card--light',
                     pkg.featured ? 'svc-detail-card--featured' : '',
                     pkg.premium ? 'svc-detail-card--premium' : '',
                   ]
@@ -253,7 +257,7 @@ function Services() {
           <div className="pricing-notice">
             <IconGem />
             <span>
-              <strong>PREMIUM PRICING</strong> • SUV & Double Cab Vehicles +$20
+              <strong>Premium pricing</strong> • SUV & Double Cab Vehicles +$20
             </span>
           </div>
         </div>

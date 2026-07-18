@@ -73,7 +73,7 @@ function Navbar() {
   return (
     <nav
       className={`navbar navbar-expand-md navbar-light sticky-top shadow-sm ze-navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' is-open' : ''}`}
-      style={{ background: '#ffffff', borderBottom: '3px solid #E10600' }}
+      style={{ background: 'var(--ze-white)', borderBottom: '3px solid var(--ze-red-primary)' }}
     >
       <div className="container">
         <Link to="/" className="navbar-brand" aria-label="Z Elite Auto Care Home" onClick={closeMenu}>

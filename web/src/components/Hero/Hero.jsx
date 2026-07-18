@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import heroBg from '../../assets/premium.jfif'
@@ -8,10 +7,10 @@ import {
   IconGeoAltFill,
   IconLightningChargeFill,
   IconShieldCheck,
+  IconStarFill,
   IconTelephoneFill,
 } from '../icons'
 
-const HERO_WORDS = ['Brake Repairs', 'Oil Changes', 'Suspension Work', 'Electrical Fixes']
 const HEADLINE_TOP = ["Darwin's", 'Mobile']
 const HEADLINE_BOTTOM = ['Garage', 'Specialists']
 
@@ -24,51 +23,24 @@ const TRUST_POINTS = [
 const FLOAT_STATS = [
   { value: '100%', label: 'Satisfaction focus' },
   { value: '24/7', label: 'Emergency ready' },
-  { value: '5★', label: 'Quality repairs' },
+  {
+    value: (
+      <span className="home-hero-float-stat__stars" aria-label="5 star quality">
+        <IconStarFill />
+        <IconStarFill />
+        <IconStarFill />
+        <IconStarFill />
+        <IconStarFill />
+      </span>
+    ),
+    label: 'Quality repairs',
+  },
 ]
 
 const ease = [0.22, 1, 0.36, 1]
 
 function Hero() {
-  const [accentText, setAccentText] = useState('')
-  const typingRef = useRef({ wi: 0, ci: 0, deleting: false, timeoutId: null })
   const reduceMotion = useReducedMotion()
-
-  useEffect(() => {
-    const state = typingRef.current
-    let cancelled = false
-
-    function tick() {
-      if (cancelled) return
-
-      const word = HERO_WORDS[state.wi]
-      const nextText = state.deleting
-        ? word.slice(0, state.ci--)
-        : word.slice(0, state.ci++)
-
-      setAccentText(nextText)
-
-      if (!state.deleting && state.ci > word.length) {
-        state.deleting = true
-        state.timeoutId = setTimeout(tick, 1800)
-        return
-      }
-      if (state.deleting && state.ci < 0) {
-        state.deleting = false
-        state.wi = (state.wi + 1) % HERO_WORDS.length
-        state.ci = 0
-        state.timeoutId = setTimeout(tick, 400)
-        return
-      }
-      state.timeoutId = setTimeout(tick, state.deleting ? 55 : 90)
-    }
-
-    state.timeoutId = setTimeout(tick, reduceMotion ? 200 : 1400)
-    return () => {
-      cancelled = true
-      clearTimeout(state.timeoutId)
-    }
-  }, [reduceMotion])
 
   return (
     <section
@@ -76,7 +48,7 @@ function Hero() {
       className="hero home-hero position-relative overflow-hidden d-flex align-items-center"
     >
       <div className="hero-bg-stage">
-        <div className="hero-bg-kenburns">
+        <div className="hero-bg-static">
           <img
             src={heroBg}
             alt="Professional mobile garage and mechanical services"
@@ -122,42 +94,49 @@ function Hero() {
               </div>
             </motion.div>
 
-            <h1 className="hero-headline fw-bold home-hero__title">
+            <motion.h1
+              className="hero-headline fw-bold home-hero__title"
+              initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: reduceMotion ? 0 : 0.08, ease }}
+            >
               {HEADLINE_TOP.map((word, i) => (
-                <span key={`t-${word}`} className="home-hero-word" style={{ '--i': i }}>
+                <span key={`t-${word}`} className="home-hero-word">
                   {word}
                   {i < HEADLINE_TOP.length - 1 ? '\u00A0' : ''}
                 </span>
               ))}
               <br />
-              <span className="home-hero-accent-wrap">
-                <span className="hero-headline-accent" id="heroAccent">
-                  {accentText}
-                </span>
-              </span>
+              <span className="hero-headline-accent">Brake Repairs</span>
               <br />
               {HEADLINE_BOTTOM.map((word, i) => (
-                <span
-                  key={`b-${word}`}
-                  className="home-hero-word"
-                  style={{ '--i': HEADLINE_TOP.length + i }}
-                >
+                <span key={`b-${word}`} className="home-hero-word">
                   {word}
                   {i < HEADLINE_BOTTOM.length - 1 ? '\u00A0' : ''}
                 </span>
               ))}
-            </h1>
+            </motion.h1>
 
-            <p className="hero-subheadline home-hero-blur home-hero__lead">
+            <motion.p
+              className="hero-subheadline home-hero-blur home-hero__lead"
+              initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.16, ease }}
+            >
               Brakes, oil changes, suspension, electrical and more. Professional mechanical repairs
               brought straight to you, 24/7. Detailing packages also available as an add-on.
-            </p>
+            </motion.p>
 
-            <div className="d-flex flex-wrap align-items-center hero-cta-buttons home-hero-ctas">
+            <motion.div
+              className="d-flex flex-wrap align-items-center hero-cta-buttons home-hero-ctas"
+              initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.24, ease }}
+            >
               <div className="home-hero-call-group">
                 <a
                   href="tel:0432241883"
-                  className="btn btn-danger rounded-pill hero-call-pulse home-hero-call"
+                  className="ze-btn ze-btn--primary home-hero-call"
                   title="Call 0432 241 883"
                 >
                   <IconTelephoneFill aria-hidden="true" />
@@ -168,20 +147,20 @@ function Hero() {
               </div>
               <Link
                 to="/contact#booking"
-                className="btn btn-outline-light rounded-pill home-hero-book"
+                className="ze-btn ze-btn--ghost-light home-hero-book"
                 title="Book a service"
               >
                 <IconCalendarCheckFill aria-hidden="true" />
                 Book Now
               </Link>
-            </div>
+            </motion.div>
           </div>
 
           <div className="col-lg-6 home-hero__aside">
             <motion.div
-              className="home-hero-glass"
-              initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
+              className="home-hero-glass ze-card ze-card--dark"
+              initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: reduceMotion ? 0 : 0.2, ease }}
             >
               <p className="home-hero-glass__eyebrow">Why choose Z Elite Auto Care</p>

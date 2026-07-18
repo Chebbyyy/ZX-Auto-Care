@@ -3,7 +3,7 @@
   --garage-blue: #3b82f6;
   position: relative;
   isolation: isolate;
-  padding: clamp(4.5rem, 9vw, 7rem) 0;
+  padding: var(--ze-section-pad) 0;
   overflow: hidden;
   background: #0a0a0a;
 }
@@ -20,17 +20,6 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  animation: garageKenBurns 30s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-@keyframes garageKenBurns {
-  from {
-    transform: scale(1.04) translate(0, 0);
-  }
-  to {
-    transform: scale(1.12) translate(-1.25%, 1%);
-  }
 }
 
 .home-garage__shade {
@@ -49,24 +38,12 @@
 }
 
 .home-garage__header {
-  text-align: center;
-  max-width: 40rem;
-  margin: 0 auto clamp(3.25rem, 6.5vw, 4.75rem);
+  max-width: 42rem;
+  margin: 0 auto var(--ze-space-7);
 }
 
-.home-garage__title {
-  margin: 0;
-  color: #ffffff;
-  font-size: var(--ze-fs-h2);
-  font-weight: 800;
-  font-style: italic;
-  letter-spacing: var(--ze-ls-display);
-  line-height: var(--ze-lh-heading);
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
-}
-
-.home-garage__title span {
-  color: var(--garage-red);
+.home-garage__section-header {
+  margin-bottom: 0;
 }
 
 .home-garage__grid {
@@ -78,35 +55,24 @@
 
 .home-garage__item {
   text-align: center;
-  color: #ffffff;
+  color: var(--ze-white);
   padding: 1.5rem 1rem 1.35rem;
-  border-radius: 18px;
-  background: linear-gradient(165deg, rgba(59, 130, 246, 0.06) 0%, rgba(255, 255, 255, 0.045) 40%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow:
-    inset 0 1px 0 rgba(147, 180, 255, 0.14),
-    0 12px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  background: rgba(22, 22, 22, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--ze-shadow-sm);
   transition:
-    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.35s ease,
-    background 0.35s ease,
-    box-shadow 0.35s ease;
+    transform var(--ze-duration) var(--ze-ease),
+    border-color var(--ze-duration) var(--ze-ease),
+    box-shadow var(--ze-duration) var(--ze-ease);
 }
 
 .home-garage__item:hover {
-  transform: translateY(-6px);
-  background: linear-gradient(165deg, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0.06) 40%);
-  border-color: rgba(59, 130, 246, 0.42);
-  box-shadow:
-    inset 0 1px 0 rgba(147, 180, 255, 0.18),
-    0 20px 42px rgba(0, 0, 0, 0.4),
-    0 0 26px rgba(59, 130, 246, 0.16);
-}
-
-.home-garage__item:hover .home-garage__icon {
-  filter: drop-shadow(0 4px 14px rgba(59, 130, 246, 0.4));
+  transform: translateY(var(--ze-lift));
+  border-color: rgba(225, 6, 0, 0.35);
+  box-shadow: var(--ze-shadow-md);
 }
 
 .home-garage__icon {
@@ -116,19 +82,17 @@
   width: 2.75rem;
   height: 2.75rem;
   margin: 0 auto 1rem;
-  color: #ffffff;
+  color: var(--ze-red-primary);
   font-size: 1.55rem;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
 }
 
 .home-garage__item-title {
   margin: 0 0 0.55rem;
-  color: #ffffff;
+  color: var(--ze-white);
   font-size: var(--ze-fs-h4);
   font-weight: 800;
   letter-spacing: -0.015em;
   line-height: 1.3;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
 }
 
 .home-garage__item-blurb {
@@ -137,7 +101,6 @@
   color: var(--ze-text-dark-body);
   font-size: var(--ze-fs-sm);
   line-height: 1.55;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
 }
 
 .home-garage__footer {
@@ -158,50 +121,6 @@
   gap: 0.75rem;
 }
 
-.home-garage__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0.8rem 1.35rem;
-  border-radius: 999px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.home-garage__btn--primary {
-  color: #ffffff;
-  background: linear-gradient(135deg, #e10600 0%, #c90500 100%);
-  border: 1px solid transparent;
-  box-shadow: 0 8px 22px rgba(225, 6, 0, 0.28);
-}
-
-.home-garage__btn--primary:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(225, 6, 0, 0.38);
-}
-
-.home-garage__btn--ghost {
-  color: #e5e5e5;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.home-garage__btn--ghost:hover {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
-}
-
 @media (max-width: 991.98px) {
   .home-garage__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -218,23 +137,16 @@
     flex-direction: column;
   }
 
-  .home-garage__btn {
+  .home-garage__actions .ze-btn {
     width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-garage__bg img {
-    animation: none;
-    transform: scale(1.04);
-  }
-
-  .home-garage__btn,
   .home-garage__item {
     transition: none;
   }
 
-  .home-garage__btn:hover,
   .home-garage__item:hover {
     transform: none;
   }

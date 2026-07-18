@@ -11,6 +11,7 @@ import {
   IconRadio,
   IconWrench,
 } from '../icons'
+import SectionHeader from '../SectionHeader/SectionHeader'
 import carBg from '../../assets/gallery/mw21.jpeg'
 import './HomeGarage.css'
 
@@ -74,7 +75,7 @@ function HomeGarage() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className="home-garage" aria-labelledby="home-garage-heading">
+    <section className="home-garage" aria-label="Mobile mechanical repairs">
       <div className="home-garage__bg" aria-hidden="true">
         <img src={carBg} alt="" />
         <div className="home-garage__shade" />
@@ -89,9 +90,13 @@ function HomeGarage() {
           variants={fadeUp}
           custom={0}
         >
-          <h2 id="home-garage-heading" className="home-garage__title">
-            Mobile Mechanical <span>Repairs</span>
-          </h2>
+          <SectionHeader
+            eyebrow="Mechanical Services"
+            title="Mobile Mechanical Repairs"
+            titleHighlight="Repairs"
+            lead="Straightforward repairs and maintenance delivered wherever your vehicle is parked."
+            className="home-garage__section-header"
+          />
         </motion.div>
 
         <div className="home-garage__grid">
@@ -100,7 +105,7 @@ function HomeGarage() {
             return (
               <motion.div
                 key={service.title}
-                className="home-garage__item"
+                className="home-garage__item ze-card ze-card--dark"
                 initial={reduceMotion ? false : 'hidden'}
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
@@ -129,10 +134,10 @@ function HomeGarage() {
             Detailing packages also available as an add-on.
           </p>
           <div className="home-garage__actions">
-            <Link to="/services#garageServices" className="home-garage__btn home-garage__btn--ghost">
+            <Link to="/services#garageServices" className="ze-btn ze-btn--ghost-light">
               View All Services
             </Link>
-            <Link to="/contact#booking" className="home-garage__btn home-garage__btn--primary">
+            <Link to="/contact#booking" className="ze-btn ze-btn--primary">
               <IconCalendarCheckFill aria-hidden="true" />
               Book a Garage Service
             </Link>

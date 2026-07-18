@@ -5,7 +5,7 @@
   --promo-red-soft: var(--ze-red-soft, #ef4444);
   --promo-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  padding: var(--ze-section-pad) 0;
   overflow: hidden;
   background: #0a0a0a;
   border-top: 1px solid rgba(225, 6, 0, 0.22);
@@ -25,7 +25,7 @@
   gap: clamp(1.75rem, 4vw, 3.25rem);
   align-items: center;
   padding: clamp(1.25rem, 3vw, 1.75rem);
-  border-radius: 1.25rem;
+  border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(145deg, rgba(24, 24, 24, 0.72) 0%, rgba(12, 12, 12, 0.82) 100%);
   backdrop-filter: blur(6px);
@@ -37,7 +37,7 @@
 
 .promo-banner__media {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 0;
   overflow: hidden;
   isolation: isolate;
   aspect-ratio: 4 / 3;
@@ -73,8 +73,7 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  transform: scale(1.06);
-  will-change: transform, opacity;
+  will-change: opacity;
 }
 
 .promo-banner__media-shade {
@@ -96,7 +95,7 @@
   display: flex;
   gap: 0.4rem;
   padding: 0.3rem 0.5rem;
-  border-radius: 999px;
+  border-radius: 0;
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -104,14 +103,13 @@
 .promo-banner__dot {
   width: 0.4rem;
   height: 0.4rem;
-  border-radius: 999px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.35);
   transition: background 0.35s var(--promo-ease), transform 0.35s var(--promo-ease);
 }
 
 .promo-banner__dot.is-active {
   background: var(--promo-red);
-  transform: scale(1.15);
 }
 
 .promo-banner__copy {
@@ -138,7 +136,7 @@
   content: '';
   width: 1.5rem;
   height: 2px;
-  border-radius: 1px;
+  border-radius: 0;
   background: var(--promo-red);
 }
 
@@ -165,7 +163,7 @@
   gap: 0.55rem;
   width: fit-content;
   padding: 0.85rem 1.65rem;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid transparent;
   background: var(--ze-grad-red, linear-gradient(135deg, var(--promo-red) 0%, var(--promo-red-deep) 100%));
   color: #ffffff;
@@ -222,13 +220,13 @@
 
   .promo-banner__inner {
     padding: 0.85rem;
-    border-radius: 1rem;
+    border-radius: 0;
   }
 
   .promo-banner__media {
     aspect-ratio: 4 / 3;
     max-height: none;
-    border-radius: 0.85rem;
+    border-radius: 0;
   }
 
   .promo-banner__cta {

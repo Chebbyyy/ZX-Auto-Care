@@ -1,0 +1,104 @@
+.ze-page-hero {
+  position: relative;
+  min-height: clamp(22rem, 48vw, 30rem);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--ze-surface-0);
+}
+
+.ze-page-hero__media,
+.ze-page-hero__shade {
+  position: absolute;
+  inset: 0;
+}
+
+.ze-page-hero__media {
+  z-index: -2;
+}
+
+.ze-page-hero__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ze-page-hero__shade {
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.67) 48%, rgba(0, 0, 0, 0.34) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.74) 100%);
+}
+
+.ze-page-hero__inner {
+  width: 100%;
+  padding-top: clamp(6.5rem, 12vw, 9rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.ze-page-hero__content {
+  max-width: 46rem;
+}
+
+.ze-page-hero__eyebrow {
+  color: var(--ze-red-tint);
+}
+
+.ze-page-hero__title {
+  max-width: 15ch;
+  margin: 0;
+  color: var(--ze-white);
+  font-family: var(--ze-font-heading);
+  font-size: var(--ze-fs-display);
+  font-weight: 800;
+  letter-spacing: var(--ze-ls-display);
+  line-height: var(--ze-lh-display);
+}
+
+.ze-page-hero__title span {
+  color: var(--ze-red-primary);
+}
+
+.ze-page-hero__description {
+  max-width: 40rem;
+  margin: var(--ze-space-4) 0 0;
+  color: var(--ze-text-dark-body);
+  font-size: var(--ze-fs-lead);
+  line-height: var(--ze-lh-body);
+}
+
+.ze-page-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--ze-space-2);
+  margin-top: var(--ze-space-5);
+  color: var(--ze-text-dark-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ze-page-hero__breadcrumb a {
+  color: var(--ze-white);
+  text-decoration: none;
+}
+
+.ze-page-hero__breadcrumb a:hover {
+  color: var(--ze-red-soft);
+}
+
+@media (max-width: 767.98px) {
+  .ze-page-hero {
+    min-height: 22rem;
+  }
+
+  .ze-page-hero__shade {
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.64) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.78) 100%);
+  }
+}

@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import promoImgA from '../../assets/gallery/mw3.jpeg'
 import promoImgB from '../../assets/gallery/gs2.jpeg'
-import AnimatedGrid from '../AnimatedGrid/AnimatedGrid'
 import { IconCalendarCheckFill } from '../icons'
 import './PromoBanner.css'
 
@@ -21,25 +20,17 @@ const SLIDES = [
 const SLIDE_MS = 4500
 
 const fadeSlide = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 20 },
   visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
   }),
 }
 
 function PromoBanner() {
-  const sectionRef = useRef(null)
   const reduceMotion = useReducedMotion()
   const [active, setActive] = useState(0)
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  })
-  const imageY = useTransform(scrollYProgress, [0, 1], reduceMotion ? [0, 0] : ['-5%', '5%'])
-  const imageScale = useTransform(scrollYProgress, [0, 1], reduceMotion ? [1, 1] : [1.12, 1.03])
 
   useEffect(() => {
     if (reduceMotion) return undefined
@@ -50,16 +41,16 @@ function PromoBanner() {
   }, [reduceMotion])
 
   return (
-    <section className="promo-banner" ref={sectionRef} aria-labelledby="promo-banner-heading">
-      <AnimatedGrid />
+    <section className="promo-banner ze-section" aria-labelledby="promo-banner-heading">
+      <div className="ze-bg-static" aria-hidden="true" />
 
       <div className="container promo-banner__container">
         <motion.div
           className="promo-banner__inner"
-          initial={reduceMotion ? false : { opacity: 0, y: 36 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="promo-banner__media">
             <div className="promo-banner__media-glow" aria-hidden="true" />
@@ -70,11 +61,10 @@ function PromoBanner() {
                   src={SLIDES[active].src}
                   alt={SLIDES[active].alt}
                   className="promo-banner__img"
-                  style={{ y: imageY, scale: imageScale }}
-                  initial={reduceMotion ? false : { opacity: 0, x: 28 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={reduceMotion ? undefined : { opacity: 0, x: -28 }}
-                  transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                  initial={reduceMotion ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={reduceMotion ? undefined : { opacity: 0 }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   decoding="async"
                   loading="lazy"
                 />
@@ -94,35 +84,35 @@ function PromoBanner() {
 
           <div className="promo-banner__copy">
             <motion.p
-              className="promo-banner__eyebrow"
+              className="ze-eyebrow"
               variants={fadeSlide}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
               custom={0.05}
             >
-              Z Elite Auto Care
+              Book a Service
             </motion.p>
 
             <motion.h2
               id="promo-banner-heading"
-              className="promo-banner__headline"
+              className="promo-banner__headline ze-section-title"
               variants={fadeSlide}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
               custom={0.12}
             >
-              Ready When You Are.
+              Ready When You Are
             </motion.h2>
 
             <motion.p
-              className="promo-banner__text"
+              className="promo-banner__text ze-section-lead"
               variants={fadeSlide}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
-              custom={0.22}
+              custom={0.2}
             >
               Tell us what&apos;s going on with your vehicle and we&apos;ll come to you. Fast callback,
               clear pricing, and repairs done right the first time.
@@ -133,9 +123,9 @@ function PromoBanner() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
-              custom={0.32}
+              custom={0.28}
             >
-              <Link to="/contact#booking" className="promo-banner__cta">
+              <Link to="/contact#booking" className="ze-btn ze-btn--primary">
                 <IconCalendarCheckFill aria-hidden="true" />
                 Book Your Service
               </Link>

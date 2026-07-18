@@ -104,7 +104,7 @@
   transform: translateX(-50%);
   width: min(230px, 52vw);
   height: 26px;
-  border-radius: 50%;
+  border-radius: 0;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, transparent 70%);
   animation: bookingCarShadow 6s ease-in-out infinite;
 }
@@ -151,7 +151,7 @@
 .contact-page .booking-panel {
   max-width: 40rem;
   margin: 0 auto;
-  border-radius: 28px;
+  border-radius: 0;
   border: 1px solid rgba(225, 6, 0, 0.45);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(12, 12, 12, 0.55) 22%);
   background-color: rgba(12, 12, 12, 0.45);
@@ -206,7 +206,7 @@
 
 .contact-page .booking-panel .form-control,
 .contact-page .booking-panel .form-select {
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid transparent;
   background: #ffffff;
   color: #111111;
@@ -217,7 +217,7 @@
 }
 
 .contact-page .booking-panel textarea.form-control {
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 .contact-page .booking-panel .form-control:focus,
@@ -231,7 +231,7 @@
 }
 
 .contact-page .booking-submit {
-  border-radius: 999px !important;
+  border-radius: 0 !important;
   font-weight: 700;
   padding: 0.75rem 1.5rem;
   transition: transform 0.25s var(--contact-ease), box-shadow 0.25s var(--contact-ease);
@@ -255,10 +255,10 @@
   width: 4.5rem;
   height: 4.5rem;
   margin: 0 auto 1.15rem;
-  border-radius: 50%;
-  background: var(--ze-grad-red, linear-gradient(135deg, #e10600 0%, #7a0500 100%));
-  color: var(--ze-white, #ffffff);
-  font-size: 2rem;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ze-red-primary, #e10600);
+  font-size: 2.4rem;
   box-shadow: 0 10px 28px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
@@ -292,7 +292,7 @@
   margin: 0.35rem auto 1.35rem;
   padding: 1.35rem 1.5rem;
   text-align: left;
-  border-radius: 14px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-left: 4px solid #e10600;
@@ -377,7 +377,7 @@
 
 /* ─── Contact cards ─── */
 .contact-page .ct-section {
-  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  padding: var(--ze-section-pad) 0;
   background: #0a0a0a;
   position: relative;
   overflow: hidden;
@@ -446,41 +446,46 @@
 }
 
 .contact-page .ct-card {
-  background: rgba(255, 255, 255, 0.97);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  background: rgba(22, 22, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  box-shadow: var(--ze-shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition:
-    transform 0.4s var(--contact-ease),
-    box-shadow 0.4s var(--contact-ease),
-    border-color 0.4s ease;
+    transform var(--ze-duration) var(--ze-ease),
+    box-shadow var(--ze-duration) var(--ze-ease),
+    border-color var(--ze-duration) var(--ze-ease);
 }
 
 .contact-page .ct-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 20px 44px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(225, 6, 0, 0.3),
-    0 0 26px rgba(225, 6, 0, 0.14);
+  transform: translateY(var(--ze-lift));
+  box-shadow: var(--ze-shadow-md);
   border-color: rgba(225, 6, 0, 0.35);
 }
 
-/* Subtle icon animation (overrides the legacy full 360° spin) */
-.contact-page .ct-card .ct-card-icon {
-  transition: transform 0.35s var(--contact-ease);
+.contact-page .ct-card-title,
+.contact-page .ct-phone,
+.contact-page .ct-address,
+.contact-page .ct-hours {
+  color: var(--ze-white);
+}
+
+.contact-page .ct-col-note {
+  color: var(--ze-text-dark-muted);
+}
+
+.contact-page .ct-card .ct-card-icon,
+.contact-page .ct-dir-link svg {
+  transition: transform var(--ze-duration) var(--ze-ease);
 }
 
 .contact-page .ct-card:hover .ct-card-icon {
-  transform: scale(1.1) rotate(8deg);
-}
-
-/* Get Directions — arrow slides on hover */
-.contact-page .ct-dir-link svg {
-  transition: transform 0.3s var(--contact-ease);
+  transform: translateY(-2px);
 }
 
 .contact-page .ct-dir-link:hover svg {
-  transform: translate(4px, -3px);
+  transform: translate(3px, -2px);
 }
 
 .contact-page .ct-map-divider {
@@ -499,7 +504,7 @@
 }
 
 .contact-page .ct-map-wrap {
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);

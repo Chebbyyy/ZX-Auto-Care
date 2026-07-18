@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import { IconPatchCheckFill, IconStarFill } from '../icons'
-import DarkVeil from '../DarkVeil/DarkVeil'
+import SectionHeader from '../SectionHeader/SectionHeader'
 import './Testimonials.css'
 
 const REVIEWS = [
@@ -29,13 +29,13 @@ const REVIEWS = [
 ]
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      delay: 0.1 + i * 0.1,
+      duration: 0.45,
+      delay: 0.08 + i * 0.08,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
@@ -43,7 +43,7 @@ const cardVariants = {
 
 function StarRow({ className = '' }) {
   return (
-    <div className={`testi-stars ${className}`.trim()}>
+    <div className={`testi-stars ${className}`.trim()} aria-label="5 out of 5 stars">
       <IconStarFill />
       <IconStarFill />
       <IconStarFill />
@@ -58,38 +58,29 @@ function Testimonials() {
 
   return (
     <div className="testimonials-page">
-      <section id="testimonials" className="testi-section">
-        <div className="darkveil-backdrop" aria-hidden="true">
-          <DarkVeil
-            hueShift={155}
-            noiseIntensity={0.03}
-            scanlineIntensity={0}
-            speed={0.2}
-            scanlineFrequency={0}
-            warpAmount={0.08}
-            resolutionScale={1}
-          />
-        </div>
+      <section id="testimonials" className="testi-section ze-section">
+        <div className="ze-bg-static" aria-hidden="true" />
 
         <div className="container">
           <motion.div
-            className="testi-header"
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="testi-eyebrow">Customer Reviews</span>
-            <h2 className="testi-title">What Our Customers Say</h2>
-            <div className="testi-line"></div>
-            <p className="testi-subtitle">Real feedback from real Darwin clients</p>
+            <SectionHeader
+              as="h2"
+              eyebrow="Customer Reviews"
+              title="What Our Customers Say"
+              lead="Real feedback from real Darwin clients"
+            />
           </motion.div>
 
           <div className="testi-grid">
             {REVIEWS.map((review, index) => (
               <motion.div
                 key={review.name}
-                className={`testi-card${review.featured ? ' testi-card--featured' : ''}`}
+                className={`testi-card ze-card ze-card--dark${review.featured ? ' testi-card--featured' : ''}`}
                 custom={index}
                 variants={cardVariants}
                 initial="hidden"
@@ -117,7 +108,7 @@ function Testimonials() {
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="testi-rating-summary">
               <span className="testi-big-score">5.0</span>
@@ -126,7 +117,7 @@ function Testimonials() {
                 <span className="testi-review-count">Based on customer reviews</span>
               </div>
             </div>
-            <Link to="/contact#booking" className="testi-cta-btn">
+            <Link to="/contact#booking" className="ze-btn ze-btn--primary">
               Book Your Service Today
             </Link>
           </motion.div>
