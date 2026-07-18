@@ -159,33 +159,28 @@ function Services() {
         </motion.div>
 
         <div className="svc-grid">
-          {SERVICES_GRID.map((service, i) => {
-            const Icon = service.Icon
-            return (
-              <motion.article
-                key={service.title}
-                className="svc-grid-card ze-card ze-card--light"
-                initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease }}
-              >
-                <div className="svc-grid-card__media">
-                  <img src={service.img} alt={service.alt} loading="lazy" decoding="async" />
-                </div>
-                <div className="svc-grid-card__body">
-                  <span className="svc-grid-card__badge" aria-hidden="true">
-                    <Icon />
-                  </span>
-                  <h3>{service.title}</h3>
-                  <p>{service.desc}</p>
-                  <Link to="/contact#booking" className="svc-grid-card__link">
-                    Book Now <IconArrowUpRight aria-hidden="true" />
-                  </Link>
-                </div>
-              </motion.article>
-            )
-          })}
+          {SERVICES_GRID.map((service, i) => (
+            <motion.article
+              key={service.title}
+              className="svc-grid-card"
+              initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease }}
+            >
+              <div className="svc-grid-card__media" aria-hidden="true">
+                <img src={service.img} alt={service.alt} loading="lazy" decoding="async" />
+              </div>
+              <div className="svc-grid-card__body">
+                <span className="svc-grid-card__eyebrow">Mobile Service</span>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                <Link to="/contact#booking" className="svc-grid-card__link">
+                  Book Now <IconArrowUpRight aria-hidden="true" />
+                </Link>
+              </div>
+            </motion.article>
+          ))}
         </div>
 
         <div className="svc-stats" role="list">

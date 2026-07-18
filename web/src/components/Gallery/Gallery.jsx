@@ -289,44 +289,38 @@ function Gallery() {
           </div>
 
           <div className="gallery-shop-grid">
-            {WORK_ITEMS.map((item, index) => {
-              const Icon = item.Icon
-              return (
-                <motion.article
-                  key={item.id}
-                  className="gallery-shop-card ze-card ze-card--light"
-                  custom={index}
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
+            {WORK_ITEMS.map((item, index) => (
+              <motion.article
+                key={item.id}
+                className="gallery-shop-card"
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <button
+                  type="button"
+                  className="gallery-shop-card__hit"
+                  onClick={() => setOpenModal(item.id)}
+                  aria-label={`View details for ${item.title}`}
                 >
-                  <button
-                    type="button"
-                    className="gallery-shop-card__hit"
-                    onClick={() => setOpenModal(item.id)}
-                    aria-label={`View details for ${item.title}`}
-                  >
-                    <div className="gallery-shop-card__media">
-                      <img src={item.img} alt={item.alt} loading="lazy" decoding="async" />
-                      <span className="gallery-shop-card__tag">{item.badge}</span>
-                    </div>
+                  <div className="gallery-shop-card__media" aria-hidden="true">
+                    <img src={item.img} alt={item.alt} loading="lazy" decoding="async" />
+                  </div>
 
-                    <div className="gallery-shop-card__body">
-                      <span className="gallery-shop-card__badge" aria-hidden="true">
-                        <Icon />
-                      </span>
-                      <h3>{item.title}</h3>
-                      <p className="gallery-shop-card__meta">{item.serviceTag}</p>
-                      <span className="gallery-shop-card__cta">
-                        View Details
-                        <IconArrowUpRight aria-hidden="true" />
-                      </span>
-                    </div>
-                  </button>
-                </motion.article>
-              )
-            })}
+                  <div className="gallery-shop-card__body">
+                    <span className="gallery-shop-card__eyebrow">{item.badge}</span>
+                    <h3>{item.title}</h3>
+                    <p className="gallery-shop-card__meta">{item.serviceTag}</p>
+                    <span className="gallery-shop-card__cta">
+                      View Details
+                      <IconArrowUpRight aria-hidden="true" />
+                    </span>
+                  </div>
+                </button>
+              </motion.article>
+            ))}
           </div>
           </div>
         </div>
@@ -365,7 +359,6 @@ function Gallery() {
 }
 
 function Lightbox({ item, reduceMotion, onClose }) {
-  const Icon = item.Icon
   return (
     <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-labelledby="gallery-lb-title">
       <button
@@ -381,17 +374,15 @@ function Lightbox({ item, reduceMotion, onClose }) {
         exit={{ opacity: 0, y: 10, scale: 0.98 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="gallery-lightbox__header">
-          <h5 id="gallery-lb-title">
-            <Icon className="me-2" />
-            {item.modalTitle}
-          </h5>
+        <div className="gallery-lightbox__media">
+          <img src={item.img} alt={item.alt} />
           <button type="button" className="gallery-lightbox__close" aria-label="Close" onClick={onClose}>
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div className="gallery-lightbox__body">
-          <img src={item.img} alt={item.alt} />
+          <span className="gallery-lightbox__eyebrow">{item.serviceTag}</span>
+          <h5 id="gallery-lb-title">{item.modalTitle}</h5>
           <p className="lead">{item.lead}</p>
           <ul>
             {item.points.map((point) => (
@@ -400,7 +391,7 @@ function Lightbox({ item, reduceMotion, onClose }) {
           </ul>
         </div>
         <div className="gallery-lightbox__footer">
-          <button type="button" className="ze-btn ze-btn--ghost-dark" onClick={onClose}>
+          <button type="button" className="ze-btn ze-btn--ghost-light" onClick={onClose}>
             Close
           </button>
           <Link to="/contact#booking" className="ze-btn ze-btn--primary" onClick={onClose}>
