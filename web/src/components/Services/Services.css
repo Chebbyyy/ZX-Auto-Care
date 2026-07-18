@@ -498,12 +498,24 @@
   .svc-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .svc-grid-card {
+    min-height: clamp(21rem, 44vw, 24rem);
+  }
 }
 
 @media (max-width: 575.98px) {
   .svc-detail-grid,
   .svc-grid {
     grid-template-columns: 1fr;
+  }
+
+  .svc-grid-card {
+    min-height: 19rem;
+  }
+
+  .svc-grid-card__body {
+    padding: 1.15rem 1.1rem 1.1rem;
   }
 
   .svc-stats {
