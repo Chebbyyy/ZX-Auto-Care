@@ -7,7 +7,7 @@ import {
   IconTools,
 } from '../icons'
 import BorderGlow from '../BorderGlow/BorderGlow'
-import { ZX_GLOW_LIGHT } from '../BorderGlow/zxGlowPresets'
+import { ZE_GLOW_LIGHT } from '../BorderGlow/zeGlowPresets'
 
 function animateCounterValue(target, onUpdate) {
   const duration = 1800
@@ -119,9 +119,9 @@ function Stats() {
                 transition={{ duration: 0.55, delay: i * 0.08, ease }}
               >
                 <BorderGlow
-                  className={`zx-glow home-stat-glow home-stat-glow--${card.variant}`}
+                  className={`ze-glow home-stat-glow home-stat-glow--${card.variant}`}
                   style={{ '--delay': card.delay }}
-                  {...ZX_GLOW_LIGHT}
+                  {...ZE_GLOW_LIGHT}
                   borderRadius={20}
                 >
                   <div className="stat-card-body text-center p-4 h-100">

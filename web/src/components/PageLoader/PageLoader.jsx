@@ -6,7 +6,7 @@ import { useEffect } from 'react'
  */
 function PageLoader({ minMs = 720 }) {
   useEffect(() => {
-    const loader = document.getElementById('zx-page-loader')
+    const loader = document.getElementById('ze-page-loader')
     if (!loader) return undefined
 
     const started = performance.now()

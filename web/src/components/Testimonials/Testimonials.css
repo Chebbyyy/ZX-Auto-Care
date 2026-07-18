@@ -27,8 +27,8 @@
 }
 
 .testimonials-page .testi-line {
-  background: var(--zx-grad-red-line, linear-gradient(90deg, #ff4a42, #e10600, #7a0500));
-  box-shadow: 0 0 14px var(--zx-red-glow, rgba(225, 6, 0, 0.35));
+  background: var(--ze-grad-red-line, linear-gradient(90deg, #ff4a42, #e10600, #7a0500));
+  box-shadow: 0 0 14px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
 .testimonials-page .testi-subtitle {

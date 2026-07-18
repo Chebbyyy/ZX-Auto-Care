@@ -1,8 +1,8 @@
 .promo-banner {
-  --promo-bg: var(--zx-charcoal, #0a0a0a);
-  --promo-red: var(--zx-red-primary, #e10600);
-  --promo-red-deep: var(--zx-red-deep, #7a0500);
-  --promo-red-soft: var(--zx-red-soft, #ff4a42);
+  --promo-bg: var(--ze-charcoal, #0a0a0a);
+  --promo-red: var(--ze-red-primary, #e10600);
+  --promo-red-deep: var(--ze-red-deep, #7a0500);
+  --promo-red-soft: var(--ze-red-soft, #ff4a42);
   --promo-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   padding: clamp(2.5rem, 6vw, 4.5rem) 0;
@@ -167,7 +167,7 @@
   padding: 0.85rem 1.65rem;
   border-radius: 999px;
   border: 1px solid transparent;
-  background: var(--zx-grad-red, linear-gradient(135deg, var(--promo-red) 0%, var(--promo-red-deep) 100%));
+  background: var(--ze-grad-red, linear-gradient(135deg, var(--promo-red) 0%, var(--promo-red-deep) 100%));
   color: #ffffff;
   font-size: 0.92rem;
   font-weight: 700;

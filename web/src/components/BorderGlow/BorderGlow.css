@@ -151,9 +151,9 @@
   z-index: 1;
 }
 
-/* ── ZX brand refinements (anti “template rainbow”) ── */
+/* ── Z Elite brand refinements (anti “template rainbow”) ── */
 
-.border-glow-card.zx-glow {
+.border-glow-card.ze-glow {
   width: 100%;
   height: 100%;
   border: 1px solid rgba(15, 23, 42, 0.08);
@@ -163,36 +163,36 @@
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.border-glow-card.zx-glow:hover {
+.border-glow-card.ze-glow:hover {
   transform: translate3d(0, -4px, 0);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.9) inset,
     0 14px 32px rgba(15, 23, 42, 0.1);
 }
 
-.border-glow-card.zx-glow--dark {
+.border-glow-card.ze-glow--dark {
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
-.border-glow-card.zx-glow--dark:hover {
+.border-glow-card.ze-glow--dark:hover {
   box-shadow:
     0 14px 36px rgba(0, 0, 0, 0.45),
     0 0 0 1px rgba(225, 6, 0, 0.18);
 }
 
-.border-glow-card.zx-glow .border-glow-inner {
+.border-glow-card.ze-glow .border-glow-inner {
   height: 100%;
   overflow: visible;
 }
 
-.border-glow-card.zx-glow > .edge-light {
+.border-glow-card.ze-glow > .edge-light {
   mix-blend-mode: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .border-glow-card.zx-glow,
-  .border-glow-card.zx-glow:hover {
+  .border-glow-card.ze-glow,
+  .border-glow-card.ze-glow:hover {
     transition: none;
     transform: none;
   }

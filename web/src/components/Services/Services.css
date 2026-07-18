@@ -1,6 +1,6 @@
 .services.services--darkveil {
   padding: clamp(4.5rem, 8vw, 7.5rem) 0;
-  background: var(--zx-charcoal, #0a0a0a);
+  background: var(--ze-charcoal, #0a0a0a);
   position: relative;
   overflow: hidden;
 }
@@ -28,7 +28,7 @@
   align-items: center;
   gap: 0.4rem;
   margin: 0 0 0.85rem;
-  color: var(--zx-red-soft, #ff4a42);
+  color: var(--ze-red-soft, #ff4a42);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -45,7 +45,7 @@
 }
 
 .svc-title span {
-  color: var(--zx-red-primary, #e10600);
+  color: var(--ze-red-primary, #e10600);
 }
 
 .svc-lead {
@@ -62,12 +62,12 @@
   gap: 0.55rem;
   padding: 0.9rem 1.5rem;
   border-radius: 999px;
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600, #7a0500));
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
   color: #ffffff !important;
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 12px 28px var(--zx-red-glow, rgba(225, 6, 0, 0.35));
+  box-shadow: 0 12px 28px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
   transition:
     transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.25s ease,
@@ -132,8 +132,8 @@
   justify-content: center;
   flex-shrink: 0;
   color: #ffffff;
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600, #7a0500));
-  box-shadow: 0 8px 20px var(--zx-red-glow, rgba(225, 6, 0, 0.35));
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
+  box-shadow: 0 8px 20px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
 .services--shouty .svc-block-title {
@@ -206,11 +206,11 @@
   height: 2.6rem;
   margin-bottom: 1rem;
   border-radius: 12px;
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600, #7a0500));
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
   border: none;
   color: #ffffff;
   font-size: 1.15rem;
-  box-shadow: 0 6px 16px var(--zx-red-glow, rgba(225, 6, 0, 0.3));
+  box-shadow: 0 6px 16px var(--ze-red-glow, rgba(225, 6, 0, 0.3));
 }
 
 .svc-shout-card h4 {
@@ -281,7 +281,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
-  background: var(--zx-red-primary, #e10600);
+  background: var(--ze-red-primary, #e10600);
 }
 
 .svc-badge--premium {
@@ -297,8 +297,8 @@
   margin-bottom: 0.95rem;
   border-radius: 12px;
   color: #ffffff;
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600, #7a0500));
-  box-shadow: 0 8px 18px var(--zx-red-glow, rgba(225, 6, 0, 0.35));
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
+  box-shadow: 0 8px 18px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
 .svc-detail-card h4 {
@@ -341,7 +341,7 @@
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 50%;
-  background: var(--zx-red-soft, #ff4a42);
+  background: var(--ze-red-soft, #ff4a42);
 }
 
 .svc-detail-card__price {
@@ -351,7 +351,7 @@
 }
 
 .svc-detail-card__price strong {
-  color: var(--zx-red-soft, #ff4a42);
+  color: var(--ze-red-soft, #ff4a42);
   font-size: 1.35rem;
   font-weight: 800;
 }

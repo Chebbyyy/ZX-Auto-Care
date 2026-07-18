@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import {
+  IconAward,
   IconCalendarCheckFill,
-  IconCheckCircleFill,
   IconCheckLg,
   IconCpu,
-  IconCurrencyDollar,
-  IconLightningChargeFill,
+  IconGearFill,
+  IconGem,
   IconPeopleFill,
   IconShieldCheck,
   IconTools,
-  IconTruck,
 } from '../icons'
-import Silk from '../Silk/Silk'
+import AnimatedGrid from '../AnimatedGrid/AnimatedGrid'
 import aboutHeroImg from '../../assets/gallery/mw7.jpeg'
+import whyBgImg from '../../assets/premium.jfif'
 import './WhyUs.css'
 
 const FOCUS_POINTS = [
@@ -29,36 +29,26 @@ const CHIPS = [
   { Icon: IconTools, label: 'Expert Repairs' },
 ]
 
-const FEATURES = [
+const WHY_FEATURES = [
   {
-    Icon: IconTruck,
-    title: 'Mobile Garage',
-    body: 'Repairs at your home, office, or roadside.',
+    Icon: IconAward,
+    title: 'Certified Expertise',
+    body: 'Skilled mechanics for all makes and models across Darwin.',
+  },
+  {
+    Icon: IconGearFill,
+    title: 'Quality Parts & Work',
+    body: 'Professional repairs done right the first time, every time.',
+  },
+  {
+    Icon: IconGem,
+    title: 'Mobile Convenience',
+    body: 'We come to your home, office, or roadside — no workshop wait.',
   },
   {
     Icon: IconPeopleFill,
-    title: 'Expert Mechanics',
-    body: 'Certified techs for all makes and models.',
-  },
-  {
-    Icon: IconCurrencyDollar,
-    title: 'Clear Pricing',
-    body: 'Upfront quotes. No hidden fees.',
-  },
-  {
-    Icon: IconCheckCircleFill,
-    title: 'Quality Repairs',
-    body: 'Done right the first time.',
-  },
-  {
-    Icon: IconShieldCheck,
-    title: 'Guaranteed Work',
-    body: "Not satisfied? We'll make it right.",
-  },
-  {
-    Icon: IconLightningChargeFill,
-    title: '24/7 Emergency',
-    body: 'Urgent repairs when you need them.',
+    title: 'Customer-First Approach',
+    body: 'Clear quotes, honest advice, and work you can trust.',
   },
 ]
 
@@ -78,123 +68,120 @@ function WhyUs() {
 
   return (
     <section id="why-us" className="why-us why-us--shouty">
-      <div className="silk-backdrop">
-        <Silk speed={2} scale={1.05} color="#2a2428" noiseIntensity={0.85} rotation={0.08} />
-      </div>
+      <div className="why-us__top">
+        <AnimatedGrid />
+        <div className="container why-us__content">
+          <motion.div
+            className="about-intro"
+            initial={reduceMotion ? false : 'hidden'}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeUp}
+          >
+            <div className="about-intro__copy">
+              <p className="about-eyebrow">
+                <span aria-hidden="true">//</span> About
+              </p>
+              <h1 className="about-title">
+                About <span>Us</span>
+              </h1>
+              <p className="about-lead">
+                Mobile garage repairs across Darwin — brakes, oil, suspension, electrical and more.
+                Transparent pricing, done right the first time.
+              </p>
 
-      <div className="why-us__accents" aria-hidden="true">
-        <span className="why-us__accent why-us__accent--a" />
-        <span className="why-us__accent why-us__accent--b" />
-        <span className="why-us__accent why-us__accent--c" />
-      </div>
+              <ul className="about-focus-list">
+                {FOCUS_POINTS.map((point) => (
+                  <li key={point}>
+                    <span className="about-focus-check" aria-hidden="true">
+                      <IconCheckLg />
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
 
-      <div className="container why-us__content">
-        <motion.div
-          className="about-intro"
-          initial={reduceMotion ? false : 'hidden'}
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeUp}
-        >
-          <div className="about-intro__copy">
-            <p className="about-eyebrow">
-              <span aria-hidden="true">//</span> About
-            </p>
-            <h1 className="about-title">
-              About <span>Us</span>
-            </h1>
-            <p className="about-lead">
-              Mobile garage repairs across Darwin — brakes, oil, suspension, electrical and more.
-              Transparent pricing, done right the first time.
-            </p>
+              <div className="about-chips">
+                {CHIPS.map(({ Icon, label }) => (
+                  <div key={label} className="about-chip">
+                    <span className="about-chip__icon" aria-hidden="true">
+                      <Icon />
+                    </span>
+                    <span>{label}</span>
+                  </div>
+                ))}
+              </div>
 
-            <ul className="about-focus-list">
-              {FOCUS_POINTS.map((point) => (
-                <li key={point}>
-                  <span className="about-focus-check" aria-hidden="true">
-                    <IconCheckLg />
-                  </span>
-                  {point}
-                </li>
-              ))}
-            </ul>
-
-            <div className="about-chips">
-              {CHIPS.map(({ Icon, label }) => (
-                <div key={label} className="about-chip">
-                  <span className="about-chip__icon" aria-hidden="true">
-                    <Icon />
-                  </span>
-                  <span>{label}</span>
-                </div>
-              ))}
+              <Link to="/contact#booking" className="about-cta">
+                <IconCalendarCheckFill aria-hidden="true" />
+                Book a Service
+              </Link>
             </div>
 
-            <Link to="/contact#booking" className="about-cta">
-              <IconCalendarCheckFill aria-hidden="true" />
-              Book a Service
-            </Link>
-          </div>
+            <motion.div
+              className="about-intro__media"
+              initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.65, delay: 0.12, ease }}
+            >
+              <img
+                src={aboutHeroImg}
+                alt="Close-up of precision automotive mechanical work"
+                loading="lazy"
+                decoding="async"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
 
+      <div className="why-choose-band">
+        <div className="why-choose-band__bg" aria-hidden="true">
+          <img src={whyBgImg} alt="" loading="lazy" decoding="async" />
+          <div className="why-choose-band__shade" />
+        </div>
+
+        <div className="container why-choose-band__inner">
           <motion.div
-            className="about-intro__media"
-            initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+            className="why-choose"
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.65, delay: 0.12, ease }}
+            transition={{ duration: 0.55, ease }}
           >
-            <img
-              src={aboutHeroImg}
-              alt="Close-up of precision automotive mechanical work"
-              loading="lazy"
-              decoding="async"
-            />
+            <h2 className="why-choose__title">
+              Why <span>Choose Us</span>
+            </h2>
           </motion.div>
-        </motion.div>
 
-        <motion.div
-          className="why-choose"
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.55, ease }}
-        >
-          <p className="about-eyebrow">
-            <span aria-hidden="true">//</span> Why us
-          </p>
-          <h2 className="why-choose__title">
-            Why <span>Choose Us</span>
-          </h2>
-          <p className="why-choose__sub">
-            Mobile, reliable garage service across Darwin.
-          </p>
-        </motion.div>
-
-        <div className="features-grid features-grid--shouty">
-          {FEATURES.map((feature, index) => {
-            const Icon = feature.Icon
-            return (
-              <motion.article
-                key={feature.title}
-                className="why-shout-card"
-                custom={index}
-                variants={fadeUp}
-                initial={reduceMotion ? false : 'hidden'}
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.25 }}
-              >
-                <span className="why-shout-card__icon" aria-hidden="true">
-                  <Icon />
-                </span>
-                <h3>{feature.title}</h3>
-                <p>{feature.body}</p>
-              </motion.article>
-            )
-          })}
+          <div className="why-choose-grid">
+            {WHY_FEATURES.map((feature, index) => {
+              const Icon = feature.Icon
+              return (
+                <motion.article
+                  key={feature.title}
+                  className="why-choose-item"
+                  custom={index}
+                  variants={fadeUp}
+                  initial={reduceMotion ? false : 'hidden'}
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.25 }}
+                >
+                  <span className="why-choose-item__icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.body}</p>
+                </motion.article>
+              )
+            })}
+          </div>
         </div>
       </div>
 
       <div className="why-us__cta">
+        <AnimatedGrid />
         <motion.div
           className="container why-us__cta-inner"
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}

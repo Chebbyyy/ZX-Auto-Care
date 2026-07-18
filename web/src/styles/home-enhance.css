@@ -4,10 +4,10 @@
    ═══════════════════════════════════════════ */
 
 .home-page {
-  --home-red: var(--zx-red-primary, #e10600);
-  --home-red-soft: var(--zx-red-glow, rgba(225, 6, 0, 0.35));
-  --home-red-deep: var(--zx-red-deep, #7a0500);
-  --home-red-mid: var(--zx-red-mid, #c90500);
+  --home-red: var(--ze-red-primary, #e10600);
+  --home-red-soft: var(--ze-red-glow, rgba(225, 6, 0, 0.35));
+  --home-red-deep: var(--ze-red-deep, #7a0500);
+  --home-red-mid: var(--ze-red-mid, #c90500);
   --home-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -188,7 +188,7 @@
   border-radius: 999px;
   flex-shrink: 0;
   color: #fff;
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600, #7a0500));
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
   font-size: 0.7rem;
 }
 
@@ -219,7 +219,7 @@
 .home-page .home-hero-float-stat strong {
   display: block;
   color: #fff;
-  font-family: var(--zx-font-heading, 'Sora', sans-serif);
+  font-family: var(--ze-font-heading, 'Sora', sans-serif);
   font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -380,17 +380,17 @@
   font-size: 0.84rem;
   font-weight: 700;
   white-space: nowrap;
-  background: var(--zx-grad-red);
+  background: var(--ze-grad-red);
   border-color: transparent;
-  box-shadow: 0 8px 22px var(--zx-red-glow);
+  box-shadow: 0 8px 22px var(--ze-red-glow);
 }
 
 .home-page .home-hero-call:hover {
-  background: var(--zx-grad-red-hover);
-  box-shadow: 0 12px 28px var(--zx-red-glow);
+  background: var(--ze-grad-red-hover);
+  box-shadow: 0 12px 28px var(--ze-red-glow);
 }
 
-.home-page .home-hero-call .zx-icon {
+.home-page .home-hero-call .ze-icon {
   font-size: 0.95rem;
   flex-shrink: 0;
 }
@@ -438,7 +438,7 @@
 }
 
 .home-page .home-hero-ctas .btn-danger {
-  background: var(--zx-grad-red);
+  background: var(--ze-grad-red);
   border-color: transparent;
 }
 
@@ -447,7 +447,7 @@
 }
 
 .home-page .home-hero-ctas .hero-call-pulse:hover {
-  box-shadow: 0 12px 28px var(--zx-red-glow) !important;
+  box-shadow: 0 12px 28px var(--ze-red-glow) !important;
 }
 
 /* ─── Info strip polish ─── */
@@ -542,18 +542,18 @@
 }
 
 .home-page .home-stat-glow--red .stat-number,
-.home-page .home-stat-glow--red .stat-icon .zx-icon,
+.home-page .home-stat-glow--red .stat-icon .ze-icon,
 .home-page .home-stat-glow--red .text-danger,
 .home-page .home-stat-glow--yellow .stat-number,
-.home-page .home-stat-glow--yellow .stat-icon .zx-icon,
+.home-page .home-stat-glow--yellow .stat-icon .ze-icon,
 .home-page .home-stat-glow--yellow .text-warning,
 .home-page .home-stat-glow--green .stat-number,
-.home-page .home-stat-glow--green .stat-icon .zx-icon,
+.home-page .home-stat-glow--green .stat-icon .ze-icon,
 .home-page .home-stat-glow--green .text-success,
 .home-page .home-stat-glow--cyan .stat-number,
-.home-page .home-stat-glow--cyan .stat-icon .zx-icon,
+.home-page .home-stat-glow--cyan .stat-icon .ze-icon,
 .home-page .home-stat-glow--cyan .text-info {
-  color: var(--zx-red-primary, #e10600) !important;
+  color: var(--ze-red-primary, #e10600) !important;
 }
 
 .home-page .home-stat-glow .stat-icon {
@@ -564,14 +564,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600, #7a0500));
-  box-shadow: 0 6px 18px var(--zx-red-glow, rgba(225, 6, 0, 0.35));
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
+  box-shadow: 0 6px 18px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
-.home-page .home-stat-glow .stat-icon .zx-icon,
+.home-page .home-stat-glow .stat-icon .ze-icon,
 .home-page .home-stat-glow .stat-icon .text-danger,
 .home-page .home-stat-glow .stat-icon .display-4 {
-  color: var(--zx-white, #fff) !important;
+  color: var(--ze-white, #fff) !important;
   font-size: 1.35rem !important;
 }
 
@@ -581,11 +581,11 @@
   font-size: 0.78rem !important;
 }
 
-.home-page .home-stat-glow .stat-icon .zx-icon {
+.home-page .home-stat-glow .stat-icon .ze-icon {
   transition: transform 0.35s var(--home-ease);
 }
 
-.home-page .home-stat-glow:hover .stat-icon .zx-icon {
+.home-page .home-stat-glow:hover .stat-icon .ze-icon {
   transform: scale(1.06);
   filter: none;
 }
@@ -621,65 +621,7 @@
 }
 
 /* ─── Garage section rhythm ─── */
-.home-page .home-garage {
-  padding: clamp(4.5rem, 9vw, 7rem) 0;
-}
-
-.home-page .home-garage__header {
-  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
-}
-
-.home-page .home-garage__title {
-  font-size: clamp(1.75rem, 3.4vw, 2.45rem);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-
-.home-page .home-garage__sub {
-  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
-  line-height: 1.7;
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.home-page .home-garage__grid {
-  gap: clamp(1rem, 2vw, 1.35rem);
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
-}
-
-.home-page .home-garage__card {
-  padding: clamp(1.35rem, 2.5vw, 1.65rem) clamp(1.2rem, 2vw, 1.4rem);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.home-page .home-garage__card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
-}
-
-.home-page .home-garage__icon {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-.home-page .home-garage__card-title {
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.45rem;
-}
-
-.home-page .home-garage__card-blurb {
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
+/* Home garage matches Why Choose Us band — styles live in HomeGarage.css */
 
 /* ─── Promo band breathing room ─── */
 .home-page .promo-banner {

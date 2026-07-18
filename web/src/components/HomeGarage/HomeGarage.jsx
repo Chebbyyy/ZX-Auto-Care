@@ -9,9 +9,9 @@ import {
   IconGearFill,
   IconLightningChargeFill,
   IconRadio,
-  IconTools,
   IconWrench,
 } from '../icons'
+import carBg from '../../assets/premium.jfif'
 import './HomeGarage.css'
 
 const SERVICES = [
@@ -75,6 +75,11 @@ function HomeGarage() {
 
   return (
     <section className="home-garage" aria-labelledby="home-garage-heading">
+      <div className="home-garage__bg" aria-hidden="true">
+        <img src={carBg} alt="" />
+        <div className="home-garage__shade" />
+      </div>
+
       <div className="container home-garage__inner">
         <motion.div
           className="home-garage__header"
@@ -84,17 +89,9 @@ function HomeGarage() {
           variants={fadeUp}
           custom={0}
         >
-          <p className="home-garage__eyebrow">
-            <IconTools aria-hidden="true" />
-            Garage Services First
-          </p>
           <h2 id="home-garage-heading" className="home-garage__title">
-            Mobile mechanical repairs, brought to you
+            Mobile Mechanical <span>Repairs</span>
           </h2>
-          <p className="home-garage__sub">
-            Brakes, oil, suspension, electrical and more. Professional garage work at your home,
-            office, or roadside anywhere in Darwin, 24/7.
-          </p>
         </motion.div>
 
         <div className="home-garage__grid">
@@ -103,7 +100,7 @@ function HomeGarage() {
             return (
               <motion.div
                 key={service.title}
-                className="home-garage__card"
+                className="home-garage__item"
                 initial={reduceMotion ? false : 'hidden'}
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
@@ -113,8 +110,8 @@ function HomeGarage() {
                 <span className="home-garage__icon" aria-hidden="true">
                   <Icon />
                 </span>
-                <h3 className="home-garage__card-title">{service.title}</h3>
-                <p className="home-garage__card-blurb">{service.blurb}</p>
+                <h3 className="home-garage__item-title">{service.title}</h3>
+                <p className="home-garage__item-blurb">{service.blurb}</p>
               </motion.div>
             )
           })}

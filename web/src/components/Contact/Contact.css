@@ -2,9 +2,9 @@
 
 .contact-page {
   --contact-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --contact-red: var(--zx-red-primary, #e10600);
-  --contact-red-deep: var(--zx-red-deep, #7a0500);
-  --contact-red-soft: var(--zx-red-soft, #ff4a42);
+  --contact-red: var(--ze-red-primary, #e10600);
+  --contact-red-deep: var(--ze-red-deep, #7a0500);
+  --contact-red-soft: var(--ze-red-soft, #ff4a42);
 }
 
 /* ─── Booking ─── */
@@ -34,7 +34,7 @@
 }
 
 .contact-page .booking-card-header {
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600 0%, #7a0500 100%)) !important;
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600 0%, #7a0500 100%)) !important;
   padding: 1.35rem 1.5rem !important;
   border-bottom: none;
 }
@@ -84,10 +84,10 @@
   height: 4.5rem;
   margin: 0 auto 1.15rem;
   border-radius: 50%;
-  background: var(--zx-grad-red, linear-gradient(135deg, #e10600 0%, #7a0500 100%));
-  color: var(--zx-white, #ffffff);
+  background: var(--ze-grad-red, linear-gradient(135deg, #e10600 0%, #7a0500 100%));
+  color: var(--ze-white, #ffffff);
   font-size: 2rem;
-  box-shadow: 0 10px 28px var(--zx-red-glow, rgba(225, 6, 0, 0.35));
+  box-shadow: 0 10px 28px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
 }
 
 .contact-page .booking-success__eyebrow {

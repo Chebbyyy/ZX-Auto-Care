@@ -2,8 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 // Custom UI system (replaces Bootstrap CSS) + Lucide icon metrics + legacy design styles
-import './styles/zx-ui.css'
-import './styles/zx-icons.css'
+import './styles/ze-ui.css'
+import './styles/ze-icons.css'
 import '../../style.css'
 import './styles/typography.css'
 

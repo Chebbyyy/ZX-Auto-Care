@@ -1,6 +1,6 @@
-/** Shared ZX BorderGlow presets — multi-shade brand reds + charcoal */
+/** Shared Z Elite BorderGlow presets — multi-shade brand reds + charcoal */
 
-export const ZX_GLOW_LIGHT = {
+export const ZE_GLOW_LIGHT = {
   backgroundColor: '#ffffff',
   borderRadius: 14,
   glowRadius: 20,
@@ -13,7 +13,7 @@ export const ZX_GLOW_LIGHT = {
   animated: false,
 }
 
-export const ZX_GLOW_DARK = {
+export const ZE_GLOW_DARK = {
   backgroundColor: '#141414',
   borderRadius: 14,
   glowRadius: 22,

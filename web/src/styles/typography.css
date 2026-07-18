@@ -1,12 +1,12 @@
 /*
- * ZX Auto Care — site-wide typography
+ * Z Elite Auto Care — site-wide typography
  * Sora (700–800): headings & display text
  * Jost (400–600): body, UI, navigation, cards, forms
  */
 
 :root {
-  --zx-font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --zx-font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ze-font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ze-font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 /* Headings & display */
@@ -32,7 +32,7 @@ h6,
 .footer-brand-name,
 .footer-col-title,
 .footer-phone {
-  font-family: var(--zx-font-heading, var(--font-heading));
+  font-family: var(--ze-font-heading, var(--font-heading));
 }
 
 /* Body & UI surfaces */
@@ -76,8 +76,8 @@ button,
 .services-eyebrow,
 .hero-subheadline,
 .section-header p,
-.zx-loader-tag {
-  font-family: var(--zx-font-body, var(--font-primary));
+.ze-loader-tag {
+  font-family: var(--ze-font-body, var(--font-primary));
 }
 
 /* Navigation weight */
@@ -88,7 +88,7 @@ button,
 }
 
 .navbar-brand {
-  font-family: var(--zx-font-heading, var(--font-heading));
+  font-family: var(--ze-font-heading, var(--font-heading));
   font-weight: 700;
 }
 
@@ -152,7 +152,7 @@ label,
 }
 
 .stat-label {
-  font-family: var(--zx-font-body, var(--font-primary));
+  font-family: var(--ze-font-body, var(--font-primary));
   font-weight: 600;
   letter-spacing: 0.06em;
 }

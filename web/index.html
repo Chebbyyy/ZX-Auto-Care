@@ -38,7 +38,7 @@
         background: #111111;
       }
 
-      #zx-page-loader {
+      #ze-page-loader {
         position: fixed;
         inset: 0;
         z-index: 99999;
@@ -52,22 +52,22 @@
         font-family: Jost, system-ui, sans-serif;
       }
 
-      #zx-page-loader.is-done {
+      #ze-page-loader.is-done {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
       }
 
-      .zx-loader-inner {
+      .ze-loader-inner {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         width: min(280px, 86vw);
-        animation: zxLoaderIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation: zeLoaderIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
 
-      .zx-loader-logo {
+      .ze-loader-logo {
         width: 72px;
         height: 72px;
         object-fit: cover;
@@ -76,7 +76,7 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
       }
 
-      .zx-loader-title {
+      .ze-loader-title {
         margin: 0;
         font-size: 0.95rem;
         font-weight: 800;
@@ -86,7 +86,7 @@
         line-height: 1.2;
       }
 
-      .zx-loader-tag {
+      .ze-loader-tag {
         margin: 0.45rem 0 1.35rem;
         font-size: 0.62rem;
         font-weight: 500;
@@ -95,7 +95,7 @@
         line-height: 1.35;
       }
 
-      .zx-loader-bar {
+      .ze-loader-bar {
         width: 100%;
         max-width: 168px;
         height: 2px;
@@ -104,16 +104,16 @@
         overflow: hidden;
       }
 
-      .zx-loader-bar > span {
+      .ze-loader-bar > span {
         display: block;
         height: 100%;
         width: 0%;
         border-radius: inherit;
         background: #e10600;
-        animation: zxFill 1.05s ease-in-out infinite;
+        animation: zeFill 1.05s ease-in-out infinite;
       }
 
-      @keyframes zxLoaderIn {
+      @keyframes zeLoaderIn {
         from {
           opacity: 0;
           transform: translateY(8px);
@@ -124,7 +124,7 @@
         }
       }
 
-      @keyframes zxFill {
+      @keyframes zeFill {
         0% {
           width: 8%;
         }
@@ -137,22 +137,22 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .zx-loader-inner,
-        .zx-loader-bar > span {
+        .ze-loader-inner,
+        .ze-loader-bar > span {
           animation: none;
         }
 
-        .zx-loader-bar > span {
+        .ze-loader-bar > span {
           width: 60%;
         }
       }
     </style>
   </head>
   <body>
-    <div id="zx-page-loader" role="status" aria-label="Loading Z Elite Auto Care">
-      <div class="zx-loader-inner">
+    <div id="ze-page-loader" role="status" aria-label="Loading Z Elite Auto Care">
+      <div class="ze-loader-inner">
         <img
-          class="zx-loader-logo"
+          class="ze-loader-logo"
           src="/logo.jpg"
           alt="Z Elite Auto Care"
           width="72"
@@ -160,9 +160,9 @@
           decoding="async"
           fetchpriority="high"
         />
-        <p class="zx-loader-title">Z ELITE AUTO CARE</p>
-        <p class="zx-loader-tag">DARWIN'S TRUSTED MOBILE WORKSHOP</p>
-        <div class="zx-loader-bar" aria-hidden="true"><span></span></div>
+        <p class="ze-loader-title">Z ELITE AUTO CARE</p>
+        <p class="ze-loader-tag">DARWIN'S TRUSTED MOBILE WORKSHOP</p>
+        <div class="ze-loader-bar" aria-hidden="true"><span></span></div>
       </div>
     </div>
 

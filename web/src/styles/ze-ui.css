@@ -1,7 +1,7 @@
 /*
- * ZX UI — layout & utility system
+ * Z Elite UI — layout & utility system
  * Compatible class names preserved for pixel parity with the original site.
- * Only utilities/components needed by the ZX Auto Care React app.
+ * Only utilities/components needed by the Z Elite Auto Care React app.
  */
 
 /* -------------------------------------------------------------------------- */
@@ -9,28 +9,28 @@
 /* -------------------------------------------------------------------------- */
 :root {
   /* Brand reds */
-  --zx-red-deep: #7a0500;
-  --zx-red-primary: #e10600;
-  --zx-red-mid: #c90500;
-  --zx-red-soft: #ff4a42;
-  --zx-red-tint: #fecaca;
-  --zx-red-wash: rgba(225, 6, 0, 0.08);
-  --zx-red-wash-strong: rgba(225, 6, 0, 0.16);
-  --zx-red-glow: rgba(225, 6, 0, 0.35);
+  --ze-red-deep: #7a0500;
+  --ze-red-primary: #e10600;
+  --ze-red-mid: #c90500;
+  --ze-red-soft: #ff4a42;
+  --ze-red-tint: #fecaca;
+  --ze-red-wash: rgba(225, 6, 0, 0.08);
+  --ze-red-wash-strong: rgba(225, 6, 0, 0.16);
+  --ze-red-glow: rgba(225, 6, 0, 0.35);
 
   /* Neutrals */
-  --zx-black: #000;
-  --zx-charcoal: #0a0a0a;
-  --zx-gray-dark: #1a1a1a;
-  --zx-gray: #555;
-  --zx-gray-mid: #737373;
-  --zx-gray-light: #e5e5e5;
-  --zx-off-white: #f7f7f8;
-  --zx-white: #fff;
+  --ze-black: #000;
+  --ze-charcoal: #0a0a0a;
+  --ze-gray-dark: #1a1a1a;
+  --ze-gray: #555;
+  --ze-gray-mid: #737373;
+  --ze-gray-light: #e5e5e5;
+  --ze-off-white: #f7f7f8;
+  --ze-white: #fff;
 
-  --zx-grad-red: linear-gradient(135deg, var(--zx-red-primary) 0%, var(--zx-red-mid) 55%, var(--zx-red-deep) 100%);
-  --zx-grad-red-hover: linear-gradient(135deg, var(--zx-red-soft) 0%, var(--zx-red-primary) 50%, var(--zx-red-mid) 100%);
-  --zx-grad-red-line: linear-gradient(90deg, var(--zx-red-soft), var(--zx-red-primary), var(--zx-red-deep));
+  --ze-grad-red: linear-gradient(135deg, var(--ze-red-primary) 0%, var(--ze-red-mid) 55%, var(--ze-red-deep) 100%);
+  --ze-grad-red-hover: linear-gradient(135deg, var(--ze-red-soft) 0%, var(--ze-red-primary) 50%, var(--ze-red-mid) 100%);
+  --ze-grad-red-line: linear-gradient(90deg, var(--ze-red-soft), var(--ze-red-primary), var(--ze-red-deep));
 
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -78,9 +78,9 @@
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
 
-  --zx-font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --zx-font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --bs-font-sans-serif: var(--zx-font-body);
+  --ze-font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ze-font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bs-font-sans-serif: var(--ze-font-body);
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -149,7 +149,7 @@ hr {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: var(--zx-font-heading);
+  font-family: var(--ze-font-heading);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -671,37 +671,37 @@ textarea {
 .fs-6 { font-size: 1rem !important; }
 
 .display-1 {
-  font-family: var(--zx-font-heading);
+  font-family: var(--ze-font-heading);
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 700;
   line-height: 1.2;
 }
 .display-2 {
-  font-family: var(--zx-font-heading);
+  font-family: var(--ze-font-heading);
   font-size: calc(1.575rem + 3.9vw);
   font-weight: 700;
   line-height: 1.2;
 }
 .display-3 {
-  font-family: var(--zx-font-heading);
+  font-family: var(--ze-font-heading);
   font-size: calc(1.525rem + 3.3vw);
   font-weight: 700;
   line-height: 1.2;
 }
 .display-4 {
-  font-family: var(--zx-font-heading);
+  font-family: var(--ze-font-heading);
   font-size: calc(1.475rem + 2.7vw);
   font-weight: 700;
   line-height: 1.2;
 }
 .display-5 {
-  font-family: var(--zx-font-heading);
+  font-family: var(--ze-font-heading);
   font-size: calc(1.425rem + 2.1vw);
   font-weight: 700;
   line-height: 1.2;
 }
 .display-6 {
-  font-family: var(--zx-font-heading);
+  font-family: var(--ze-font-heading);
   font-size: calc(1.375rem + 1.5vw);
   font-weight: 700;
   line-height: 1.2;
@@ -855,7 +855,7 @@ textarea {
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
-  --bs-btn-font-family: var(--zx-font-body);
+  --bs-btn-font-family: var(--ze-font-body);
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 600;
   --bs-btn-line-height: 1.5;
@@ -1020,23 +1020,23 @@ fieldset:disabled .btn {
 
 .btn-danger {
   --bs-btn-color: #fff;
-  --bs-btn-bg: var(--zx-red-primary);
-  --bs-btn-border-color: var(--zx-red-primary);
+  --bs-btn-bg: var(--ze-red-primary);
+  --bs-btn-border-color: var(--ze-red-primary);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: var(--zx-red-soft);
-  --bs-btn-hover-border-color: var(--zx-red-soft);
+  --bs-btn-hover-bg: var(--ze-red-soft);
+  --bs-btn-hover-border-color: var(--ze-red-soft);
   --bs-btn-focus-shadow-rgb: 225, 6, 0;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: var(--zx-red-deep);
-  --bs-btn-active-border-color: var(--zx-red-deep);
+  --bs-btn-active-bg: var(--ze-red-deep);
+  --bs-btn-active-border-color: var(--ze-red-deep);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: var(--zx-red-mid);
-  --bs-btn-disabled-border-color: var(--zx-red-mid);
-  background-image: var(--zx-grad-red);
+  --bs-btn-disabled-bg: var(--ze-red-mid);
+  --bs-btn-disabled-border-color: var(--ze-red-mid);
+  background-image: var(--ze-grad-red);
 }
 
 .btn-danger:hover {
-  background-image: var(--zx-grad-red-hover);
+  background-image: var(--ze-grad-red-hover);
 }
 
 .btn-dark {

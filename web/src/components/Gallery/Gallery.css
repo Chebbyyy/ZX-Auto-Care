@@ -1,10 +1,10 @@
 .gallery.gallery--premium {
   --gallery-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --gallery-red: var(--zx-red-primary, #e10600);
-  --gallery-red-deep: var(--zx-red-deep, #7a0500);
-  --gallery-red-soft: var(--zx-red-soft, #ff4a42);
+  --gallery-red: var(--ze-red-primary, #e10600);
+  --gallery-red-deep: var(--ze-red-deep, #7a0500);
+  --gallery-red-soft: var(--ze-red-soft, #ff4a42);
   padding: clamp(3.5rem, 6vw, 6.5rem) 0;
-  background: var(--zx-charcoal, #0a0a0a);
+  background: var(--ze-charcoal, #0a0a0a);
   position: relative;
   overflow: hidden;
 }

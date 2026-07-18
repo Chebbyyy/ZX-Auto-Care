@@ -1,5 +1,5 @@
 /* Folder SVGs — color via SVG currentColor + parent CSS color */
-.zx-icon {
+.ze-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,7 @@
   overflow: visible;
 }
 
-.zx-icon svg {
+.ze-icon svg {
   display: block;
   width: 100%;
   height: 100%;

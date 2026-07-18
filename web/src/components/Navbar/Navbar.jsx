@@ -72,7 +72,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar navbar-expand-md navbar-light sticky-top shadow-sm zx-navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' is-open' : ''}`}
+      className={`navbar navbar-expand-md navbar-light sticky-top shadow-sm ze-navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' is-open' : ''}`}
       style={{ background: '#ffffff', borderBottom: '3px solid #E10600' }}
     >
       <div className="container">
