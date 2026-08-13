@@ -144,6 +144,7 @@ label,
     --ze-fs-eyebrow: 0.8125rem;
     --ze-lh-body: 1.7;
     --ze-ls-eyebrow: 0.06em;
+    --ze-section-pad: clamp(2.75rem, 8vw, 4rem);
   }
 
   body {

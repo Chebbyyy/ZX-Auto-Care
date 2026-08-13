@@ -1230,7 +1230,30 @@ a {
     font-weight: 600;
     color: #ffffff;
     letter-spacing: 0.02em;
-    white-space: nowrap;
+    white-space: normal;
+}
+
+@media (max-width: 767.98px) {
+    .hero-info-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+        gap: 0.35rem;
+        padding: 0.5rem;
+    }
+
+    .hib-badge--red,
+    .hib-center,
+    .hib-badge--end,
+    .hib-badge--teal {
+        border-right: none;
+        padding: 0.35rem 0.65rem;
+    }
+
+    .hib-text {
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3063,6 +3086,21 @@ a {
     }
 }
 
+@media (max-width: 767.98px) {
+    .testi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testi-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .testi-card {
+        padding: 1.5rem 1.25rem 1.35rem;
+    }
+}
+
 /* Card */
 .testi-card {
     background: #f8f9fa;
@@ -3730,7 +3768,7 @@ a {
 
 @media (max-width: 768px) {
     .ct-toast {
-        bottom: 100px;
+        bottom: 13rem;
         right: 20px;
         left: 20px;
         padding: 0.9rem 1.25rem;

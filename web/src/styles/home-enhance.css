@@ -258,7 +258,22 @@
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
+  .home-page .home-hero {
+    min-height: auto;
+    padding-top: clamp(4.75rem, 14vw, 5.75rem);
+    padding-bottom: clamp(3rem, 8vw, 4.5rem);
+  }
+
+  .home-page .home-hero__row {
+    min-height: auto;
+  }
+
+  .home-page .home-hero__copy,
+  .home-page .home-hero__title {
+    text-align: center;
+  }
+
   .home-page .home-hero-float-stats {
     grid-template-columns: 1fr;
   }
@@ -267,6 +282,43 @@
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 0;
+  }
+
+  .home-page .home-hero-ctas {
+    justify-content: center;
+    gap: 0.85rem !important;
+  }
+
+  .home-page .home-hero-call-group {
+    width: min(100%, 300px);
+  }
+
+  .home-page .home-hero-call-group .home-hero-call {
+    width: 100%;
+  }
+
+  .home-page .home-hero-call {
+    white-space: normal;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    row-gap: 0.35rem;
+  }
+
+  .home-page .home-hero-call__divider {
+    display: none;
+  }
+
+  .home-page .home-hero-ctas .btn,
+  .home-page .home-hero-call,
+  .home-page .home-hero-book {
+    width: min(100%, 300px);
+    justify-content: center;
+  }
+
+  .home-page .home-stats-band .stats-section,
+  .home-page .home-stats-float {
+    margin-top: clamp(-2rem, -5vw, -2.75rem);
   }
 }
 
@@ -590,33 +642,6 @@
 
 .home-page .home-stat-glow .stat-icon .ze-icon {
   transition: transform 0.35s var(--home-ease);
-}
-
-@media (max-width: 767.98px) {
-  .home-page .home-hero-ctas {
-    justify-content: center;
-    gap: 0.85rem !important;
-  }
-
-  .home-page .home-hero-call-group {
-    width: min(100%, 300px);
-  }
-
-  .home-page .home-hero-call-group .home-hero-call {
-    width: 100%;
-  }
-
-  .home-page .home-hero-ctas .btn,
-  .home-page .home-hero-call,
-  .home-page .home-hero-book {
-    width: min(100%, 300px);
-    justify-content: center;
-  }
-
-  .home-page .home-stats-band .stats-section,
-  .home-page .home-stats-float {
-    margin-top: clamp(-2rem, -5vw, -2.75rem);
-  }
 }
 
 /* Promo */

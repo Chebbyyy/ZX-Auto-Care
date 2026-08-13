@@ -290,6 +290,16 @@
   }
 }
 
+@media (max-width: 767.98px) {
+  .contact-info-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .contact-info-phone-btn {
+    min-height: 2.85rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .contact-info-card,
   .contact-info-phone-btn {

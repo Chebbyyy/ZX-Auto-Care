@@ -95,3 +95,29 @@
   height: 1.65rem;
   color: inherit;
 }
+
+@media (max-width: 767.98px) {
+  .site-footer__grid {
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .site-footer__brand,
+  .site-footer__heading {
+    margin-bottom: 0.85rem;
+  }
+
+  .site-footer__tagline {
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .site-footer__nav {
+    align-items: center;
+  }
+
+  .site-footer__link,
+  .site-footer__meta {
+    justify-content: center;
+  }
+}

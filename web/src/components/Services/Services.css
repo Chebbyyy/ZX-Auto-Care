@@ -502,7 +502,7 @@
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .svc-detail-grid,
   .svc-grid {
     grid-template-columns: 1fr;
@@ -530,6 +530,12 @@
   .svc-cta {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .svc-grid-card {
+    min-height: 18rem;
   }
 }
 
