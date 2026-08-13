@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-// Design system: tokens → icons → legacy bridge → primitives → typography
 import './styles/ze-ui.css'
 import './styles/ze-icons.css'
 import './styles/ze-legacy.css'

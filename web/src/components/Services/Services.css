@@ -27,9 +27,7 @@
 .services__shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.9) 100%),
-    radial-gradient(ellipse 70% 55% at 50% 30%, rgba(225, 6, 0, 0.1) 0%, transparent 60%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.82) 45%, rgba(0, 0, 0, 0.9) 100%);
 }
 
 .services__inner {
@@ -37,7 +35,7 @@
   z-index: 1;
 }
 
-/* ── Header row: title left, copy + CTA right ── */
+/* Header */
 .svc-head {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -52,17 +50,17 @@
   gap: 0.4rem;
   margin: 0 0 0.85rem;
   color: var(--ze-red-soft, #ff4a42);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: var(--ze-fs-eyebrow, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .svc-title {
   margin: 0;
   color: #ffffff;
   font-size: var(--ze-fs-h2);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: var(--ze-ls-display);
   line-height: var(--ze-lh-heading);
 }
@@ -84,26 +82,26 @@
   gap: 0.55rem;
   padding: 0.9rem 1.5rem;
   border-radius: 0;
-  background: var(--ze-grad-red, linear-gradient(135deg, #e10600, #7a0500));
+  background: var(--ze-red-primary);
   color: #ffffff !important;
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 12px 28px var(--ze-red-glow, rgba(225, 6, 0, 0.35));
+  box-shadow: none;
   transition:
     transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.25s ease,
-    filter 0.25s ease;
+    background 0.25s ease;
 }
 
 .svc-cta:hover {
   color: #ffffff !important;
   transform: translateY(-2px);
-  filter: brightness(1.06);
-  box-shadow: 0 16px 34px rgba(225, 6, 0, 0.45);
+  filter: none;
+  background: var(--ze-red-mid, #c90500);
+  box-shadow: var(--ze-shadow-sm);
 }
 
-/* ── Photo-top service cards with overlapping red badge ── */
+/* Service cards */
 .svc-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -175,26 +173,27 @@
 .svc-grid-card__eyebrow {
   margin-bottom: 0.45rem;
   color: var(--ze-red-soft, #ff4a42);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .svc-grid-card__body h3 {
   margin: 0 0 0.45rem;
   color: #ffffff;
-  font-size: clamp(1.35rem, 2vw, 1.65rem);
-  font-weight: 800;
+  font-family: var(--ze-font-heading);
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  font-weight: 700;
   letter-spacing: -0.015em;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .svc-grid-card__body p {
   margin: 0 0 0.9rem;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.85rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .svc-grid-card__link {
@@ -204,10 +203,10 @@
   align-self: flex-start;
   padding-bottom: 0.15rem;
   color: var(--ze-red-soft, #ff4a42);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 74, 66, 0.4);
   transition: gap 0.25s ease, color 0.25s ease, border-color 0.25s ease;
@@ -219,7 +218,7 @@
   gap: 0.65rem;
 }
 
-/* ── Stats strip under the cards ── */
+/* Stats */
 .svc-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -246,18 +245,18 @@
 .svc-stat__value {
   color: var(--ze-red-soft, #ff4a42);
   font-size: clamp(1.6rem, 3.2vw, 2.3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
 .svc-stat__label {
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
-/* ── Block headers on dark ── */
+/* Block headers */
 .services--shouty .svc-block {
   background: transparent;
   border: none;
@@ -292,7 +291,7 @@
   margin: 0 0 0.35rem;
   color: #ffffff !important;
   font-size: var(--ze-fs-h3);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: var(--ze-ls-heading);
 }
 
@@ -310,16 +309,16 @@
   padding: 0.15rem 0.5rem;
   border-radius: 0;
   vertical-align: middle;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #fecaca;
   background: rgba(225, 6, 0, 0.22);
   border: 1px solid rgba(225, 6, 0, 0.4);
 }
 
-/* ── Detailing cards: white like the reference ── */
+/* Detailing cards */
 .svc-detail-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -355,7 +354,7 @@
 }
 
 .svc-detail-card--premium {
-  background: linear-gradient(145deg, #c90500 0%, #7a0500 100%);
+  background: #c90500;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -365,9 +364,9 @@
   right: 0.85rem;
   padding: 0.2rem 0.55rem;
   border-radius: 0;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffffff;
   background: var(--ze-red-primary, #e10600);
@@ -399,16 +398,16 @@
 .svc-detail-card h4 {
   margin: 0 0 0.55rem;
   color: #0a0a0a !important;
-  font-size: 1.05rem;
-  font-weight: 800;
-  line-height: 1.25;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .svc-detail-card > p {
   margin: 0 0 0.85rem;
   color: #555555;
-  font-size: 0.86rem;
-  line-height: 1.55;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .svc-detail-card ul {
@@ -423,7 +422,7 @@
 
 .svc-detail-card li {
   color: #444444;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   padding-left: 0.85rem;
   position: relative;
 }
@@ -448,10 +447,9 @@
 .svc-detail-card__price strong {
   color: var(--ze-red-primary, #e10600);
   font-size: 1.35rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
-/* Premium (solid red) card: white text throughout */
 .svc-detail-card--premium h4 {
   color: #ffffff !important;
 }

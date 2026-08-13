@@ -1,8 +1,4 @@
-/**
- * Icons from web/src/assets/icons/*.svg
- * Color follows each SVG's own structure (stroke/fill + currentColor)
- * and inherits from CSS `color` on the parent.
- */
+/** SVG icons — color inherits from parent `color`. */
 import IconArrowRightCircleFillRaw from '../../assets/icons/IconArrowRightCircleFill.svg?raw'
 import IconArrowUpDownRaw from '../../assets/icons/IconArrowUpDown.svg?raw'
 import IconArrowUpRightRaw from '../../assets/icons/IconArrowUpRight.svg?raw'
@@ -41,7 +37,7 @@ import IconTruckRaw from '../../assets/icons/IconTruck.svg?raw'
 import IconWhatsappRaw from '../../assets/icons/IconWhatsapp.svg?raw'
 import IconWrenchRaw from '../../assets/icons/IconWrench.svg?raw'
 
-/** Keep the SVG's fill/stroke/currentColor as authored; only size for layout. */
+/** Preserve authored SVG colors; size for layout only. */
 function prepareSvg(raw) {
   return raw
     .replace(/<!--[\s\S]*?-->/g, '')

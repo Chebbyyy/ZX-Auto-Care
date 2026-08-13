@@ -1,11 +1,8 @@
-/* ============================================
-   Z ELITE AUTO CARE - PREMIUM STYLESHEET
-   Agency-Built Aesthetic | Professional Design
-   ============================================ */
+/* Legacy stylesheet */
 
-/* Color system — multi-shade red + charcoal neutrals */
+/* Color system */
 :root {
-    /* Brand reds — primary stays motorsport #E10600; soft/tint from modern red family */
+    /* Brand reds */
     --ze-red-deep: #7a0500;
     --ze-red-primary: #E10600;
     --ze-red-mid: #c90500;
@@ -13,7 +10,7 @@
     --ze-red-tint: #fca5a5;
     --ze-red-wash: rgba(225, 6, 0, 0.08);
     --ze-red-wash-strong: rgba(225, 6, 0, 0.16);
-    --ze-red-glow: rgba(225, 6, 0, 0.35);
+    --ze-red-glow: rgba(0, 0, 0, 0.18);
     --ze-red-border: rgba(225, 6, 0, 0.35);
 
     /* Neutrals */
@@ -26,60 +23,26 @@
     --ze-off-white: #fef2f2;
     --ze-white: #ffffff;
 
-    /* Trust / success (WhatsApp, confirmations) */
+    /* Trust / success */
     --ze-green: #16a34a;
 
-    /* Surfaces — darkest to lightest for section rhythm */
+    /* Surfaces */
     --ze-surface-0: #0a0a0a;
     --ze-surface-1: #111111;
     --ze-surface-2: #161616;
     --ze-surface-3: #1e1e1e;
 
-    /* Text on dark backgrounds */
+    /* Text on dark */
     --ze-text-dark-strong: #ffffff;
     --ze-text-dark-body: rgba(255, 255, 255, 0.78);
     --ze-text-dark-muted: rgba(255, 255, 255, 0.62);
 
-    /* Text on light backgrounds */
+    /* Text on light */
     --ze-text-light-strong: #0a0a0a;
     --ze-text-light-body: #555555;
     --ze-text-light-muted: #737373;
 
-    /* Type scale — one hierarchy for every page */
-    --ze-fs-display: clamp(2.2rem, 4.8vw, 3.5rem);
-    --ze-fs-h2: clamp(1.9rem, 4vw, 2.9rem);
-    --ze-fs-h3: clamp(1.4rem, 2.6vw, 1.8rem);
-    --ze-fs-h4: 1.08rem;
-    --ze-fs-lead: clamp(0.95rem, 1.4vw, 1.06rem);
-    --ze-fs-body: 0.95rem;
-    --ze-fs-sm: 0.88rem;
-    --ze-fs-eyebrow: 0.75rem;
-
-    --ze-lh-display: 1.08;
-    --ze-lh-heading: 1.18;
-    --ze-lh-body: 1.65;
-
-    --ze-ls-display: -0.03em;
-    --ze-ls-heading: -0.02em;
-    --ze-ls-eyebrow: 0.14em;
-
-    /* Surfaces — darkest to lightest for section rhythm */
-    --ze-surface-0: #0a0a0a;
-    --ze-surface-1: #111111;
-    --ze-surface-2: #161616;
-    --ze-surface-3: #1e1e1e;
-
-    /* Text on dark backgrounds */
-    --ze-text-dark-strong: #ffffff;
-    --ze-text-dark-body: rgba(255, 255, 255, 0.78);
-    --ze-text-dark-muted: rgba(255, 255, 255, 0.62);
-
-    /* Text on light backgrounds */
-    --ze-text-light-strong: #0a0a0a;
-    --ze-text-light-body: #555555;
-    --ze-text-light-muted: #737373;
-
-    /* Type scale — one hierarchy for every page */
+    /* Type scale */
     --ze-fs-display: clamp(2.2rem, 4.8vw, 3.5rem);
     --ze-fs-h2: clamp(1.9rem, 4vw, 2.9rem);
     --ze-fs-h3: clamp(1.4rem, 2.6vw, 1.8rem);
@@ -158,7 +121,7 @@ body { line-height: 1.6; }
 }
 
 .nav-logo-img {
-    height: 56px;
+    height: 68px;
     width: auto;
     transition: var(--transition-fast);
     filter: drop-shadow(0 2px 8px rgba(225,6,0,0.4)) drop-shadow(0 1px 3px rgba(0,0,0,0.3));
@@ -171,7 +134,7 @@ body { line-height: 1.6; }
 }
 
 @media (max-width: 768px) {
-    .nav-logo-img { height: 36px; }
+    .nav-logo-img { height: 52px; }
 }
 
 .navbar-nav .nav-link {
@@ -747,8 +710,8 @@ html {
     --shadow-dark: rgba(0, 0, 0, 0.25);
 
     /* Typography */
-    --font-primary: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-primary: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-heading: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -928,22 +891,24 @@ html {
 
 @media (max-width: 768px) {
     .floating-whatsapp-btn {
-        width: 56px;
-        height: 56px;
-        bottom: 20px;
-        right: 20px;
+        width: 52px;
+        height: 52px;
+        bottom: 16px;
+        right: 14px;
+        left: auto;
     }
     
     .floating-whatsapp-btn svg {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
     }
     
     .scroll-top-btn {
-        width: 56px;
-        height: 56px;
-        bottom: 85px;
-        right: 20px;
+        width: 52px;
+        height: 52px;
+        bottom: calc(16px + 52px + 12px + 52px + 12px);
+        right: 14px;
+        left: auto;
     }
     
     .scroll-top-btn svg {
@@ -989,11 +954,13 @@ html {
 
 @media (max-width: 768px) {
     .floating-call-btn {
-        width: 56px;
-        height: 56px;
-        bottom: 20px;
-        left: 20px;
+        width: 52px;
+        height: 52px;
+        bottom: calc(16px + 52px + 12px);
+        right: 14px;
+        left: auto;
         font-size: 0.7rem;
+        padding: 0;
     }
 }
 
@@ -1259,10 +1226,10 @@ a {
 }
 
 .hib-text {
-    font-size: 0.82rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: #ffffff;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.02em;
     white-space: nowrap;
 }
 
@@ -1272,15 +1239,16 @@ a {
     .hib-center      { padding: 3px 10px; }
     .hib-badge--teal { padding: 3px 3px 3px 10px; }
     .hib-circle { width: 28px; height: 28px; font-size: 0.8rem; }
-    .hib-text { font-size: 0.72rem; }
+    .hib-text { font-size: 0.85rem; }
 }
 
 .hero-headline {
     color: #FFFFFF;
-    font-size: clamp(1.8rem, 5vw, 4rem);
+    font-family: var(--ze-font-display, var(--ze-font-heading));
+    font-size: clamp(2.2rem, 6vw, 4rem);
     font-weight: 800;
     line-height: 1.15;
-    letter-spacing: -0.5px;
+    letter-spacing: 0.01em;
     text-shadow: 0 2px 12px rgba(0,0,0,0.5);
     animation: heroFadeUp 0.8s ease both;
     animation-delay: 2.85s;
@@ -1290,7 +1258,7 @@ a {
     color: var(--accent-color);
     display: inline-block;
     min-height: 1.2em;
-    letter-spacing: 4px;
+    letter-spacing: 0.08em;
 }
 
 .hero-subheadline {
@@ -1347,9 +1315,9 @@ a {
 
 .services-eyebrow {
     display: inline-block;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-color);
     border: 1px solid rgba(225,6,0,0.35);
@@ -2289,9 +2257,9 @@ a {
 }
 
 .garage-cta-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-color);
     margin: 0 0 0.3rem;
@@ -2300,7 +2268,7 @@ a {
 .garage-cta-heading {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #ffffff;
     margin: 0 0 0.25rem;
     line-height: 1.2;
@@ -2373,9 +2341,9 @@ a {
 }
 
 .detail-trust-heading {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-color);
     margin-bottom: 1rem;
@@ -3041,9 +3009,9 @@ a {
 
 .testi-eyebrow {
     display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-color);
     border: 1px solid rgba(225, 6, 0, 0.35);
@@ -3054,9 +3022,9 @@ a {
 
 .testi-title {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 800;
+    font-weight: 700;
     color: #0a0a0a;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.01em;
     margin-bottom: 0;
 }
 
@@ -3515,9 +3483,9 @@ a {
 
 .ct-label {
     display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-color);
     border: 1px solid rgba(225,6,0,0.35);
@@ -3528,9 +3496,9 @@ a {
 
 .ct-title {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 800;
+    font-weight: 700;
     color: #0a0a0a;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.01em;
     margin-bottom: 0.5rem;
 }
 
@@ -3885,9 +3853,9 @@ a {
 
 .footer-col-title {
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #E10600;
     margin: 0 0 1.5rem;

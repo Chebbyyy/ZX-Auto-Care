@@ -125,27 +125,23 @@
   align-items: center;
   gap: 0.5rem;
   margin: 0 0 0.85rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--ze-fs-eyebrow, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: var(--ze-red-tint);
 }
 
 .promo-banner__eyebrow::before {
-  content: '';
-  width: 1.5rem;
-  height: 2px;
-  border-radius: 0;
-  background: var(--promo-red);
+  display: none;
 }
 
 .promo-banner__headline {
   margin: 0 0 1rem;
   font-size: clamp(1.65rem, 3.2vw, 2.45rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: #ffffff;
 }
 
@@ -165,25 +161,24 @@
   padding: 0.85rem 1.65rem;
   border-radius: 0;
   border: 1px solid transparent;
-  background: var(--ze-grad-red, linear-gradient(135deg, var(--promo-red) 0%, var(--promo-red-deep) 100%));
+  background: var(--promo-red, #e10600);
   color: #ffffff;
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(225, 6, 0, 0.28);
+  box-shadow: none;
   transition:
     transform 0.25s var(--promo-ease),
-    box-shadow 0.25s var(--promo-ease),
-    background 0.25s var(--promo-ease),
-    filter 0.25s var(--promo-ease);
+    background 0.25s var(--promo-ease);
 }
 
 .promo-banner__cta:hover {
   color: #ffffff;
   transform: translateY(-2px);
-  filter: brightness(1.06);
-  box-shadow: 0 14px 28px rgba(225, 6, 0, 0.38);
+  filter: none;
+  background: var(--promo-red-deep, #c90500);
+  box-shadow: var(--ze-shadow-sm);
 }
 
 .promo-banner__cta:focus-visible {

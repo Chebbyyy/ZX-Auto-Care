@@ -1,7 +1,4 @@
-/* ═══════════════════════════════════════════
-   Home page enhancements only
-   Scoped under .home-page — no other routes
-   ═══════════════════════════════════════════ */
+/* Home page — scoped under .home-page */
 
 .home-page {
   --home-red: var(--ze-red-primary, #e10600);
@@ -11,7 +8,7 @@
   --home-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ─── Hero: static premium background ─── */
+/* Hero background */
 .home-page .hero-bg-stage {
   position: absolute;
   inset: 0;
@@ -54,7 +51,7 @@
   }
 }
 
-/* ─── Hero: premium two-column layout ─── */
+/* Hero layout */
 .home-page .home-hero {
   min-height: min(100vh, 920px);
   padding-top: clamp(5.5rem, 12vh, 7rem);
@@ -107,7 +104,6 @@
   color: var(--ze-text-dark-body);
 }
 
-/* Glass aside + floating mini-stats */
 .home-page .home-hero__aside {
   display: flex;
   justify-content: center;
@@ -120,22 +116,20 @@
   margin-left: auto;
   padding: clamp(1.35rem, 3vw, 1.85rem);
   border-radius: 0;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(12, 12, 12, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--ze-shadow-md);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .home-page .home-hero-glass__eyebrow {
   margin: 0 0 1rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .home-page .home-hero-glass__list {
@@ -201,21 +195,21 @@
 .home-page .home-hero-float-stat strong {
   display: block;
   color: #fff;
-  font-family: var(--ze-font-heading, 'Sora', sans-serif);
+  font-family: var(--ze-font-heading);
   font-size: var(--ze-fs-h4);
-  font-weight: 800;
-  letter-spacing: var(--ze-ls-display);
-  line-height: 1.1;
-  margin-bottom: 0.2rem;
+  font-weight: 700;
+  letter-spacing: var(--ze-ls-heading);
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
 }
 
 .home-page .home-hero-float-stat > span {
   display: block;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
 }
 
 .home-page .home-hero-float-stat .home-hero-float-stat__stars {
@@ -331,7 +325,7 @@
   }
 }
 
-/* ─── Hero CTAs ─── */
+/* Hero CTAs */
 .home-page .home-hero-ctas {
   animation: homeFadeUp 0.7s var(--home-ease) 1.05s both;
   gap: 1.75rem !important;
@@ -362,19 +356,19 @@
 }
 
 .home-page .home-hero-ctas .btn-danger {
-  background: var(--ze-grad-red);
+  background: var(--ze-red-primary);
   border-color: transparent;
-  box-shadow: 0 8px 24px var(--ze-red-glow);
+  box-shadow: none;
 }
 
 .home-page .home-hero-ctas .btn-danger:hover {
-  background: var(--ze-grad-red-hover);
-  box-shadow: 0 12px 32px var(--ze-red-glow);
+  background: var(--ze-red-mid);
+  box-shadow: var(--ze-shadow-sm);
 }
 
 .home-page .home-hero-ctas .btn-outline-light:hover {
-  border-color: var(--ze-red-soft);
-  background: var(--ze-red-wash-strong);
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .home-page .home-hero-call-group {
@@ -393,14 +387,14 @@
   font-size: 0.84rem;
   font-weight: 700;
   white-space: nowrap;
-  background: var(--ze-grad-red);
+  background: var(--ze-red-primary);
   border-color: transparent;
-  box-shadow: 0 8px 22px var(--ze-red-glow);
+  box-shadow: none;
 }
 
 .home-page .home-hero-call:hover {
-  background: var(--ze-grad-red-hover);
-  box-shadow: 0 12px 28px var(--ze-red-glow);
+  background: var(--ze-red-mid);
+  box-shadow: var(--ze-shadow-sm);
 }
 
 .home-page .home-hero-call .ze-icon {
@@ -451,7 +445,7 @@
 }
 
 .home-page .home-hero-ctas .btn-danger {
-  background: var(--ze-grad-red);
+  background: var(--ze-red-primary);
   border-color: transparent;
 }
 
@@ -460,14 +454,14 @@
 }
 
 .home-page .home-hero-ctas .hero-call-pulse:hover {
-  box-shadow: 0 12px 28px var(--ze-red-glow) !important;
+  box-shadow: var(--ze-shadow-sm) !important;
 }
 
-/* ─── Info strip polish ─── */
+/* Info strip */
 .home-page .home-stats-band .text-strip {
-  background: linear-gradient(180deg, #171717 0%, #101010 100%);
-  border-top: 1px solid rgba(225, 6, 0, 0.35);
-  border-bottom: 1px solid rgba(225, 6, 0, 0.28);
+  background: #121212;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
   padding: clamp(0.85rem, 2vw, 1.15rem) 0;
   margin-top: 0.25rem;
@@ -475,10 +469,10 @@
 
 .home-page .home-stats-band .text-strip-content span {
   font-size: var(--ze-fs-lead);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
 }
 
-/* ─── Stats: floating glass cards over hero ─── */
+/* Floating stats */
 .home-page .home-stats-band {
   position: relative;
   z-index: 4;
@@ -521,7 +515,7 @@
   }
 }
 
-/* ─── Premium stat cards ─── */
+/* Stat cards */
 .home-page .home-stat-glow {
   height: 100%;
   overflow: hidden;
@@ -589,8 +583,9 @@
 
 .home-page .home-stat-glow .stat-label {
   color: var(--ze-text-light-body);
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .home-page .home-stat-glow .stat-icon .ze-icon {
@@ -624,10 +619,7 @@
   }
 }
 
-/* ─── Garage section rhythm ─── */
-/* Home garage matches Why Choose Us band — styles live in HomeGarage.css */
-
-/* ─── Promo band breathing room ─── */
+/* Promo */
 .home-page .promo-banner {
   padding: clamp(3.5rem, 8vw, 6rem) 0;
 }

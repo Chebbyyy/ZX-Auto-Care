@@ -51,7 +51,7 @@
   max-width: 15ch;
   margin: 0;
   color: var(--ze-white);
-  font-family: var(--ze-font-heading);
+  font-family: var(--ze-font-display, var(--ze-font-heading));
   font-size: var(--ze-fs-display);
   font-weight: 800;
   letter-spacing: var(--ze-ls-display);
@@ -76,10 +76,10 @@
   gap: var(--ze-space-2);
   margin-top: var(--ze-space-5);
   color: var(--ze-text-dark-muted);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .ze-page-hero__breadcrumb a {

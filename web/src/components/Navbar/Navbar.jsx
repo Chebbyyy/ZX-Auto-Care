@@ -81,8 +81,8 @@ function Navbar() {
             src={LOGO_SRC}
             alt="Z Elite Auto Care"
             className="nav-logo-img"
-            width={160}
-            height={48}
+            width={200}
+            height={68}
             decoding="async"
             fetchPriority="high"
           />

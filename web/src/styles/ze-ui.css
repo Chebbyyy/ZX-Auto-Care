@@ -1,14 +1,8 @@
-/*
- * Z Elite UI — layout & utility system
- * Compatible class names preserved for pixel parity with the original site.
- * Only utilities/components needed by the Z Elite Auto Care React app.
- */
+/* Z Elite UI */
 
-/* -------------------------------------------------------------------------- */
-/* CSS variables                                                              */
-/* -------------------------------------------------------------------------- */
+/* CSS variables */
 :root {
-  /* Brand reds — primary stays motorsport #E10600; soft/tint from modern red family */
+  /* Brand reds */
   --ze-red-deep: #7a0500;
   --ze-red-primary: #e10600;
   --ze-red-mid: #c90500;
@@ -16,7 +10,7 @@
   --ze-red-tint: #fca5a5;
   --ze-red-wash: rgba(225, 6, 0, 0.08);
   --ze-red-wash-strong: rgba(225, 6, 0, 0.16);
-  --ze-red-glow: rgba(225, 6, 0, 0.35);
+  --ze-red-glow: rgba(0, 0, 0, 0.18);
 
   /* Neutrals */
   --ze-black: #000;
@@ -28,42 +22,43 @@
   --ze-off-white: #fef2f2;
   --ze-white: #fff;
 
-  /* Trust / success (WhatsApp, confirmations) */
+  /* Trust / success */
   --ze-green: #16a34a;
 
-  /* Surfaces — darkest to lightest for section rhythm */
+  /* Surfaces */
   --ze-surface-0: #0a0a0a;
   --ze-surface-1: #111111;
   --ze-surface-2: #161616;
   --ze-surface-3: #1e1e1e;
 
-  /* Text on dark backgrounds */
+  /* Text on dark */
   --ze-text-dark-strong: #ffffff;
   --ze-text-dark-body: rgba(255, 255, 255, 0.78);
   --ze-text-dark-muted: rgba(255, 255, 255, 0.62);
 
-  /* Text on light backgrounds */
+  /* Text on light */
   --ze-text-light-strong: #0a0a0a;
   --ze-text-light-body: #555555;
   --ze-text-light-muted: #737373;
 
-  /* Type scale — one hierarchy for every page */
-  --ze-fs-display: clamp(2.2rem, 4.8vw, 3.5rem); /* page heroes */
-  --ze-fs-h2: clamp(1.9rem, 4vw, 2.9rem); /* section titles */
-  --ze-fs-h3: clamp(1.4rem, 2.6vw, 1.8rem); /* block titles */
-  --ze-fs-h4: 1.08rem; /* card titles */
-  --ze-fs-lead: clamp(0.95rem, 1.4vw, 1.06rem); /* section intros */
-  --ze-fs-body: 0.95rem;
-  --ze-fs-sm: 0.88rem;
-  --ze-fs-eyebrow: 0.75rem;
+  /* Type scale */
+  --ze-fs-display: clamp(2.4rem, 6vw, 3.5rem);
+  --ze-fs-h2: clamp(1.85rem, 4.5vw, 2.65rem);
+  --ze-fs-h3: clamp(1.4rem, 3vw, 1.75rem);
+  --ze-fs-h4: 1.2rem;
+  --ze-fs-lead: clamp(1.05rem, 2vw, 1.15rem);
+  --ze-fs-body: 1.0625rem;
+  --ze-fs-sm: 0.975rem;
+  --ze-fs-eyebrow: 0.8rem;
 
-  --ze-lh-display: 1.08;
-  --ze-lh-heading: 1.18;
+  --ze-lh-display: 1.1;
+  --ze-lh-heading: 1.22;
   --ze-lh-body: 1.65;
 
-  --ze-ls-display: -0.03em;
-  --ze-ls-heading: -0.02em;
-  --ze-ls-eyebrow: 0.14em;
+  /* Letter spacing */
+  --ze-ls-display: 0.01em;
+  --ze-ls-heading: -0.01em;
+  --ze-ls-eyebrow: 0.08em;
 
   /* Spacing */
   --ze-section-pad: clamp(4rem, 7vw, 6.5rem);
@@ -75,7 +70,7 @@
   --ze-space-6: 2rem;
   --ze-space-7: 3rem;
 
-  /* Radius (zeroed for sharp, boxy corners site-wide) */
+  /* Radius */
   --ze-radius-sm: 0;
   --ze-radius-md: 0;
   --ze-radius-lg: 0;
@@ -83,19 +78,19 @@
   --ze-radius-pill: 0;
 
   /* Shadows */
-  --ze-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
-  --ze-shadow-md: 0 12px 32px rgba(0, 0, 0, 0.22);
-  --ze-shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.32);
-  --ze-shadow-red: 0 10px 28px rgba(225, 6, 0, 0.35);
+  --ze-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --ze-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --ze-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.22);
+  --ze-shadow-red: 0 4px 14px rgba(0, 0, 0, 0.2);
 
   /* Motion */
   --ze-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --ze-duration: 0.3s;
-  --ze-lift: -4px;
+  --ze-duration: 0.25s;
+  --ze-lift: -2px;
 
-  --ze-grad-red: linear-gradient(135deg, var(--ze-red-primary) 0%, var(--ze-red-mid) 55%, var(--ze-red-deep) 100%);
-  --ze-grad-red-hover: linear-gradient(135deg, var(--ze-red-soft) 0%, var(--ze-red-primary) 50%, var(--ze-red-mid) 100%);
-  --ze-grad-red-line: linear-gradient(90deg, var(--ze-red-soft), var(--ze-red-primary), var(--ze-red-deep));
+  --ze-grad-red: var(--ze-red-primary);
+  --ze-grad-red-hover: var(--ze-red-mid);
+  --ze-grad-red-line: linear-gradient(90deg, var(--ze-red-primary), var(--ze-red-mid));
 
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -143,8 +138,9 @@
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
 
-  --ze-font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --ze-font-heading: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ze-font-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ze-font-heading: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ze-font-display: 'Barlow Condensed', 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --bs-font-sans-serif: var(--ze-font-body);
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;

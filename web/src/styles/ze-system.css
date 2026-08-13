@@ -1,8 +1,4 @@
-/* Z Elite design system — buttons, cards, section headers, backgrounds, FABs */
-
-/* -------------------------------------------------------------------------- */
-/* Buttons                                                                    */
-/* -------------------------------------------------------------------------- */
+/* Buttons */
 .ze-btn {
   display: inline-flex;
   align-items: center;
@@ -12,7 +8,7 @@
   padding: 0.65rem 1.5rem;
   border-radius: 0;
   border: 1px solid transparent;
-  font-family: var(--ze-font-heading);
+  font-family: var(--ze-font-body);
   font-size: var(--ze-fs-sm);
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -33,16 +29,16 @@
 }
 
 .ze-btn--primary {
-  background: var(--ze-grad-red);
+  background: var(--ze-red-primary);
   color: var(--ze-white);
-  box-shadow: var(--ze-shadow-red);
+  box-shadow: none;
 }
 
 .ze-btn--primary:hover {
-  background: var(--ze-grad-red-hover);
+  background: var(--ze-red-mid);
   color: var(--ze-white);
   transform: translateY(var(--ze-lift));
-  box-shadow: 0 14px 36px var(--ze-red-glow);
+  box-shadow: var(--ze-shadow-sm);
 }
 
 .ze-btn--ghost-light {
@@ -53,8 +49,8 @@
 
 .ze-btn--ghost-light:hover {
   color: var(--ze-white);
-  border-color: var(--ze-red-soft);
-  background: var(--ze-red-wash-strong);
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateY(var(--ze-lift));
 }
 
@@ -67,20 +63,21 @@
 .ze-btn--ghost-dark:hover {
   color: var(--ze-red-primary);
   border-color: var(--ze-red-primary);
-  background: var(--ze-red-wash);
+  background: transparent;
   transform: translateY(var(--ze-lift));
 }
 
 .ze-btn--success {
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  background: #16a34a;
   color: var(--ze-white);
-  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+  box-shadow: none;
 }
 
 .ze-btn--success:hover {
   color: var(--ze-white);
   transform: translateY(var(--ze-lift));
-  filter: brightness(1.05);
+  background: #15803d;
+  filter: none;
 }
 
 .ze-btn--sm {
@@ -95,9 +92,7 @@
   font-size: 0.95rem;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Cards                                                                      */
-/* -------------------------------------------------------------------------- */
+/* Cards */
 .ze-card {
   border-radius: 0;
   transition:
@@ -120,23 +115,21 @@
 }
 
 .ze-card--dark {
-  background: rgba(22, 22, 22, 0.72);
+  background: rgba(18, 18, 18, 0.92);
   color: var(--ze-text-dark-strong);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--ze-shadow-sm);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .ze-card--dark:hover {
   transform: translateY(var(--ze-lift));
   box-shadow: var(--ze-shadow-md);
-  border-color: rgba(225, 6, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Sections + headers                                                         */
-/* -------------------------------------------------------------------------- */
+/* Sections */
 .ze-section {
   position: relative;
   padding: var(--ze-section-pad) 0;
@@ -159,8 +152,8 @@
   font-family: var(--ze-font-body);
   font-size: var(--ze-fs-eyebrow);
   font-weight: 600;
-  letter-spacing: var(--ze-ls-eyebrow);
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: var(--ze-red-primary);
 }
 
@@ -168,7 +161,7 @@
   margin: 0 0 var(--ze-space-4);
   font-family: var(--ze-font-heading);
   font-size: var(--ze-fs-h2);
-  font-weight: 800;
+  font-weight: 700;
   line-height: var(--ze-lh-heading);
   letter-spacing: var(--ze-ls-heading);
   color: var(--ze-text-dark-strong);
@@ -194,19 +187,14 @@
   color: var(--ze-text-light-body);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Static premium background (no canvas)                                      */
-/* -------------------------------------------------------------------------- */
+/* Static background */
 .ze-bg-static {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 55% 45% at 20% 15%, rgba(225, 6, 0, 0.14) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(225, 6, 0, 0.08) 0%, transparent 55%),
-    linear-gradient(180deg, var(--ze-surface-0) 0%, var(--ze-surface-1) 100%);
+  background: linear-gradient(180deg, var(--ze-surface-0) 0%, var(--ze-surface-1) 100%);
 }
 
 .ze-bg-static::before {
@@ -228,9 +216,7 @@
   background: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Focus                                                                      */
-/* -------------------------------------------------------------------------- */
+/* Focus */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -241,9 +227,7 @@ textarea:focus-visible,
   outline-offset: 3px;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Floating action buttons                                                    */
-/* -------------------------------------------------------------------------- */
+/* FABs */
 .floating-whatsapp-btn,
 .floating-call-btn,
 .scroll-top-btn {
@@ -266,15 +250,15 @@ textarea:focus-visible,
 .floating-whatsapp-btn {
   bottom: 24px;
   right: 24px;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  background: #16a34a;
   color: var(--ze-white);
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: var(--ze-shadow-sm);
 }
 
 .floating-whatsapp-btn:hover {
   color: var(--ze-white);
-  transform: translateY(var(--ze-lift)) scale(1.05);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+  transform: translateY(var(--ze-lift));
+  box-shadow: var(--ze-shadow-md);
 }
 
 .floating-whatsapp-btn svg {
@@ -286,29 +270,36 @@ textarea:focus-visible,
 .floating-call-btn {
   bottom: 24px;
   left: 24px;
-  background: var(--ze-grad-red);
+  background: var(--ze-red-primary);
   color: var(--ze-white);
-  box-shadow: var(--ze-shadow-red);
+  box-shadow: var(--ze-shadow-sm);
   font-weight: 700;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
   text-align: center;
   line-height: 1.15;
   padding: 0.5rem;
 }
 
+.floating-call-btn__icon {
+  display: none;
+  width: 1.55rem;
+  height: 1.55rem;
+  color: inherit;
+}
+
 .floating-call-btn:hover {
   color: var(--ze-white);
-  transform: translateY(var(--ze-lift)) scale(1.05);
-  background: var(--ze-grad-red-hover);
+  transform: translateY(var(--ze-lift));
+  background: var(--ze-red-mid);
 }
 
 .scroll-top-btn {
   bottom: 92px;
   right: 24px;
-  background: var(--ze-grad-red);
+  background: var(--ze-red-primary);
   color: var(--ze-white);
-  box-shadow: var(--ze-shadow-red);
+  box-shadow: var(--ze-shadow-sm);
   display: none;
   z-index: 997;
 }
@@ -318,7 +309,8 @@ textarea:focus-visible,
 }
 
 .scroll-top-btn:hover {
-  transform: translateY(var(--ze-lift)) scale(1.05);
+  transform: translateY(var(--ze-lift));
+  background: var(--ze-red-mid);
 }
 
 .scroll-top-btn svg {
@@ -332,26 +324,37 @@ textarea:focus-visible,
   .scroll-top-btn {
     width: 52px;
     height: 52px;
+    right: 14px;
+    left: auto;
   }
 
   .floating-whatsapp-btn {
-    bottom: 18px;
-    right: 16px;
+    bottom: 16px;
   }
 
   .floating-call-btn {
-    bottom: 18px;
-    left: 16px;
-    font-size: 0.62rem;
+    bottom: calc(16px + 52px + 12px);
+    font-size: 0.7rem;
+    padding: 0;
+  }
+
+  .floating-call-btn__label {
+    display: none;
+  }
+
+  .floating-call-btn__icon {
+    display: block;
   }
 
   .scroll-top-btn {
-    bottom: 80px;
-    right: 16px;
+    bottom: calc(16px + 52px + 12px + 52px + 12px);
+  }
+
+  body {
+    padding-bottom: 5.5rem;
   }
 }
 
-/* Kill legacy pulse animations for restrained motion */
 .hero-call-pulse {
   animation: none !important;
 }

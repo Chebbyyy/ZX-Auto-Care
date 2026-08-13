@@ -1,9 +1,6 @@
 import { useEffect } from 'react'
 
-/**
- * Hides the HTML splash once React has painted.
- * Balanced hold: noticeable enough to feel finished, not long enough to drag.
- */
+/** Hides the HTML splash once React has painted. */
 function PageLoader({ minMs = 720 }) {
   useEffect(() => {
     const loader = document.getElementById('ze-page-loader')

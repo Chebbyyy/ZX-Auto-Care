@@ -25,11 +25,7 @@
 .home-garage__shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.86) 100%),
-    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(225, 6, 0, 0.12) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 42% at 88% 12%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 38% at 10% 88%, rgba(59, 130, 246, 0.07) 0%, transparent 58%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.74) 45%, rgba(0, 0, 0, 0.88) 100%);
 }
 
 .home-garage__inner {
@@ -58,10 +54,10 @@
   color: var(--ze-white);
   padding: 1.5rem 1rem 1.35rem;
   border-radius: 0;
-  background: rgba(22, 22, 22, 0.76);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(18, 18, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   box-shadow: var(--ze-shadow-sm);
   transition:
     transform var(--ze-duration) var(--ze-ease),
@@ -71,7 +67,7 @@
 
 .home-garage__item:hover {
   transform: translateY(var(--ze-lift));
-  border-color: rgba(225, 6, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.18);
   box-shadow: var(--ze-shadow-md);
 }
 
@@ -90,8 +86,8 @@
   margin: 0 0 0.55rem;
   color: var(--ze-white);
   font-size: var(--ze-fs-h4);
-  font-weight: 800;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 1.3;
 }
 

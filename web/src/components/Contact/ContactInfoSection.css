@@ -26,19 +26,19 @@
   z-index: 1;
 }
 
-/* Cards */
 .contact-info-card {
   height: 100%;
   padding: 1.75rem 1.5rem;
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(18, 18, 18, 0.75);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  background: rgba(18, 18, 18, 0.94);
+  backdrop-filter: none;
+  box-shadow: var(--ze-shadow-sm);
   text-align: center;
   transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.4s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
     box-shadow 0.4s ease;
 }
 
@@ -73,9 +73,9 @@
 .contact-info-card__eyebrow {
   margin: 0 0 1rem;
   color: #a3a3a3;
-  font-size: 0.72rem;
+  font-size: var(--ze-fs-eyebrow, 0.8rem);
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--ze-ls-eyebrow, 0.08em);
   text-transform: uppercase;
 }
 
@@ -87,7 +87,6 @@
   text-align: center;
 }
 
-/* Badges */
 .contact-info-card__badges {
   display: flex;
   flex-wrap: wrap;
@@ -100,9 +99,9 @@
   align-items: center;
   padding: 0.35rem 0.7rem;
   border-radius: 0;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: #e5e5e5;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -118,7 +117,6 @@
   color: #bdbdbd;
 }
 
-/* Quick links */
 .contact-info-links {
   display: flex;
   flex-direction: column;
@@ -208,16 +206,15 @@
   display: inline-block;
   padding: 0.12rem 0.45rem;
   border-radius: 0;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ze-gray-mid, #737373);
   background: rgba(115, 115, 115, 0.12);
   border: 1px solid rgba(115, 115, 115, 0.22);
 }
 
-/* Get in touch */
 .contact-info-phone-btn {
   display: flex;
   align-items: center;
@@ -226,20 +223,21 @@
   margin-bottom: 1rem;
   padding: 0.85rem 1rem;
   border-radius: 0;
-  background: linear-gradient(135deg, #e10600 0%, #c90500 100%);
+  background: #e10600;
   color: #ffffff;
   font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(225, 6, 0, 0.28);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: none;
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .contact-info-phone-btn:hover {
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(225, 6, 0, 0.38);
+  background: #c90500;
+  box-shadow: var(--ze-shadow-sm);
 }
 
 .contact-info-meta {
@@ -261,7 +259,6 @@
   border-radius: 0 !important;
 }
 
-/* Trust bar */
 .contact-info-trust {
   display: flex;
   flex-wrap: wrap;

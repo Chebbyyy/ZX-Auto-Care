@@ -9,7 +9,6 @@
   overflow: hidden;
 }
 
-/* Content sits directly on the dark section */
 .gallery-panel {
   position: relative;
   z-index: 1;
@@ -29,10 +28,10 @@
   gap: 0.4rem;
   margin: 0 0 0.75rem;
   color: var(--gallery-red-soft);
-  font-size: var(--ze-fs-eyebrow, 0.75rem);
-  font-weight: 700;
-  letter-spacing: var(--ze-ls-eyebrow, 0.14em);
-  text-transform: uppercase;
+  font-size: var(--ze-fs-eyebrow, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .gallery.gallery--premium > .container {
@@ -40,7 +39,7 @@
   z-index: 1;
 }
 
-/* ─── Before / After carousel ─── */
+/* Before / After */
 .gallery-ba {
   position: relative;
   margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
@@ -103,25 +102,25 @@
   z-index: 3;
   padding: 0.35rem 0.75rem;
   border-radius: 0;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: #fff;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
 }
 
 .gallery-ba__glass--before {
   left: 0.85rem;
-  background: rgba(225, 6, 0, 0.45);
+  background: rgba(0, 0, 0, 0.72);
 }
 
 .gallery-ba__glass--after {
   right: 0.85rem;
-  background: rgba(225, 6, 0, 0.45);
+  background: rgba(0, 0, 0, 0.72);
 }
 
 .gallery-ba__handle {
@@ -240,7 +239,7 @@
   width: 22px;
 }
 
-/* ─── Shop-style work grid ─── */
+/* Shop grid */
 .gallery-shop-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -324,25 +323,26 @@
 
 .gallery-shop-card__eyebrow {
   color: var(--ze-red-soft, #ff4a42);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .gallery-shop-card__body h3 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
-  font-weight: 800;
+  font-family: var(--ze-font-heading);
+  font-size: clamp(1.3rem, 2vw, 1.55rem);
+  font-weight: 700;
   letter-spacing: -0.015em;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .gallery-shop-card__meta {
   margin: 0 0 0.65rem;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: var(--ze-fs-sm, 0.88rem);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -353,9 +353,9 @@
   gap: 0.4rem;
   align-self: flex-start;
   padding-bottom: 0.15rem;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ze-red-soft, #ff4a42);
   border-bottom: 1px solid rgba(255, 74, 66, 0.4);
@@ -368,7 +368,7 @@
   gap: 0.65rem;
 }
 
-/* ─── "Qualified & professional" photo band ─── */
+/* Qual band */
 .gallery-qual-band {
   position: relative;
   isolation: isolate;
@@ -421,10 +421,10 @@
   margin: 0;
   color: #ffffff;
   font-size: var(--ze-fs-h2, clamp(1.9rem, 4vw, 2.9rem));
-  font-weight: 800;
-  letter-spacing: var(--ze-ls-heading, -0.02em);
+  font-weight: 700;
+  letter-spacing: var(--ze-ls-heading, -0.01em);
   line-height: var(--ze-lh-heading, 1.18);
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
 .gallery-qual-band__content h3 span {
@@ -437,10 +437,10 @@
   color: rgba(255, 255, 255, 0.82);
   font-size: var(--ze-fs-lead, clamp(0.95rem, 1.4vw, 1.06rem));
   line-height: var(--ze-lh-body, 1.65);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
 }
 
-/* ─── Premium lightbox ─── */
+/* Lightbox */
 .gallery-lightbox {
   position: fixed;
   inset: 0;
@@ -542,16 +542,17 @@
   display: block;
   margin-bottom: 0.4rem;
   color: var(--ze-red-soft, #ff4a42);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .gallery-lightbox__body h5 {
   margin: 0 0 0.55rem;
-  font-size: clamp(1.2rem, 2vw, 1.45rem);
-  font-weight: 800;
+  font-family: var(--ze-font-heading);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
   letter-spacing: -0.015em;
   color: #ffffff;
 }

@@ -1,4 +1,3 @@
-/* Soft entrance for classic nav links — one quiet motion detail */
 .ze-navbar .navbar-nav .nav-item {
   opacity: 0;
   transform: translateY(-6px);
@@ -28,15 +27,13 @@
   }
 }
 
-/* Uppercase compact links, centered between logo and call block */
 .ze-navbar .navbar-nav .nav-link {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
-/* Call Us block on the right */
 .nav-call {
   display: inline-flex;
   align-items: center;
@@ -70,16 +67,16 @@
 }
 
 .nav-call__label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: #737373;
 }
 
 .nav-call__number {
-  font-size: 0.92rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 700;
   color: #1a1a1a;
 }
 
@@ -92,70 +89,16 @@
     margin: 0.75rem 0 0.5rem;
     padding: 0 0.75rem;
   }
-}
 
-/* Uppercase compact links, centered between logo and call block */
-.ze-navbar .navbar-nav .nav-link {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
+  .ze-navbar .navbar-nav .nav-link {
+    font-size: 1rem;
+  }
 
-/* Call Us block on the right */
-.nav-call {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
+  .nav-call__label {
+    font-size: 0.9rem;
+  }
 
-.nav-call__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.35rem;
-  height: 2.35rem;
-  border-radius: 0;
-  color: #e10600;
-  border: 2px solid #e10600;
-  font-size: 1rem;
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.nav-call:hover .nav-call__icon {
-  background: #e10600;
-  color: #ffffff;
-}
-
-.nav-call__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.nav-call__label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #737373;
-}
-
-.nav-call__number {
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: #1a1a1a;
-}
-
-.nav-call:hover .nav-call__number {
-  color: #e10600;
-}
-
-@media (max-width: 767.98px) {
-  .nav-call {
-    margin: 0.75rem 0 0.5rem;
-    padding: 0 0.75rem;
+  .nav-call__number {
+    font-size: 1.05rem;
   }
 }

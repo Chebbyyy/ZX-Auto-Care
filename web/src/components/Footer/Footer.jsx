@@ -109,9 +109,12 @@ function Footer() {
       </footer>
 
       <a href="tel:0432241883" className="floating-call-btn" aria-label="Call Z Elite Auto Care">
-        Call
-        <br />
-        Now
+        <span className="floating-call-btn__label">
+          Call
+          <br />
+          Now
+        </span>
+        <IconTelephoneFill className="floating-call-btn__icon" aria-hidden="true" />
       </a>
 
       <a
