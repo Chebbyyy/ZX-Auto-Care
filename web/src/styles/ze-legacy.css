@@ -43,14 +43,14 @@
     --ze-text-light-muted: #737373;
 
     /* Type scale */
-    --ze-fs-display: clamp(2.2rem, 4.8vw, 3.5rem);
-    --ze-fs-h2: clamp(1.9rem, 4vw, 2.9rem);
-    --ze-fs-h3: clamp(1.4rem, 2.6vw, 1.8rem);
-    --ze-fs-h4: 1.08rem;
-    --ze-fs-lead: clamp(0.95rem, 1.4vw, 1.06rem);
-    --ze-fs-body: 0.95rem;
-    --ze-fs-sm: 0.88rem;
-    --ze-fs-eyebrow: 0.75rem;
+    --ze-fs-display: clamp(2.55rem, 6.2vw, 3.75rem);
+    --ze-fs-h2: clamp(2rem, 4.6vw, 2.85rem);
+    --ze-fs-h3: clamp(1.5rem, 3vw, 1.9rem);
+    --ze-fs-h4: 1.3rem;
+    --ze-fs-lead: clamp(1.15rem, 2vw, 1.28rem);
+    --ze-fs-body: 1.125rem;
+    --ze-fs-sm: 1.05rem;
+    --ze-fs-eyebrow: 0.875rem;
 
     --ze-lh-display: 1.08;
     --ze-lh-heading: 1.18;
@@ -819,150 +819,7 @@ html {
     }
 }
 
-/* ============================================
-   FLOATING ACTION BUTTONS
-   ============================================ */
-.floating-whatsapp-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    border-radius: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    z-index: 998;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-}
-
-.floating-whatsapp-btn:hover {
-    transform: scale(1.15) translateY(-5px);
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
-}
-
-.floating-whatsapp-btn svg {
-    width: 32px;
-    height: 32px;
-    fill: currentColor;
-}
-
-.scroll-top-btn {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, #c90500 100%);
-    border-radius: 0;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 997;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(225, 6, 0, 0.4);
-    transition: all 0.3s ease;
-}
-
-.scroll-top-btn.show {
-    display: flex;
-}
-
-.scroll-top-btn:hover {
-    transform: scale(1.15) translateY(-5px);
-    box-shadow: 0 8px 30px rgba(225, 6, 0, 0.6);
-    background: linear-gradient(135deg, #c90500 0%, var(--accent-color) 100%);
-}
-
-.scroll-top-btn svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-}
-
-@media (max-width: 768px) {
-    .floating-whatsapp-btn {
-        width: 52px;
-        height: 52px;
-        bottom: 16px;
-        right: 14px;
-        left: auto;
-    }
-    
-    .floating-whatsapp-btn svg {
-        width: 26px;
-        height: 26px;
-    }
-    
-    .scroll-top-btn {
-        width: 52px;
-        height: 52px;
-        bottom: calc(16px + 52px + 12px + 52px + 12px);
-        right: 14px;
-        left: auto;
-    }
-    
-    .scroll-top-btn svg {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-/* ============================================
-   FLOATING CALL BUTTON
-   ============================================ */
-.floating-call-btn {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, #c90500 100%);
-    border-radius: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    z-index: 998;
-    box-shadow: 0 4px 20px rgba(225, 6, 0, 0.4);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.5px;
-    text-align: center;
-    padding: 1rem;
-}
-
-.floating-call-btn:hover {
-    transform: scale(1.15) translateY(-5px);
-    box-shadow: 0 8px 30px rgba(225, 6, 0, 0.6);
-    background: linear-gradient(135deg, #c90500 0%, var(--accent-color) 100%);
-    color: #ffffff;
-}
-
-@media (max-width: 768px) {
-    .floating-call-btn {
-        width: 52px;
-        height: 52px;
-        bottom: calc(16px + 52px + 12px);
-        right: 14px;
-        left: auto;
-        font-size: 0.7rem;
-        padding: 0;
-    }
-}
+/* Floating action buttons: styles live in ze-system.css */
 
 /* ============================================
    RESET & BASE STYLES
@@ -3768,11 +3625,11 @@ a {
 
 @media (max-width: 768px) {
     .ct-toast {
-        bottom: 13rem;
-        right: 20px;
-        left: 20px;
+        bottom: 5.5rem;
+        right: 12px;
+        left: 12px;
         padding: 0.9rem 1.25rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 

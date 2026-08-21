@@ -2,6 +2,15 @@
   --ze-font-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --ze-font-heading: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --ze-font-display: 'Barlow Condensed', 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ze-fs-display: clamp(2.55rem, 6.2vw, 3.75rem);
+  --ze-fs-h2: clamp(2rem, 4.6vw, 2.85rem);
+  --ze-fs-h3: clamp(1.5rem, 3vw, 1.9rem);
+  --ze-fs-h4: 1.3rem;
+  --ze-fs-lead: clamp(1.15rem, 2vw, 1.28rem);
+  --ze-fs-body: 1.125rem;
+  --ze-fs-sm: 1.05rem;
+  --ze-fs-eyebrow: 0.875rem;
+  --ze-lh-body: 1.7;
 }
 
 h1,
@@ -80,8 +89,8 @@ button,
 }
 
 body {
-  font-size: var(--ze-fs-body, 1.0625rem);
-  line-height: var(--ze-lh-body, 1.65);
+  font-size: var(--ze-fs-body, 1.125rem);
+  line-height: var(--ze-lh-body, 1.7);
   color: var(--ze-text-light-strong, #0a0a0a);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -134,15 +143,15 @@ label,
 
 @media (max-width: 767.98px) {
   :root {
-    --ze-fs-display: clamp(2.35rem, 9vw, 2.85rem);
-    --ze-fs-h2: clamp(1.75rem, 6.5vw, 2.15rem);
-    --ze-fs-h3: 1.4rem;
-    --ze-fs-h4: 1.2rem;
-    --ze-fs-lead: 1.08rem;
-    --ze-fs-body: 1.0625rem;
-    --ze-fs-sm: 1rem;
-    --ze-fs-eyebrow: 0.8125rem;
-    --ze-lh-body: 1.7;
+    --ze-fs-display: clamp(2.5rem, 9.5vw, 3rem);
+    --ze-fs-h2: clamp(1.9rem, 7vw, 2.35rem);
+    --ze-fs-h3: 1.55rem;
+    --ze-fs-h4: 1.3rem;
+    --ze-fs-lead: 1.2rem;
+    --ze-fs-body: 1.125rem;
+    --ze-fs-sm: 1.0625rem;
+    --ze-fs-eyebrow: 0.875rem;
+    --ze-lh-body: 1.72;
     --ze-ls-eyebrow: 0.06em;
     --ze-section-pad: clamp(2.75rem, 8vw, 4rem);
   }
@@ -157,7 +166,7 @@ label,
   .ze-section-lead,
   .hero-subheadline {
     font-size: var(--ze-fs-lead);
-    line-height: 1.7;
+    line-height: 1.72;
   }
 
   .ze-section-title,

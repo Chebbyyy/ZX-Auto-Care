@@ -42,14 +42,14 @@
   --ze-text-light-muted: #737373;
 
   /* Type scale */
-  --ze-fs-display: clamp(2.4rem, 6vw, 3.5rem);
-  --ze-fs-h2: clamp(1.85rem, 4.5vw, 2.65rem);
-  --ze-fs-h3: clamp(1.4rem, 3vw, 1.75rem);
-  --ze-fs-h4: 1.2rem;
-  --ze-fs-lead: clamp(1.05rem, 2vw, 1.15rem);
-  --ze-fs-body: 1.0625rem;
-  --ze-fs-sm: 0.975rem;
-  --ze-fs-eyebrow: 0.8rem;
+  --ze-fs-display: clamp(2.55rem, 6.2vw, 3.75rem);
+  --ze-fs-h2: clamp(2rem, 4.6vw, 2.85rem);
+  --ze-fs-h3: clamp(1.5rem, 3vw, 1.9rem);
+  --ze-fs-h4: 1.3rem;
+  --ze-fs-lead: clamp(1.15rem, 2vw, 1.28rem);
+  --ze-fs-body: 1.125rem;
+  --ze-fs-sm: 1.05rem;
+  --ze-fs-eyebrow: 0.875rem;
 
   --ze-lh-display: 1.1;
   --ze-lh-heading: 1.22;
